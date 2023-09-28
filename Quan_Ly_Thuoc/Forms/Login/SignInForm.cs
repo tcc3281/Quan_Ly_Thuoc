@@ -7,15 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Quan_Ly_Thuoc.SubForms;
-namespace Quan_Ly_Thuoc
+
+namespace Quan_Ly_Thuoc.SubForms
 {
-    public partial class Form1 : Form
+    public partial class SignInForm : Form
     {
-        public Form1()
+        public SignInForm()
         {
             InitializeComponent();
         }
-        {
     }
 }

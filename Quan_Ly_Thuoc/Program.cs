@@ -18,6 +18,11 @@ namespace Quan_Ly_Thuoc
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+            int i = 0;
+            if(i == 1)
+            {
+                i++;
+            }
         }
     }
 }

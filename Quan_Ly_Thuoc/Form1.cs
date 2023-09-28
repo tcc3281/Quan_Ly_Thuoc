@@ -16,6 +16,5 @@ namespace Quan_Ly_Thuoc
         {
             InitializeComponent();
         }
-        {
     }
 }

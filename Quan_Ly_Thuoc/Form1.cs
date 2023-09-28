@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Quan_Ly_Thuoc.SubForms;
+using Quan_Ly_Thuoc.Forms.Login;
 namespace Quan_Ly_Thuoc
 {
     public partial class Form1 : Form
@@ -15,6 +15,12 @@ namespace Quan_Ly_Thuoc
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void signInToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
         }
     }
 }

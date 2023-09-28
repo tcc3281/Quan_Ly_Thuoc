@@ -14,7 +14,7 @@ namespace Quan_Ly_Thuoc
         [STAThread]
         static void Main()
         {
-            //mai
+            //main
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());

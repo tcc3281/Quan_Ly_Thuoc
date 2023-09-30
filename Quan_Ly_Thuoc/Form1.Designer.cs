@@ -51,8 +51,8 @@
             this.sảnPhầmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sốLượngBánToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sốLượngNhậpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.signInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.signInToolStripMenuLogin = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchToolStripMenuSearch = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,8 +65,8 @@
             this.toolStripMenuItem1,
             this.fileToolStripMenuItem,
             this.analystToolStripMenuItem,
-            this.signInToolStripMenuItem,
-            this.searchToolStripMenuItem});
+            this.signInToolStripMenuLogin,
+            this.searchToolStripMenuSearch});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1097, 33);
@@ -230,19 +230,19 @@
             this.sốLượngNhậpToolStripMenuItem.Size = new System.Drawing.Size(284, 34);
             this.sốLượngNhậpToolStripMenuItem.Text = "Medicine Information";
             // 
-            // signInToolStripMenuItem
+            // signInToolStripMenuLogin
             // 
-            this.signInToolStripMenuItem.Name = "signInToolStripMenuItem";
-            this.signInToolStripMenuItem.Size = new System.Drawing.Size(72, 29);
-            this.signInToolStripMenuItem.Text = "Login";
-            this.signInToolStripMenuItem.Click += new System.EventHandler(this.signInToolStripMenuItem_Click);
+            this.signInToolStripMenuLogin.Name = "signInToolStripMenuLogin";
+            this.signInToolStripMenuLogin.Size = new System.Drawing.Size(72, 29);
+            this.signInToolStripMenuLogin.Text = "Login";
+            this.signInToolStripMenuLogin.Click += new System.EventHandler(this.signInToolStripMenuItem_Click);
             // 
-            // searchToolStripMenuItem
+            // searchToolStripMenuSearch
             // 
-            this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(80, 29);
-            this.searchToolStripMenuItem.Text = "Search";
-            this.searchToolStripMenuItem.Click += new System.EventHandler(this.searchToolStripMenuItem_Click);
+            this.searchToolStripMenuSearch.Name = "searchToolStripMenuSearch";
+            this.searchToolStripMenuSearch.Size = new System.Drawing.Size(80, 29);
+            this.searchToolStripMenuSearch.Text = "Search";
+            this.searchToolStripMenuSearch.Click += new System.EventHandler(this.searchToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -277,7 +277,7 @@
         private System.Windows.Forms.ToolStripMenuItem billToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem billToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem signInToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem signInToolStripMenuLogin;
         private System.Windows.Forms.ToolStripMenuItem analystToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem doanhThuNgàyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ngàyToolStripMenuItem;
@@ -287,7 +287,7 @@
         private System.Windows.Forms.ToolStripMenuItem sảnPhầmToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sốLượngBánToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sốLượngNhậpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuSearch;
     }
 }
 

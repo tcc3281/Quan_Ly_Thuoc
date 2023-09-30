@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Quan_Ly_Thuoc.Forms.Login;
+using Quan_Ly_Thuoc.Forms.Search;
 namespace Quan_Ly_Thuoc
 {
     public partial class Form1 : Form
@@ -17,9 +18,16 @@ namespace Quan_Ly_Thuoc
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void signInToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //cmt
+            Login login = new Login();
+            login.ShowDialog();
+        }
+
+        private void searchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Search search=new Search();
+            search.ShowDialog();
         }
     }
 }

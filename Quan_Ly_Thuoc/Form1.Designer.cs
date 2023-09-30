@@ -167,12 +167,6 @@
             this.updateToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.updateToolStripMenuItem.Text = "Update";
             // 
-            // signInToolStripMenuItem
-            // 
-            this.signInToolStripMenuItem.Name = "signInToolStripMenuItem";
-            this.signInToolStripMenuItem.Size = new System.Drawing.Size(82, 29);
-            this.signInToolStripMenuItem.Text = "Sign in";
-            // 
             // analystToolStripMenuItem
             // 
             this.analystToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {

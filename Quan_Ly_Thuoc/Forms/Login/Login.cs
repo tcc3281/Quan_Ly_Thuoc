@@ -16,5 +16,10 @@ namespace Quan_Ly_Thuoc.Forms.Login
         {
             InitializeComponent();
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            textBoxAccount.Focus();
+        }
     }
 }

@@ -29,5 +29,11 @@ namespace Quan_Ly_Thuoc
             Search search=new Search();
             search.ShowDialog();
         }
+
+        private void billToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormHoaDon hoaDon = new FormHoaDon();
+            hoaDon.Show();
+        }
     }
 }

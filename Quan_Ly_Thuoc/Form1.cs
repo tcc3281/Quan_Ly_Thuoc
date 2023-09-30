@@ -21,5 +21,11 @@ namespace Quan_Ly_Thuoc
         {
             //cmt
         }
+
+        private void billToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormHoaDon hoaDon = new FormHoaDon();
+            hoaDon.Show();
+        }
     }
 }

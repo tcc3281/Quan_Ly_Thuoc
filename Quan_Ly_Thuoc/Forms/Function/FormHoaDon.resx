@@ -117,4 +117,27 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnSearchChucNang.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAACxEAAAsRAX9kX5EAAAEhSURBVDhPhZG9bQJBEIWX38QS1IBEBURuhATJ7oGAAHeA
+        hJCogRKgABdAhojICFyAIwvJMu/b9Ryzx3E86RM73Mzs7JtQoeY/Xi3RSMd6+cKOeEnHQuXGmezjSGzF
+        t7iIL7EUfYEqm9if7+JPHMRUvImF+BE0GgiUNfE3U7yKUa6eOIljjEqyBozNzSY8wLxujEIYCi6YxCh9
+        K0Qyb2ZsROxll+zFJh3zBriNYbwZZR8lW+FOMCm6WysmYRiysRGJlnwW63S8XWIHVoXbfl2+eCzw4DVG
+        bhOWQCFT4DaGeVnxZ4xuNYWsG3tmVSRjGG9mbCv+FTNRqWIkiVXhNobxZhubYpp9xKhmkipZ8lzwzHaM
+        HghjgSJ+y41ri5/JjR3CFfjPLcB7/eFzAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnSearchThuoc.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAACxEAAAsRAX9kX5EAAAEhSURBVDhPhZG9bQJBEIWX38QS1IBEBURuhATJ7oGAAHeA
+        hJCogRKgABdAhojICFyAIwvJMu/b9Ryzx3E86RM73Mzs7JtQoeY/Xi3RSMd6+cKOeEnHQuXGmezjSGzF
+        t7iIL7EUfYEqm9if7+JPHMRUvImF+BE0GgiUNfE3U7yKUa6eOIljjEqyBozNzSY8wLxujEIYCi6YxCh9
+        K0Qyb2ZsROxll+zFJh3zBriNYbwZZR8lW+FOMCm6WysmYRiysRGJlnwW63S8XWIHVoXbfl2+eCzw4DVG
+        bhOWQCFT4DaGeVnxZ4xuNYWsG3tmVSRjGG9mbCv+FTNRqWIkiVXhNobxZhubYpp9xKhmkipZ8lzwzHaM
+        HghjgSJ+y41ri5/JjR3CFfjPLcB7/eFzAAAAAElFTkSuQmCC
+</value>
+  </data>
 </root>

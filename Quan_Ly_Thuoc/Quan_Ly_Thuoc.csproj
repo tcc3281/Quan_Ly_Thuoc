@@ -71,15 +71,15 @@
     <Compile Include="Forms\Function\FormHoaDon.Designer.cs">
       <DependentUpon>FormHoaDon.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\ChiTietHD.cs" />
-    <Compile Include="Model\ChiTietHDB.cs" />
-    <Compile Include="Model\ChiTietHDN.cs" />
-    <Compile Include="Model\HoaDon.cs" />
-    <Compile Include="Model\HoaDonBan.cs" />
-    <Compile Include="Model\HoaDonNhap.cs" />
-    <Compile Include="Model\KhachHang.cs" />
-    <Compile Include="Model\NhanVien.cs" />
-    <Compile Include="Model\Thuoc.cs" />
+    <Compile Include="Models\ChiTietHD.cs" />
+    <Compile Include="Models\ChiTietHDB.cs" />
+    <Compile Include="Models\ChiTietHDN.cs" />
+    <Compile Include="Models\HoaDon.cs" />
+    <Compile Include="Models\HoaDonBan.cs" />
+    <Compile Include="Models\HoaDonNhap.cs" />
+    <Compile Include="Models\KhachHang.cs" />
+    <Compile Include="Models\NhanVien.cs" />
+    <Compile Include="Models\Thuoc.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -119,7 +119,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Image\search.png" />
+    <Content Include="Images\search.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

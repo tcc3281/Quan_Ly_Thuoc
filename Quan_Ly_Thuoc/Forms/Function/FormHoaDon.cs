@@ -101,5 +101,22 @@ namespace Quan_Ly_Thuoc
             listThuoc.Items.Clear();
             listThuoc.Items.AddRange(newList.ToArray());
         }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormHoaDon_SizeChanged(object sender, EventArgs e)
+        {
+            setWidthColumns();
+        }
+        private void setWidthColumns()
+        {
+            int k = panel7.Width;
+            listView1.Columns[0].Width = (int)(k * 0.55);
+            listView1.Columns[1].Width = (int)(k * 0.20);
+            listView1.Columns[2].Width = (int)(k * 0.25);
+        }
     }
 }

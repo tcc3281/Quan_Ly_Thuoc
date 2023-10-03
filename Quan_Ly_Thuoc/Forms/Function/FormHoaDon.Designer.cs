@@ -192,10 +192,11 @@
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // ten
             // 
-            this.ten.Text = "Tên";
+            this.ten.Text = "Tên thuốc";
             this.ten.Width = 55;
             // 
             // sl
@@ -321,6 +322,7 @@
             this.Name = "FormHoaDon";
             this.Text = "FormHoaDon";
             this.Load += new System.EventHandler(this.FormHoaDon_Load);
+            this.SizeChanged += new System.EventHandler(this.FormHoaDon_SizeChanged);
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

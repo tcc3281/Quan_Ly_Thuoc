@@ -1,6 +1,6 @@
 ﻿namespace Quan_Ly_Thuoc
 {
-    partial class FormHoaDon
+    partial class FormHoaDonBan
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHoaDon));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHoaDonBan));
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -185,6 +185,7 @@
             this.gia});
             this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listView1.HideSelection = false;
+            this.listView1.LabelEdit = true;
             this.listView1.Location = new System.Drawing.Point(0, 0);
             this.listView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listView1.Name = "listView1";
@@ -311,7 +312,7 @@
             this.btnSearchThuoc.TabIndex = 1;
             this.btnSearchThuoc.UseVisualStyleBackColor = true;
             // 
-            // FormHoaDon
+            // FormHoaDonBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -319,8 +320,8 @@
             this.ClientSize = new System.Drawing.Size(1086, 669);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "FormHoaDon";
-            this.Text = "FormHoaDon";
+            this.Name = "FormHoaDonBan";
+            this.Text = "Xuất hóa đơn";
             this.Load += new System.EventHandler(this.FormHoaDon_Load);
             this.SizeChanged += new System.EventHandler(this.FormHoaDon_SizeChanged);
             this.panel1.ResumeLayout(false);

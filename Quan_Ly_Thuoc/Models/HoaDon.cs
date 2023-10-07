@@ -8,7 +8,7 @@ namespace Quan_Ly_Thuoc.Model
 {
     internal class HoaDon
     {
-        String id, ngayXuLy, id_NV;
+        string id, ngayXuLy, id_NV;
         double tongTien;
 
         public HoaDon(string id, string ngayXuLy, string id_NV, double tongTien)

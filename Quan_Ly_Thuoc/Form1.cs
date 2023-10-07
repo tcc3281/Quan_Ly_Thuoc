@@ -32,7 +32,7 @@ namespace Quan_Ly_Thuoc
 
         private void billToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormHoaDon hoaDon = new FormHoaDon();
+            FormHoaDonBan hoaDon = new FormHoaDonBan();
             hoaDon.Show();
         }
     }

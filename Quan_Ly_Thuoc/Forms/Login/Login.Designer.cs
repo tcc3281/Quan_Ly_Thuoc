@@ -92,6 +92,9 @@
             this.Controls.Add(this.labelPassword);
             this.Controls.Add(this.textBoxAccount);
             this.Controls.Add(this.labelAccount);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Login";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);

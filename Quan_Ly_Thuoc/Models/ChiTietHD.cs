@@ -8,7 +8,7 @@ namespace Quan_Ly_Thuoc.Model
 {
     internal class ChiTietHD
     {
-        String id_HD, id_Thuoc;
+        string id_HD, id_Thuoc;
         double sl;//so luong
         double thanhTien;
 

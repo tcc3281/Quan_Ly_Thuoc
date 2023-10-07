@@ -8,7 +8,7 @@ namespace Quan_Ly_Thuoc.Model
 {
     internal class HoaDonBan : HoaDon
     {
-        String id_KH;
+        string id_KH;
 
         public HoaDonBan(string id, string ngayXuLy, string id_NV, double tongTien, string id_KH) : 
             base(id, ngayXuLy, id_NV, tongTien)

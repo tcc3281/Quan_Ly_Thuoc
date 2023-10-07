@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace Quan_Ly_Thuoc
 {
-    public partial class FormHoaDon : Form
+    public partial class FormHoaDonBan : Form
     {
         private List<string> lChucNangThuoc = new List<string>();
         private List<string> lThuoc = new List<string>();
-        public FormHoaDon()
+        public FormHoaDonBan()
         {
             InitializeComponent();
         }
@@ -111,6 +111,8 @@ namespace Quan_Ly_Thuoc
         {
             setWidthColumns();
         }
+
+        //chinh size khi thu phong
         private void setWidthColumns()
         {
             int k = panel7.Width;

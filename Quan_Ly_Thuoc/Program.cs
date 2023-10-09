@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Quan_Ly_Thuoc.Forms.Function;
 namespace Quan_Ly_Thuoc
 {
     internal static class Program
@@ -17,9 +17,7 @@ namespace Quan_Ly_Thuoc
             //main
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form1());
             Application.Run(new Form1());
-
         }
     }
 }

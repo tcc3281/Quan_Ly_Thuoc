@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Quan_Ly_Thuoc.Forms.Function;
 using Quan_Ly_Thuoc.Forms.Login;
 using Quan_Ly_Thuoc.Forms.Search;
 namespace Quan_Ly_Thuoc
@@ -30,10 +31,16 @@ namespace Quan_Ly_Thuoc
             search.ShowDialog();
         }
 
-        private void billToolStripMenuItem_Click(object sender, EventArgs e)
+        private void hóaĐơnBánToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormHoaDonBan hoaDon = new FormHoaDonBan();
             hoaDon.Show();
+        }
+
+        private void thuỗToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormNhapThuoc formNhapThuoc = new FormNhapThuoc();
+            formNhapThuoc.ShowDialog();
         }
     }
 }

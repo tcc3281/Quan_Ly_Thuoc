@@ -102,23 +102,30 @@ namespace Quan_Ly_Thuoc
             listThuoc.Items.AddRange(newList.ToArray());
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void FormHoaDon_SizeChanged(object sender, EventArgs e)
         {
             setWidthColumns();
         }
 
-        //chinh size khi thu phong
+        //chỉnh các component khi thu phóng
         private void setWidthColumns()
         {
-            int k = panel7.Width;
-            listView1.Columns[0].Width = (int)(k * 0.55);
-            listView1.Columns[1].Width = (int)(k * 0.20);
-            listView1.Columns[2].Width = (int)(k * 0.25);
+            // chỉnh trong listview
+            int adjust0 = panel7.Width;
+            listView1.Columns[0].Width = (int)(adjust0 * 0.55);
+            listView1.Columns[1].Width = (int)(adjust0 * 0.20);
+            listView1.Columns[2].Width = (int)(adjust0 * 0.25);
+
+            //chỉnh các textbox và button
+
+            btnSearchThuoc.Height = txtSearchThuoc.Height;
+
+        }
+
+        private void txtThanhTien_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

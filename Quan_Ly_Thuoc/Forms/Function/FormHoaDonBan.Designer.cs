@@ -44,10 +44,11 @@
             this.sl = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.gia = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel6 = new System.Windows.Forms.Panel();
-            this.btnCatHD = new System.Windows.Forms.Button();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnThanhToan = new System.Windows.Forms.Button();
-            this.txtThanhTien = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtThanhTien = new System.Windows.Forms.TextBox();
+            this.btnCatHD = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.listThuoc = new System.Windows.Forms.ListBox();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -61,6 +62,7 @@
             this.panel5.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
             this.SuspendLayout();
@@ -139,20 +141,23 @@
             // 
             // txtSearchChucNang
             // 
-            this.txtSearchChucNang.Location = new System.Drawing.Point(3, 4);
+            this.txtSearchChucNang.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtSearchChucNang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchChucNang.Location = new System.Drawing.Point(0, 0);
             this.txtSearchChucNang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSearchChucNang.Name = "txtSearchChucNang";
-            this.txtSearchChucNang.Size = new System.Drawing.Size(201, 26);
+            this.txtSearchChucNang.Size = new System.Drawing.Size(222, 30);
             this.txtSearchChucNang.TabIndex = 0;
             this.txtSearchChucNang.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // btnSearchChucNang
             // 
+            this.btnSearchChucNang.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnSearchChucNang.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchChucNang.Image")));
-            this.btnSearchChucNang.Location = new System.Drawing.Point(218, 4);
+            this.btnSearchChucNang.Location = new System.Drawing.Point(222, 0);
             this.btnSearchChucNang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSearchChucNang.Name = "btnSearchChucNang";
-            this.btnSearchChucNang.Size = new System.Drawing.Size(43, 29);
+            this.btnSearchChucNang.Size = new System.Drawing.Size(43, 38);
             this.btnSearchChucNang.TabIndex = 1;
             this.btnSearchChucNang.UseVisualStyleBackColor = true;
             // 
@@ -193,7 +198,6 @@
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // ten
             // 
@@ -210,10 +214,7 @@
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.btnCatHD);
-            this.panel6.Controls.Add(this.btnThanhToan);
-            this.panel6.Controls.Add(this.txtThanhTien);
-            this.panel6.Controls.Add(this.label1);
+            this.panel6.Controls.Add(this.tableLayoutPanel2);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel6.Location = new System.Drawing.Point(0, 536);
             this.panel6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -221,44 +222,72 @@
             this.panel6.Size = new System.Drawing.Size(266, 125);
             this.panel6.TabIndex = 0;
             // 
-            // btnCatHD
+            // tableLayoutPanel2
             // 
-            this.btnCatHD.Location = new System.Drawing.Point(153, 56);
-            this.btnCatHD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnCatHD.Name = "btnCatHD";
-            this.btnCatHD.Size = new System.Drawing.Size(84, 58);
-            this.btnCatHD.TabIndex = 3;
-            this.btnCatHD.Text = "Cất hóa đơn";
-            this.btnCatHD.UseVisualStyleBackColor = true;
+            this.tableLayoutPanel2.ColumnCount = 4;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.57143F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.04762F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.523809F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.85714F));
+            this.tableLayoutPanel2.Controls.Add(this.btnThanhToan, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.txtThanhTien, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnCatHD, 3, 1);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(266, 125);
+            this.tableLayoutPanel2.TabIndex = 0;
             // 
             // btnThanhToan
             // 
-            this.btnThanhToan.Location = new System.Drawing.Point(33, 56);
+            this.tableLayoutPanel2.SetColumnSpan(this.btnThanhToan, 2);
+            this.btnThanhToan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnThanhToan.Location = new System.Drawing.Point(3, 66);
             this.btnThanhToan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnThanhToan.Name = "btnThanhToan";
-            this.btnThanhToan.Size = new System.Drawing.Size(84, 58);
-            this.btnThanhToan.TabIndex = 2;
+            this.btnThanhToan.Size = new System.Drawing.Size(120, 55);
+            this.btnThanhToan.TabIndex = 7;
             this.btnThanhToan.Text = "Thanh toán";
             this.btnThanhToan.UseVisualStyleBackColor = true;
-            // 
-            // txtThanhTien
-            // 
-            this.txtThanhTien.Location = new System.Drawing.Point(125, 8);
-            this.txtThanhTien.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtThanhTien.Name = "txtThanhTien";
-            this.txtThanhTien.Size = new System.Drawing.Size(112, 26);
-            this.txtThanhTien.TabIndex = 1;
-            this.txtThanhTien.Text = "0đ";
-            this.txtThanhTien.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 11);
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 20);
-            this.label1.TabIndex = 0;
+            this.label1.Size = new System.Drawing.Size(70, 62);
+            this.label1.TabIndex = 5;
             this.label1.Text = "Thành tiền:";
+            // 
+            // txtThanhTien
+            // 
+            this.tableLayoutPanel2.SetColumnSpan(this.txtThanhTien, 3);
+            this.txtThanhTien.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtThanhTien.Location = new System.Drawing.Point(79, 4);
+            this.txtThanhTien.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtThanhTien.Name = "txtThanhTien";
+            this.txtThanhTien.ReadOnly = true;
+            this.txtThanhTien.Size = new System.Drawing.Size(184, 26);
+            this.txtThanhTien.TabIndex = 6;
+            this.txtThanhTien.Text = "0đ";
+            this.txtThanhTien.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtThanhTien.TextChanged += new System.EventHandler(this.txtThanhTien_TextChanged);
+            // 
+            // btnCatHD
+            // 
+            this.btnCatHD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCatHD.Location = new System.Drawing.Point(154, 66);
+            this.btnCatHD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCatHD.Name = "btnCatHD";
+            this.btnCatHD.Size = new System.Drawing.Size(109, 55);
+            this.btnCatHD.TabIndex = 8;
+            this.btnCatHD.Text = "Cất hóa đơn";
+            this.btnCatHD.UseVisualStyleBackColor = true;
             // 
             // panel8
             // 
@@ -295,20 +324,23 @@
             // 
             // txtSearchThuoc
             // 
-            this.txtSearchThuoc.Location = new System.Drawing.Point(46, 4);
+            this.txtSearchThuoc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtSearchThuoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchThuoc.Location = new System.Drawing.Point(0, 0);
             this.txtSearchThuoc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSearchThuoc.Name = "txtSearchThuoc";
-            this.txtSearchThuoc.Size = new System.Drawing.Size(390, 26);
+            this.txtSearchThuoc.Size = new System.Drawing.Size(494, 30);
             this.txtSearchThuoc.TabIndex = 0;
             this.txtSearchThuoc.TextChanged += new System.EventHandler(this.txtSreachThuoc_TextChanged);
             // 
             // btnSearchThuoc
             // 
+            this.btnSearchThuoc.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnSearchThuoc.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchThuoc.Image")));
-            this.btnSearchThuoc.Location = new System.Drawing.Point(456, 4);
+            this.btnSearchThuoc.Location = new System.Drawing.Point(494, 0);
             this.btnSearchThuoc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSearchThuoc.Name = "btnSearchThuoc";
-            this.btnSearchThuoc.Size = new System.Drawing.Size(43, 29);
+            this.btnSearchThuoc.Size = new System.Drawing.Size(43, 38);
             this.btnSearchThuoc.TabIndex = 1;
             this.btnSearchThuoc.UseVisualStyleBackColor = true;
             // 
@@ -333,7 +365,8 @@
             this.panel5.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
@@ -355,10 +388,6 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Button btnCatHD;
-        private System.Windows.Forms.Button btnThanhToan;
-        private System.Windows.Forms.TextBox txtThanhTien;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.TextBox txtSearchThuoc;
@@ -367,5 +396,10 @@
         private System.Windows.Forms.ColumnHeader ten;
         private System.Windows.Forms.ColumnHeader sl;
         private System.Windows.Forms.ColumnHeader gia;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Button btnThanhToan;
+        private System.Windows.Forms.Button btnCatHD;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtThanhTien;
     }
 }

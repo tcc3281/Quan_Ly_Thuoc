@@ -42,7 +42,7 @@
             this.labelAccount.Location = new System.Drawing.Point(137, 82);
             this.labelAccount.Name = "labelAccount";
             this.labelAccount.Size = new System.Drawing.Size(84, 25);
-            this.labelAccount.TabIndex = 0;
+            this.labelAccount.TabIndex = 2;
             this.labelAccount.Text = "Account";
             // 
             // textBoxAccount
@@ -51,7 +51,7 @@
             this.textBoxAccount.Location = new System.Drawing.Point(279, 82);
             this.textBoxAccount.Name = "textBoxAccount";
             this.textBoxAccount.Size = new System.Drawing.Size(375, 30);
-            this.textBoxAccount.TabIndex = 1;
+            this.textBoxAccount.TabIndex = 0;
             // 
             // buttonLogin
             // 
@@ -70,7 +70,7 @@
             this.labelPassword.Location = new System.Drawing.Point(137, 150);
             this.labelPassword.Name = "labelPassword";
             this.labelPassword.Size = new System.Drawing.Size(98, 25);
-            this.labelPassword.TabIndex = 0;
+            this.labelPassword.TabIndex = 2;
             this.labelPassword.Text = "Password";
             // 
             // textBoxPassword

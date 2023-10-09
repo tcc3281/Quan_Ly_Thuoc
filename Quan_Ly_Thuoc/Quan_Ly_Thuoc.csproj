@@ -53,10 +53,10 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Function\FormNhapThuoc.cs">
+    <Compile Include="Forms\Functions\FormNhapThuoc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Function\FormNhapThuoc.Designer.cs">
+    <Compile Include="Forms\Functions\FormNhapThuoc.Designer.cs">
       <DependentUpon>FormNhapThuoc.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Login\Login.cs">
@@ -71,10 +71,10 @@
     <Compile Include="Forms\Search\Search.Designer.cs">
       <DependentUpon>Search.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Function\FormHoaDonBan.cs">
+    <Compile Include="Forms\Functions\FormHoaDonBan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Function\FormHoaDonBan.Designer.cs">
+    <Compile Include="Forms\Functions\FormHoaDonBan.Designer.cs">
       <DependentUpon>FormHoaDonBan.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\ChiTietHD.cs" />
@@ -91,7 +91,7 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Function\FormNhapThuoc.resx">
+    <EmbeddedResource Include="Forms\Functions\FormNhapThuoc.resx">
       <DependentUpon>FormNhapThuoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login\Login.resx">
@@ -100,7 +100,7 @@
     <EmbeddedResource Include="Forms\Search\Search.resx">
       <DependentUpon>Search.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Function\FormHoaDonBan.resx">
+    <EmbeddedResource Include="Forms\Functions\FormHoaDonBan.resx">
       <DependentUpon>FormHoaDonBan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

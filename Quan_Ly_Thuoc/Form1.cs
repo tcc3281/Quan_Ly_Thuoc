@@ -34,7 +34,7 @@ namespace Quan_Ly_Thuoc
         private void hóaĐơnBánToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormHoaDonBan hoaDon = new FormHoaDonBan();
-            hoaDon.Show();
+            hoaDon.ShowDialog();
         }
 
         private void thuỗToolStripMenuItem_Click(object sender, EventArgs e)

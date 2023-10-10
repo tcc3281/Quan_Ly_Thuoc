@@ -17,9 +17,6 @@ namespace Quan_Ly_Thuoc.Forms.Search
             InitializeComponent();
         }
 
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 }

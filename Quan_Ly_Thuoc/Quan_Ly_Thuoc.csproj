@@ -59,6 +59,12 @@
     <Compile Include="Forms\Functions\FormNhapThuoc.Designer.cs">
       <DependentUpon>FormNhapThuoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Functions\FromThemNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Functions\FromThemNV.Designer.cs">
+      <DependentUpon>FromThemNV.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Login\Login.cs">
       <SubType>Form</SubType>
     </Compile>

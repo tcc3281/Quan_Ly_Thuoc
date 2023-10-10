@@ -30,24 +30,20 @@
         {
             this.tabControlfUNCTION = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBoxSearchName = new System.Windows.Forms.TextBox();
+            this.buttonSerachName = new System.Windows.Forms.Button();
+            this.groupBoxName = new System.Windows.Forms.GroupBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.groupBoxRes = new System.Windows.Forms.GroupBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.tableLayoutPanelFuction = new System.Windows.Forms.TableLayoutPanel();
+            this.textBoxSearchFunction = new System.Windows.Forms.TextBox();
+            this.buttonSearchFunction = new System.Windows.Forms.Button();
+            this.groupBoxFunction = new System.Windows.Forms.GroupBox();
             this.tabControlfUNCTION.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.groupBoxRes.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.tableLayoutPanelFuction.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlfUNCTION
@@ -58,153 +54,144 @@
             this.tabControlfUNCTION.Location = new System.Drawing.Point(0, 0);
             this.tabControlfUNCTION.Name = "tabControlfUNCTION";
             this.tabControlfUNCTION.SelectedIndex = 0;
-            this.tabControlfUNCTION.Size = new System.Drawing.Size(972, 506);
+            this.tabControlfUNCTION.Size = new System.Drawing.Size(988, 491);
             this.tabControlfUNCTION.TabIndex = 1;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.panel1);
-            this.tabPage1.Controls.Add(this.groupBoxRes);
+            this.tabPage1.Controls.Add(this.tableLayoutPanel1);
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(964, 473);
+            this.tabPage1.Size = new System.Drawing.Size(980, 458);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Tìm theo tên thuốc";
             this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 133F));
+            this.tableLayoutPanel1.Controls.Add(this.textBoxSearchName, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.buttonSerachName, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.groupBoxName, 0, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(974, 452);
+            this.tableLayoutPanel1.TabIndex = 1;
+            // 
+            // textBoxSearchName
+            // 
+            this.textBoxSearchName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxSearchName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSearchName.Location = new System.Drawing.Point(3, 3);
+            this.textBoxSearchName.Name = "textBoxSearchName";
+            this.textBoxSearchName.Size = new System.Drawing.Size(835, 30);
+            this.textBoxSearchName.TabIndex = 0;
+            // 
+            // buttonSerachName
+            // 
+            this.buttonSerachName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSerachName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSerachName.Location = new System.Drawing.Point(844, 3);
+            this.buttonSerachName.Name = "buttonSerachName";
+            this.buttonSerachName.Size = new System.Drawing.Size(127, 35);
+            this.buttonSerachName.TabIndex = 1;
+            this.buttonSerachName.Text = "Tìm kiếm";
+            this.buttonSerachName.UseVisualStyleBackColor = true;
+            // 
+            // groupBoxName
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.groupBoxName, 2);
+            this.groupBoxName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxName.Location = new System.Drawing.Point(3, 44);
+            this.groupBoxName.Name = "groupBoxName";
+            this.groupBoxName.Size = new System.Drawing.Size(968, 405);
+            this.groupBoxName.TabIndex = 2;
+            this.groupBoxName.TabStop = false;
+            this.groupBoxName.Text = "Kết quả";
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.panel2);
-            this.tabPage2.Controls.Add(this.groupBox1);
+            this.tabPage2.Controls.Add(this.tableLayoutPanelFuction);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(964, 473);
+            this.tabPage2.Size = new System.Drawing.Size(980, 458);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Tìm kiếm theo chức năng";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // groupBoxRes
+            // tableLayoutPanelFuction
             // 
-            this.groupBoxRes.Controls.Add(this.listBox1);
-            this.groupBoxRes.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBoxRes.Location = new System.Drawing.Point(3, 47);
-            this.groupBoxRes.Name = "groupBoxRes";
-            this.groupBoxRes.Size = new System.Drawing.Size(958, 423);
-            this.groupBoxRes.TabIndex = 2;
-            this.groupBoxRes.TabStop = false;
-            this.groupBoxRes.Text = "Kết quả";
+            this.tableLayoutPanelFuction.ColumnCount = 2;
+            this.tableLayoutPanelFuction.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelFuction.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 133F));
+            this.tableLayoutPanelFuction.Controls.Add(this.textBoxSearchFunction, 0, 0);
+            this.tableLayoutPanelFuction.Controls.Add(this.buttonSearchFunction, 1, 0);
+            this.tableLayoutPanelFuction.Controls.Add(this.groupBoxFunction, 0, 1);
+            this.tableLayoutPanelFuction.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelFuction.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanelFuction.Name = "tableLayoutPanelFuction";
+            this.tableLayoutPanelFuction.RowCount = 2;
+            this.tableLayoutPanelFuction.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+            this.tableLayoutPanelFuction.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelFuction.Size = new System.Drawing.Size(974, 452);
+            this.tableLayoutPanelFuction.TabIndex = 0;
             // 
-            // panel1
+            // textBoxSearchFunction
             // 
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(958, 38);
-            this.panel1.TabIndex = 3;
+            this.textBoxSearchFunction.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxSearchFunction.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSearchFunction.Location = new System.Drawing.Point(3, 3);
+            this.textBoxSearchFunction.Name = "textBoxSearchFunction";
+            this.textBoxSearchFunction.Size = new System.Drawing.Size(835, 30);
+            this.textBoxSearchFunction.TabIndex = 0;
             // 
-            // button1
+            // buttonSearchFunction
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(867, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 38);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Tìm kiếm";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonSearchFunction.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonSearchFunction.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSearchFunction.Location = new System.Drawing.Point(844, 3);
+            this.buttonSearchFunction.Name = "buttonSearchFunction";
+            this.buttonSearchFunction.Size = new System.Drawing.Size(127, 35);
+            this.buttonSearchFunction.TabIndex = 1;
+            this.buttonSearchFunction.Text = "Tìm kiếm";
+            this.buttonSearchFunction.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // groupBoxFunction
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(0, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(835, 30);
-            this.textBox1.TabIndex = 2;
-            // 
-            // listBox1
-            // 
-            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 25;
-            this.listBox1.Location = new System.Drawing.Point(3, 22);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(952, 398);
-            this.listBox1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(3, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(958, 38);
-            this.panel2.TabIndex = 5;
-            // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(867, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(91, 38);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Tìm kiếm";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(0, 3);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(835, 30);
-            this.textBox2.TabIndex = 2;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.listBox2);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox1.Location = new System.Drawing.Point(3, 47);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(958, 423);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Kết quả";
-            // 
-            // listBox2
-            // 
-            this.listBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 25;
-            this.listBox2.Location = new System.Drawing.Point(3, 22);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(952, 398);
-            this.listBox2.TabIndex = 0;
+            this.tableLayoutPanelFuction.SetColumnSpan(this.groupBoxFunction, 2);
+            this.groupBoxFunction.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxFunction.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxFunction.Location = new System.Drawing.Point(3, 44);
+            this.groupBoxFunction.Name = "groupBoxFunction";
+            this.groupBoxFunction.Size = new System.Drawing.Size(968, 405);
+            this.groupBoxFunction.TabIndex = 2;
+            this.groupBoxFunction.TabStop = false;
+            this.groupBoxFunction.Text = "Kết quả";
             // 
             // Search
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(972, 506);
+            this.ClientSize = new System.Drawing.Size(988, 491);
             this.Controls.Add(this.tabControlfUNCTION);
             this.Name = "Search";
             this.Text = "Search";
             this.tabControlfUNCTION.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.groupBoxRes.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
+            this.tableLayoutPanelFuction.ResumeLayout(false);
+            this.tableLayoutPanelFuction.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -214,15 +201,13 @@
         private System.Windows.Forms.TabControl tabControlfUNCTION;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.GroupBox groupBoxRes;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelFuction;
+        private System.Windows.Forms.TextBox textBoxSearchFunction;
+        private System.Windows.Forms.Button buttonSearchFunction;
+        private System.Windows.Forms.GroupBox groupBoxFunction;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TextBox textBoxSearchName;
+        private System.Windows.Forms.Button buttonSerachName;
+        private System.Windows.Forms.GroupBox groupBoxName;
     }
 }

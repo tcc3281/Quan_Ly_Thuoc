@@ -122,10 +122,5 @@ namespace Quan_Ly_Thuoc
             btnSearchThuoc.Height = txtSearchThuoc.Height;
 
         }
-
-        private void txtThanhTien_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

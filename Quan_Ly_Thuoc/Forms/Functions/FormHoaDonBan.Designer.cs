@@ -276,7 +276,6 @@
             this.txtThanhTien.TabIndex = 6;
             this.txtThanhTien.Text = "0đ";
             this.txtThanhTien.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtThanhTien.TextChanged += new System.EventHandler(this.txtThanhTien_TextChanged);
             // 
             // btnCatHD
             // 

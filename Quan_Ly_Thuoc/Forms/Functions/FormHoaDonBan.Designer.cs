@@ -72,9 +72,8 @@
             this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1086, 669);
+            this.panel1.Size = new System.Drawing.Size(965, 535);
             this.panel1.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -88,11 +87,10 @@
             this.tableLayoutPanel1.Controls.Add(this.panel8, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1086, 669);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(965, 535);
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
@@ -101,31 +99,28 @@
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 4);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(265, 661);
+            this.panel2.Size = new System.Drawing.Size(235, 529);
             this.panel2.TabIndex = 0;
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.listChucNang);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 38);
-            this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel4.Location = new System.Drawing.Point(0, 30);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(265, 623);
+            this.panel4.Size = new System.Drawing.Size(235, 499);
             this.panel4.TabIndex = 3;
             // 
             // listChucNang
             // 
             this.listChucNang.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listChucNang.FormattingEnabled = true;
-            this.listChucNang.ItemHeight = 20;
+            this.listChucNang.ItemHeight = 16;
             this.listChucNang.Location = new System.Drawing.Point(0, 0);
-            this.listChucNang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listChucNang.Name = "listChucNang";
-            this.listChucNang.Size = new System.Drawing.Size(265, 623);
+            this.listChucNang.Size = new System.Drawing.Size(235, 499);
             this.listChucNang.TabIndex = 0;
             // 
             // panel3
@@ -134,9 +129,8 @@
             this.panel3.Controls.Add(this.btnSearchChucNang);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(265, 38);
+            this.panel3.Size = new System.Drawing.Size(235, 30);
             this.panel3.TabIndex = 2;
             // 
             // txtSearchChucNang
@@ -144,9 +138,8 @@
             this.txtSearchChucNang.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSearchChucNang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchChucNang.Location = new System.Drawing.Point(0, 0);
-            this.txtSearchChucNang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSearchChucNang.Name = "txtSearchChucNang";
-            this.txtSearchChucNang.Size = new System.Drawing.Size(222, 30);
+            this.txtSearchChucNang.Size = new System.Drawing.Size(197, 26);
             this.txtSearchChucNang.TabIndex = 0;
             this.txtSearchChucNang.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -154,10 +147,9 @@
             // 
             this.btnSearchChucNang.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnSearchChucNang.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchChucNang.Image")));
-            this.btnSearchChucNang.Location = new System.Drawing.Point(222, 0);
-            this.btnSearchChucNang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSearchChucNang.Location = new System.Drawing.Point(197, 0);
             this.btnSearchChucNang.Name = "btnSearchChucNang";
-            this.btnSearchChucNang.Size = new System.Drawing.Size(43, 38);
+            this.btnSearchChucNang.Size = new System.Drawing.Size(38, 30);
             this.btnSearchChucNang.TabIndex = 1;
             this.btnSearchChucNang.UseVisualStyleBackColor = true;
             // 
@@ -166,10 +158,9 @@
             this.panel5.Controls.Add(this.panel7);
             this.panel5.Controls.Add(this.panel6);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(817, 4);
-            this.panel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel5.Location = new System.Drawing.Point(726, 3);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(266, 661);
+            this.panel5.Size = new System.Drawing.Size(236, 529);
             this.panel5.TabIndex = 2;
             // 
             // panel7
@@ -177,9 +168,8 @@
             this.panel7.Controls.Add(this.listView1);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(266, 536);
+            this.panel7.Size = new System.Drawing.Size(236, 429);
             this.panel7.TabIndex = 1;
             // 
             // listView1
@@ -192,9 +182,8 @@
             this.listView1.HideSelection = false;
             this.listView1.LabelEdit = true;
             this.listView1.Location = new System.Drawing.Point(0, 0);
-            this.listView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(266, 536);
+            this.listView1.Size = new System.Drawing.Size(236, 429);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -216,10 +205,9 @@
             // 
             this.panel6.Controls.Add(this.tableLayoutPanel2);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(0, 536);
-            this.panel6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel6.Location = new System.Drawing.Point(0, 429);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(266, 125);
+            this.panel6.Size = new System.Drawing.Size(236, 100);
             this.panel6.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -235,21 +223,21 @@
             this.tableLayoutPanel2.Controls.Add(this.btnCatHD, 3, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(266, 125);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(236, 100);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // btnThanhToan
             // 
             this.tableLayoutPanel2.SetColumnSpan(this.btnThanhToan, 2);
             this.btnThanhToan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnThanhToan.Location = new System.Drawing.Point(3, 66);
-            this.btnThanhToan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnThanhToan.Location = new System.Drawing.Point(3, 53);
             this.btnThanhToan.Name = "btnThanhToan";
-            this.btnThanhToan.Size = new System.Drawing.Size(120, 55);
+            this.btnThanhToan.Size = new System.Drawing.Size(105, 44);
             this.btnThanhToan.TabIndex = 7;
             this.btnThanhToan.Text = "Thanh toán";
             this.btnThanhToan.UseVisualStyleBackColor = true;
@@ -260,7 +248,7 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 62);
+            this.label1.Size = new System.Drawing.Size(61, 50);
             this.label1.TabIndex = 5;
             this.label1.Text = "Thành tiền:";
             // 
@@ -268,11 +256,10 @@
             // 
             this.tableLayoutPanel2.SetColumnSpan(this.txtThanhTien, 3);
             this.txtThanhTien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtThanhTien.Location = new System.Drawing.Point(79, 4);
-            this.txtThanhTien.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtThanhTien.Location = new System.Drawing.Point(70, 3);
             this.txtThanhTien.Name = "txtThanhTien";
             this.txtThanhTien.ReadOnly = true;
-            this.txtThanhTien.Size = new System.Drawing.Size(184, 26);
+            this.txtThanhTien.Size = new System.Drawing.Size(163, 22);
             this.txtThanhTien.TabIndex = 6;
             this.txtThanhTien.Text = "0đ";
             this.txtThanhTien.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -280,10 +267,9 @@
             // btnCatHD
             // 
             this.btnCatHD.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCatHD.Location = new System.Drawing.Point(154, 66);
-            this.btnCatHD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCatHD.Location = new System.Drawing.Point(136, 53);
             this.btnCatHD.Name = "btnCatHD";
-            this.btnCatHD.Size = new System.Drawing.Size(109, 55);
+            this.btnCatHD.Size = new System.Drawing.Size(97, 44);
             this.btnCatHD.TabIndex = 8;
             this.btnCatHD.Text = "Cất hóa đơn";
             this.btnCatHD.UseVisualStyleBackColor = true;
@@ -293,21 +279,19 @@
             this.panel8.Controls.Add(this.listThuoc);
             this.panel8.Controls.Add(this.panel9);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(274, 4);
-            this.panel8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel8.Location = new System.Drawing.Point(244, 3);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(537, 661);
+            this.panel8.Size = new System.Drawing.Size(476, 529);
             this.panel8.TabIndex = 3;
             // 
             // listThuoc
             // 
             this.listThuoc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listThuoc.FormattingEnabled = true;
-            this.listThuoc.ItemHeight = 20;
-            this.listThuoc.Location = new System.Drawing.Point(0, 38);
-            this.listThuoc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.listThuoc.ItemHeight = 16;
+            this.listThuoc.Location = new System.Drawing.Point(0, 30);
             this.listThuoc.Name = "listThuoc";
-            this.listThuoc.Size = new System.Drawing.Size(537, 623);
+            this.listThuoc.Size = new System.Drawing.Size(476, 499);
             this.listThuoc.TabIndex = 4;
             // 
             // panel9
@@ -316,9 +300,8 @@
             this.panel9.Controls.Add(this.btnSearchThuoc);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel9.Location = new System.Drawing.Point(0, 0);
-            this.panel9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(537, 38);
+            this.panel9.Size = new System.Drawing.Size(476, 30);
             this.panel9.TabIndex = 3;
             // 
             // txtSearchThuoc
@@ -326,9 +309,8 @@
             this.txtSearchThuoc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSearchThuoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchThuoc.Location = new System.Drawing.Point(0, 0);
-            this.txtSearchThuoc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSearchThuoc.Name = "txtSearchThuoc";
-            this.txtSearchThuoc.Size = new System.Drawing.Size(494, 30);
+            this.txtSearchThuoc.Size = new System.Drawing.Size(438, 26);
             this.txtSearchThuoc.TabIndex = 0;
             this.txtSearchThuoc.TextChanged += new System.EventHandler(this.txtSreachThuoc_TextChanged);
             // 
@@ -336,21 +318,19 @@
             // 
             this.btnSearchThuoc.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnSearchThuoc.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchThuoc.Image")));
-            this.btnSearchThuoc.Location = new System.Drawing.Point(494, 0);
-            this.btnSearchThuoc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSearchThuoc.Location = new System.Drawing.Point(438, 0);
             this.btnSearchThuoc.Name = "btnSearchThuoc";
-            this.btnSearchThuoc.Size = new System.Drawing.Size(43, 38);
+            this.btnSearchThuoc.Size = new System.Drawing.Size(38, 30);
             this.btnSearchThuoc.TabIndex = 1;
             this.btnSearchThuoc.UseVisualStyleBackColor = true;
             // 
             // FormHoaDonBan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1086, 669);
+            this.ClientSize = new System.Drawing.Size(965, 535);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormHoaDonBan";
             this.Text = "Xuất hóa đơn";
             this.Load += new System.EventHandler(this.FormHoaDon_Load);

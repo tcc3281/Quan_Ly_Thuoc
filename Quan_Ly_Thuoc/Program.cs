@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Quan_Ly_Thuoc.Forms.Function;
+using Quan_Ly_Thuoc.Forms.Functions;
+
 namespace Quan_Ly_Thuoc
 {
     internal static class Program

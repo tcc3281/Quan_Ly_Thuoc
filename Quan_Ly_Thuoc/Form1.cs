@@ -42,5 +42,11 @@ namespace Quan_Ly_Thuoc
             FormNhapThuoc formNhapThuoc = new FormNhapThuoc();
             formNhapThuoc.ShowDialog();
         }
+
+        private void hóaĐơnNhậpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormHoaDonNhap hoaDon = new FormHoaDonNhap();
+            hoaDon.ShowDialog();
+        }
     }
 }

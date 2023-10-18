@@ -53,6 +53,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Functions\FormKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Functions\FormKhachHang.Designer.cs">
+      <DependentUpon>FormKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Functions\FormNhaCungCap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Functions\FormNhaCungCap.Designer.cs">
+      <DependentUpon>FormNhaCungCap.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Functions\FormNhapThuoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +95,12 @@
     <Compile Include="Forms\Functions\FormHoaDonBan.Designer.cs">
       <DependentUpon>FormHoaDonBan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Functions\FormHoaDonNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Functions\FormHoaDonNhap.Designer.cs">
+      <DependentUpon>FormHoaDonNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\ChiTietHD.cs" />
     <Compile Include="Models\ChiTietHDB.cs" />
     <Compile Include="Models\ChiTietHDN.cs" />
@@ -96,6 +114,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Functions\FormHoaDonNhap.resx">
+      <DependentUpon>FormHoaDonNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Functions\FormKhachHang.resx">
+      <DependentUpon>FormKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Functions\FormNhaCungCap.resx">
+      <DependentUpon>FormNhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Functions\FormNhapThuoc.resx">
       <DependentUpon>FormNhapThuoc.cs</DependentUpon>
@@ -135,6 +162,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Images\search.png" />
+    <Content Include="Images\user.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

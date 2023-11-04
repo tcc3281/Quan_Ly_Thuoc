@@ -49,6 +49,7 @@
             this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.btnAddTHuoc = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.listView1 = new System.Windows.Forms.ListView();
             this.idThuoc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -57,21 +58,22 @@
             this.gia = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.khuyenMai = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.tableLayoutPanel2);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Location = new System.Drawing.Point(3, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(794, 196);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Size = new System.Drawing.Size(894, 244);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hóa đơn nhập";
@@ -104,7 +106,8 @@
             this.tableLayoutPanel2.Controls.Add(this.btnHuy, 3, 4);
             this.tableLayoutPanel2.Controls.Add(this.numericUpDown1, 3, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 18);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 23);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 5;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -112,7 +115,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(788, 175);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(888, 217);
             this.tableLayoutPanel2.TabIndex = 10;
             // 
             // lblMaHD
@@ -121,16 +124,17 @@
             this.lblMaHD.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblMaHD.Location = new System.Drawing.Point(3, 0);
             this.lblMaHD.Name = "lblMaHD";
-            this.lblMaHD.Size = new System.Drawing.Size(151, 35);
+            this.lblMaHD.Size = new System.Drawing.Size(171, 43);
             this.lblMaHD.TabIndex = 1;
             this.lblMaHD.Text = "Mã hóa đơn:";
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dateTimePicker1.Location = new System.Drawing.Point(160, 108);
+            this.dateTimePicker1.Location = new System.Drawing.Point(180, 133);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(309, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(349, 26);
             this.dateTimePicker1.TabIndex = 9;
             // 
             // txtMaHD
@@ -139,19 +143,20 @@
             this.txtMaHD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMaHD.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtMaHD.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtMaHD.Location = new System.Drawing.Point(160, 3);
+            this.txtMaHD.Location = new System.Drawing.Point(180, 4);
+            this.txtMaHD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMaHD.Name = "txtMaHD";
             this.txtMaHD.ReadOnly = true;
-            this.txtMaHD.Size = new System.Drawing.Size(309, 22);
+            this.txtMaHD.Size = new System.Drawing.Size(349, 26);
             this.txtMaHD.TabIndex = 4;
             // 
             // lblNgayNhap
             // 
             this.lblNgayNhap.AutoSize = true;
             this.lblNgayNhap.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblNgayNhap.Location = new System.Drawing.Point(3, 105);
+            this.lblNgayNhap.Location = new System.Drawing.Point(3, 129);
             this.lblNgayNhap.Name = "lblNgayNhap";
-            this.lblNgayNhap.Size = new System.Drawing.Size(151, 35);
+            this.lblNgayNhap.Size = new System.Drawing.Size(171, 43);
             this.lblNgayNhap.TabIndex = 3;
             this.lblNgayNhap.Text = "Ngày nhập:";
             // 
@@ -159,18 +164,19 @@
             // 
             this.comboBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(160, 73);
+            this.comboBox2.Location = new System.Drawing.Point(180, 90);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(309, 24);
+            this.comboBox2.Size = new System.Drawing.Size(349, 28);
             this.comboBox2.TabIndex = 8;
             // 
             // lblTenNhanVien
             // 
             this.lblTenNhanVien.AutoSize = true;
             this.lblTenNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTenNhanVien.Location = new System.Drawing.Point(3, 35);
+            this.lblTenNhanVien.Location = new System.Drawing.Point(3, 43);
             this.lblTenNhanVien.Name = "lblTenNhanVien";
-            this.lblTenNhanVien.Size = new System.Drawing.Size(151, 35);
+            this.lblTenNhanVien.Size = new System.Drawing.Size(171, 43);
             this.lblTenNhanVien.TabIndex = 0;
             this.lblTenNhanVien.Text = "Nhân viên thực hiện:";
             // 
@@ -178,18 +184,19 @@
             // 
             this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(160, 38);
+            this.comboBox1.Location = new System.Drawing.Point(180, 47);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(309, 24);
+            this.comboBox1.Size = new System.Drawing.Size(349, 28);
             this.comboBox1.TabIndex = 7;
             // 
             // lblKhachHang
             // 
             this.lblKhachHang.AutoSize = true;
             this.lblKhachHang.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblKhachHang.Location = new System.Drawing.Point(3, 70);
+            this.lblKhachHang.Location = new System.Drawing.Point(3, 86);
             this.lblKhachHang.Name = "lblKhachHang";
-            this.lblKhachHang.Size = new System.Drawing.Size(151, 35);
+            this.lblKhachHang.Size = new System.Drawing.Size(171, 43);
             this.lblKhachHang.TabIndex = 2;
             this.lblKhachHang.Text = "Nhà cung cấp:";
             // 
@@ -197,27 +204,28 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Location = new System.Drawing.Point(3, 140);
+            this.label1.Location = new System.Drawing.Point(3, 172);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 35);
+            this.label1.Size = new System.Drawing.Size(171, 45);
             this.label1.TabIndex = 10;
             this.label1.Text = "Tổng tiền:";
             // 
             // txtThanhTienHDN
             // 
             this.txtThanhTienHDN.Dock = System.Windows.Forms.DockStyle.Left;
-            this.txtThanhTienHDN.Location = new System.Drawing.Point(160, 143);
+            this.txtThanhTienHDN.Location = new System.Drawing.Point(180, 176);
+            this.txtThanhTienHDN.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtThanhTienHDN.Name = "txtThanhTienHDN";
-            this.txtThanhTienHDN.Size = new System.Drawing.Size(134, 22);
+            this.txtThanhTienHDN.Size = new System.Drawing.Size(150, 26);
             this.txtThanhTienHDN.TabIndex = 11;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(475, 0);
+            this.label2.Location = new System.Drawing.Point(535, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(151, 35);
+            this.label2.Size = new System.Drawing.Size(171, 43);
             this.label2.TabIndex = 12;
             this.label2.Text = "Thuốc:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -226,9 +234,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Location = new System.Drawing.Point(475, 35);
+            this.label3.Location = new System.Drawing.Point(535, 43);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(151, 35);
+            this.label3.Size = new System.Drawing.Size(171, 43);
             this.label3.TabIndex = 13;
             this.label3.Text = "Số lượng:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -237,18 +245,19 @@
             // 
             this.cmbThuoc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbThuoc.FormattingEnabled = true;
-            this.cmbThuoc.Location = new System.Drawing.Point(632, 3);
+            this.cmbThuoc.Location = new System.Drawing.Point(712, 4);
+            this.cmbThuoc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbThuoc.Name = "cmbThuoc";
-            this.cmbThuoc.Size = new System.Drawing.Size(153, 24);
+            this.cmbThuoc.Size = new System.Drawing.Size(173, 28);
             this.cmbThuoc.TabIndex = 14;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Location = new System.Drawing.Point(475, 70);
+            this.label4.Location = new System.Drawing.Point(535, 86);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(151, 35);
+            this.label4.Size = new System.Drawing.Size(171, 43);
             this.label4.TabIndex = 16;
             this.label4.Text = "Đơn giá:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -257,9 +266,9 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Location = new System.Drawing.Point(475, 105);
+            this.label5.Location = new System.Drawing.Point(535, 129);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(151, 35);
+            this.label5.Size = new System.Drawing.Size(171, 43);
             this.label5.TabIndex = 17;
             this.label5.Text = "Khuyến mãi:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -268,26 +277,29 @@
             // 
             this.comboBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(632, 73);
+            this.comboBox5.Location = new System.Drawing.Point(712, 90);
+            this.comboBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(153, 24);
+            this.comboBox5.Size = new System.Drawing.Size(173, 28);
             this.comboBox5.TabIndex = 18;
             // 
             // comboBox6
             // 
             this.comboBox6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(632, 108);
+            this.comboBox6.Location = new System.Drawing.Point(712, 133);
+            this.comboBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(153, 24);
+            this.comboBox6.Size = new System.Drawing.Size(173, 28);
             this.comboBox6.TabIndex = 19;
             // 
             // btnAddTHuoc
             // 
             this.btnAddTHuoc.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnAddTHuoc.Location = new System.Drawing.Point(475, 143);
+            this.btnAddTHuoc.Location = new System.Drawing.Point(535, 176);
+            this.btnAddTHuoc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAddTHuoc.Name = "btnAddTHuoc";
-            this.btnAddTHuoc.Size = new System.Drawing.Size(125, 29);
+            this.btnAddTHuoc.Size = new System.Drawing.Size(141, 37);
             this.btnAddTHuoc.TabIndex = 20;
             this.btnAddTHuoc.Text = "Thêm vào hóa đơn";
             this.btnAddTHuoc.UseVisualStyleBackColor = true;
@@ -295,20 +307,37 @@
             // btnHuy
             // 
             this.btnHuy.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnHuy.Location = new System.Drawing.Point(632, 143);
+            this.btnHuy.Location = new System.Drawing.Point(712, 176);
+            this.btnHuy.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(74, 29);
+            this.btnHuy.Size = new System.Drawing.Size(83, 37);
             this.btnHuy.TabIndex = 21;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = true;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.numericUpDown1.Location = new System.Drawing.Point(712, 47);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(173, 26);
+            this.numericUpDown1.TabIndex = 22;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.listView1);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(3, 205);
+            this.groupBox2.Location = new System.Drawing.Point(3, 256);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(794, 242);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox2.Size = new System.Drawing.Size(894, 302);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chi tiết hóa đơn nhập";
@@ -323,9 +352,10 @@
             this.khuyenMai});
             this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(3, 18);
+            this.listView1.Location = new System.Drawing.Point(3, 23);
+            this.listView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(788, 221);
+            this.listView1.Size = new System.Drawing.Size(888, 275);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -363,32 +393,21 @@
             this.tableLayoutPanel1.Controls.Add(this.groupBox2, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(900, 562);
             this.tableLayoutPanel1.TabIndex = 10;
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDown1.Location = new System.Drawing.Point(632, 38);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(153, 22);
-            this.numericUpDown1.TabIndex = 22;
             // 
             // FormHoaDonNhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(900, 562);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormHoaDonNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HoaDonNhap";
@@ -396,9 +415,9 @@
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
         }

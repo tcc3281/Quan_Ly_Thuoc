@@ -9,7 +9,6 @@ namespace Quan_Ly_Thuoc.Model
     internal class ChiTietHDB : ChiTietHD
     {
         double giamGia;
-
         public ChiTietHDB(string id_HD, string id_Thuoc, double sl, double thanhTien, double giamGia) : 
             base(id_HD, id_Thuoc, sl, thanhTien)
         {

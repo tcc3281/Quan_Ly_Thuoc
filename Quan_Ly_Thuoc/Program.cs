@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Quan_Ly_Thuoc.Forms.Function;
 using Quan_Ly_Thuoc.Forms.Functions;
+using Quan_Ly_Thuoc.Model;
 
 namespace Quan_Ly_Thuoc
 {

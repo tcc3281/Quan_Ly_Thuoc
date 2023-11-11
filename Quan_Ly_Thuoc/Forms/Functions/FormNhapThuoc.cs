@@ -85,38 +85,20 @@ namespace Quan_Ly_Thuoc.Forms.Function
 			return true;
 		}
 
-		private bool CheckData(string idThuoc)
-		{
-			pd.cmd.CommandText = "Select count(*) from DanhMucThuoc where '" + idThuoc + "'";
-			pd.Connect();
-			int val = (int)pd.cmd.ExecuteScalar();
-			pd.Disconnect();
-			if (val > 0)
-			{
-				return false;
-			}
-			return true;
-		}
 
 		private void buttonAdd_Click(object sender, EventArgs e)
 		{
 			String idThuoc = IDThuoc();
 			if (Validate())
 			{
-				if (CheckData(idThuoc))
-				{
-					String sql = "insert into DanhMucThuoc(MaThuoc, TenThuoc, ThanhPhan, MaDangDieuChe, " +
-							"ChongChiDinh, MaDV, MaNSX) values('" + idThuoc + "', N'" + txtMedicineName.Text + "', N'" +
-							txtIngredient.Text + "', N'" + cmbFormMedicine.Text + "', N'" + txtNotRecommended.Text + "', N'" +
-							cmbUnit.Text + "', N'" + cmbCountry.Text + "')";
-					//MessageBox.Show(sql);
-					pd.RunSQL(sql);
-					this.Close();
-				}
-				else
-				{
-					MessageBox.Show("Thuoc da ton tai.");
-				}
+				String sql = "insert into DanhMucThuoc(MaThuoc, TenThuoc, ThanhPhan, MaDangDieuChe, " +
+						"ChongChiDinh, MaDV, MaNSX) values('" + idThuoc + "', N'" + txtMedicineName.Text + "', N'" +
+						txtIngredient.Text + "', N'" + cmbFormMedicine.Text + "', N'" + txtNotRecommended.Text + "', N'" +
+						cmbUnit.Text + "', N'" + cmbCountry.Text + "')";
+				//MessageBox.Show(sql);
+				pd.RunSQL(sql);
+				this.Close();
+
 			}
 			else
 			{

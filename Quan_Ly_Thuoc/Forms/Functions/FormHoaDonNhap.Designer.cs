@@ -307,65 +307,100 @@
             0,
             0,
             0});
-			this.txtSL.Name = "txtSL";
-			this.txtSL.Size = new System.Drawing.Size(153, 22);
-			this.txtSL.TabIndex = 22;
-			// 
-			// groupBox2
-			// 
-			this.groupBox2.Controls.Add(this.dgvCTHDN);
-			this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.groupBox2.Location = new System.Drawing.Point(3, 205);
-			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Size = new System.Drawing.Size(794, 242);
-			this.groupBox2.TabIndex = 1;
-			this.groupBox2.TabStop = false;
-			this.groupBox2.Text = "Chi tiết hóa đơn nhập";
-			// 
-			// tableLayoutPanel1
-			// 
-			this.tableLayoutPanel1.ColumnCount = 1;
-			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-			this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 0);
-			this.tableLayoutPanel1.Controls.Add(this.groupBox2, 0, 1);
-			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-			this.tableLayoutPanel1.RowCount = 2;
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55F));
-			this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
-			this.tableLayoutPanel1.TabIndex = 10;
-			// 
-			// dgvCTHDN
-			// 
-			this.dgvCTHDN.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dgvCTHDN.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.dgvCTHDN.Location = new System.Drawing.Point(3, 18);
-			this.dgvCTHDN.Name = "dgvCTHDN";
-			this.dgvCTHDN.RowHeadersWidth = 51;
-			this.dgvCTHDN.RowTemplate.Height = 24;
-			this.dgvCTHDN.Size = new System.Drawing.Size(788, 221);
-			this.dgvCTHDN.TabIndex = 0;
-			// 
-			// FormHoaDonNhap
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 450);
-			this.Controls.Add(this.tableLayoutPanel1);
-			this.Name = "FormHoaDonNhap";
-			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "HoaDonNhap";
-			this.Load += new System.EventHandler(this.FormHoaDonNhap_Load);
-			this.groupBox1.ResumeLayout(false);
-			this.tableLayoutPanel2.ResumeLayout(false);
-			this.tableLayoutPanel2.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.txtSL)).EndInit();
-			this.groupBox2.ResumeLayout(false);
-			this.tableLayoutPanel1.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.dgvCTHDN)).EndInit();
-			this.ResumeLayout(false);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(173, 26);
+            this.numericUpDown1.TabIndex = 22;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.listView1);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Location = new System.Drawing.Point(3, 256);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox2.Size = new System.Drawing.Size(894, 302);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Chi tiết hóa đơn nhập";
+            // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.idThuoc,
+            this.tenThuoc,
+            this.sl,
+            this.gia,
+            this.khuyenMai});
+            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(3, 23);
+            this.listView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(888, 275);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // idThuoc
+            // 
+            this.idThuoc.Text = "Mã thuốc";
+            this.idThuoc.Width = 80;
+            // 
+            // tenThuoc
+            // 
+            this.tenThuoc.Text = "Tên thuốc";
+            this.tenThuoc.Width = 150;
+            // 
+            // sl
+            // 
+            this.sl.Text = "Số lượng";
+            this.sl.Width = 80;
+            // 
+            // gia
+            // 
+            this.gia.Text = "Đơn giá";
+            this.gia.Width = 100;
+            // 
+            // khuyenMai
+            // 
+            this.khuyenMai.Text = "Khuyến mãi";
+            this.khuyenMai.Width = 100;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox2, 0, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(900, 562);
+            this.tableLayoutPanel1.TabIndex = 10;
+            // 
+            // FormHoaDonNhap
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(900, 562);
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Name = "FormHoaDonNhap";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "HoaDonNhap";
+            this.Load += new System.EventHandler(this.FormHoaDonNhap_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.ResumeLayout(false);
 
         }
 

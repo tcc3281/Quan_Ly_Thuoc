@@ -29,48 +29,49 @@
         private void InitializeComponent()
         {
             this.LabelMedicineName = new System.Windows.Forms.Label();
-            this.textBoxMedicineName = new System.Windows.Forms.TextBox();
+            this.txtMedicineName = new System.Windows.Forms.TextBox();
             this.labeIngredient = new System.Windows.Forms.Label();
             this.labelNotRecommended = new System.Windows.Forms.Label();
-            this.labelProducer = new System.Windows.Forms.Label();
             this.labelUnit = new System.Windows.Forms.Label();
-            this.comboBoxProducer = new System.Windows.Forms.ComboBox();
-            this.textBoxNotRecommended = new System.Windows.Forms.TextBox();
-            this.comboBoxUnit = new System.Windows.Forms.ComboBox();
-            this.richTextBoxIngredient = new System.Windows.Forms.RichTextBox();
+            this.txtNotRecommended = new System.Windows.Forms.TextBox();
+            this.cmbUnit = new System.Windows.Forms.ComboBox();
+            this.txtIngredient = new System.Windows.Forms.RichTextBox();
             this.labelCountry = new System.Windows.Forms.Label();
-            this.comboBoxCountry = new System.Windows.Forms.ComboBox();
+            this.cmbCountry = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBoxFormMedicine = new System.Windows.Forms.TextBox();
-            this.buttonClear = new System.Windows.Forms.Button();
-            this.buttonAdd = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.cmbFormMedicine = new System.Windows.Forms.ComboBox();
+            this.txtDNSX = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // LabelMedicineName
             // 
             this.LabelMedicineName.AutoSize = true;
             this.LabelMedicineName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelMedicineName.Location = new System.Drawing.Point(28, 39);
+            this.LabelMedicineName.Location = new System.Drawing.Point(25, 31);
             this.LabelMedicineName.Name = "LabelMedicineName";
-            this.LabelMedicineName.Size = new System.Drawing.Size(100, 25);
+            this.LabelMedicineName.Size = new System.Drawing.Size(83, 20);
             this.LabelMedicineName.TabIndex = 0;
             this.LabelMedicineName.Text = "Tên thuốc";
             // 
-            // textBoxMedicineName
+            // txtMedicineName
             // 
-            this.textBoxMedicineName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxMedicineName.Location = new System.Drawing.Point(199, 30);
-            this.textBoxMedicineName.Name = "textBoxMedicineName";
-            this.textBoxMedicineName.Size = new System.Drawing.Size(234, 30);
-            this.textBoxMedicineName.TabIndex = 1;
+            this.txtMedicineName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMedicineName.Location = new System.Drawing.Point(177, 24);
+            this.txtMedicineName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMedicineName.Name = "txtMedicineName";
+            this.txtMedicineName.Size = new System.Drawing.Size(208, 26);
+            this.txtMedicineName.TabIndex = 1;
             // 
             // labeIngredient
             // 
             this.labeIngredient.AutoSize = true;
             this.labeIngredient.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labeIngredient.Location = new System.Drawing.Point(28, 115);
+            this.labeIngredient.Location = new System.Drawing.Point(25, 92);
             this.labeIngredient.Name = "labeIngredient";
-            this.labeIngredient.Size = new System.Drawing.Size(118, 25);
+            this.labeIngredient.Size = new System.Drawing.Size(96, 20);
             this.labeIngredient.TabIndex = 0;
             this.labeIngredient.Text = "Thành phần";
             // 
@@ -78,148 +79,156 @@
             // 
             this.labelNotRecommended.AutoSize = true;
             this.labelNotRecommended.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNotRecommended.Location = new System.Drawing.Point(468, 33);
+            this.labelNotRecommended.Location = new System.Drawing.Point(416, 26);
             this.labelNotRecommended.Name = "labelNotRecommended";
-            this.labelNotRecommended.Size = new System.Drawing.Size(143, 25);
+            this.labelNotRecommended.Size = new System.Drawing.Size(120, 20);
             this.labelNotRecommended.TabIndex = 0;
             this.labelNotRecommended.Text = "Chống chỉ định";
-            // 
-            // labelProducer
-            // 
-            this.labelProducer.AutoSize = true;
-            this.labelProducer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelProducer.Location = new System.Drawing.Point(468, 108);
-            this.labelProducer.Name = "labelProducer";
-            this.labelProducer.Size = new System.Drawing.Size(127, 25);
-            this.labelProducer.TabIndex = 0;
-            this.labelProducer.Text = "Nhà sản xuất";
             // 
             // labelUnit
             // 
             this.labelUnit.AutoSize = true;
             this.labelUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUnit.Location = new System.Drawing.Point(468, 191);
+            this.labelUnit.Location = new System.Drawing.Point(416, 153);
             this.labelUnit.Name = "labelUnit";
-            this.labelUnit.Size = new System.Drawing.Size(103, 25);
+            this.labelUnit.Size = new System.Drawing.Size(88, 20);
             this.labelUnit.TabIndex = 0;
             this.labelUnit.Text = "Đơn vị tính";
             // 
-            // comboBoxProducer
+            // txtNotRecommended
             // 
-            this.comboBoxProducer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxProducer.FormattingEnabled = true;
-            this.comboBoxProducer.Location = new System.Drawing.Point(648, 108);
-            this.comboBoxProducer.Name = "comboBoxProducer";
-            this.comboBoxProducer.Size = new System.Drawing.Size(317, 33);
-            this.comboBoxProducer.TabIndex = 4;
+            this.txtNotRecommended.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNotRecommended.Location = new System.Drawing.Point(576, 24);
+            this.txtNotRecommended.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNotRecommended.Name = "txtNotRecommended";
+            this.txtNotRecommended.Size = new System.Drawing.Size(282, 26);
+            this.txtNotRecommended.TabIndex = 2;
             // 
-            // textBoxNotRecommended
+            // cmbUnit
             // 
-            this.textBoxNotRecommended.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNotRecommended.Location = new System.Drawing.Point(648, 30);
-            this.textBoxNotRecommended.Name = "textBoxNotRecommended";
-            this.textBoxNotRecommended.Size = new System.Drawing.Size(317, 30);
-            this.textBoxNotRecommended.TabIndex = 2;
+            this.cmbUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbUnit.FormattingEnabled = true;
+            this.cmbUnit.Location = new System.Drawing.Point(576, 153);
+            this.cmbUnit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbUnit.Name = "cmbUnit";
+            this.cmbUnit.Size = new System.Drawing.Size(282, 28);
+            this.cmbUnit.TabIndex = 5;
             // 
-            // comboBoxUnit
+            // txtIngredient
             // 
-            this.comboBoxUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxUnit.FormattingEnabled = true;
-            this.comboBoxUnit.Location = new System.Drawing.Point(648, 191);
-            this.comboBoxUnit.Name = "comboBoxUnit";
-            this.comboBoxUnit.Size = new System.Drawing.Size(317, 33);
-            this.comboBoxUnit.TabIndex = 5;
-            // 
-            // richTextBoxIngredient
-            // 
-            this.richTextBoxIngredient.Location = new System.Drawing.Point(199, 108);
-            this.richTextBoxIngredient.Name = "richTextBoxIngredient";
-            this.richTextBoxIngredient.Size = new System.Drawing.Size(234, 125);
-            this.richTextBoxIngredient.TabIndex = 3;
-            this.richTextBoxIngredient.Text = "";
+            this.txtIngredient.Location = new System.Drawing.Point(177, 86);
+            this.txtIngredient.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtIngredient.Name = "txtIngredient";
+            this.txtIngredient.Size = new System.Drawing.Size(208, 101);
+            this.txtIngredient.TabIndex = 3;
+            this.txtIngredient.Text = "";
             // 
             // labelCountry
             // 
             this.labelCountry.AutoSize = true;
             this.labelCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCountry.Location = new System.Drawing.Point(468, 265);
+            this.labelCountry.Location = new System.Drawing.Point(416, 212);
             this.labelCountry.Name = "labelCountry";
-            this.labelCountry.Size = new System.Drawing.Size(137, 25);
+            this.labelCountry.Size = new System.Drawing.Size(116, 20);
             this.labelCountry.TabIndex = 0;
             this.labelCountry.Text = "Nước sản xuất";
             // 
-            // comboBoxCountry
+            // cmbCountry
             // 
-            this.comboBoxCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxCountry.FormattingEnabled = true;
-            this.comboBoxCountry.Location = new System.Drawing.Point(648, 265);
-            this.comboBoxCountry.Name = "comboBoxCountry";
-            this.comboBoxCountry.Size = new System.Drawing.Size(317, 33);
-            this.comboBoxCountry.TabIndex = 7;
+            this.cmbCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCountry.FormattingEnabled = true;
+            this.cmbCountry.Location = new System.Drawing.Point(576, 212);
+            this.cmbCountry.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbCountry.Name = "cmbCountry";
+            this.cmbCountry.Size = new System.Drawing.Size(282, 28);
+            this.cmbCountry.TabIndex = 7;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(19, 268);
+            this.label2.Location = new System.Drawing.Point(416, 85);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 25);
+            this.label2.Size = new System.Drawing.Size(117, 20);
             this.label2.TabIndex = 0;
             this.label2.Text = "Dạng điều chế";
             // 
-            // textBoxFormMedicine
+            // btnClear
             // 
-            this.textBoxFormMedicine.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxFormMedicine.Location = new System.Drawing.Point(199, 263);
-            this.textBoxFormMedicine.Name = "textBoxFormMedicine";
-            this.textBoxFormMedicine.Size = new System.Drawing.Size(234, 30);
-            this.textBoxFormMedicine.TabIndex = 6;
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Location = new System.Drawing.Point(420, 282);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(126, 42);
+            this.btnClear.TabIndex = 9;
+            this.btnClear.Text = "Hủy";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
-            // buttonClear
+            // btnAdd
             // 
-            this.buttonClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonClear.Location = new System.Drawing.Point(473, 352);
-            this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(142, 53);
-            this.buttonClear.TabIndex = 9;
-            this.buttonClear.Text = "Xóa";
-            this.buttonClear.UseVisualStyleBackColor = true;
-            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(177, 282);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(140, 42);
+            this.btnAdd.TabIndex = 8;
+            this.btnAdd.Text = "Thêm thuốc";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
-            // buttonAdd
+            // cmbFormMedicine
             // 
-            this.buttonAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAdd.Location = new System.Drawing.Point(199, 352);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(158, 53);
-            this.buttonAdd.TabIndex = 8;
-            this.buttonAdd.Text = "Thêm thuốc";
-            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.cmbFormMedicine.FormattingEnabled = true;
+            this.cmbFormMedicine.Location = new System.Drawing.Point(576, 86);
+            this.cmbFormMedicine.Name = "cmbFormMedicine";
+            this.cmbFormMedicine.Size = new System.Drawing.Size(282, 24);
+            this.cmbFormMedicine.TabIndex = 10;
+            // 
+            // txtDNSX
+            // 
+            this.txtDNSX.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtDNSX.Location = new System.Drawing.Point(177, 232);
+            this.txtDNSX.Name = "txtDNSX";
+            this.txtDNSX.Size = new System.Drawing.Size(208, 22);
+            this.txtDNSX.TabIndex = 11;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(25, 234);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(115, 20);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Ngày sản xuất";
             // 
             // FormNhapThuoc
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1006, 417);
-            this.Controls.Add(this.buttonAdd);
-            this.Controls.Add(this.buttonClear);
-            this.Controls.Add(this.richTextBoxIngredient);
-            this.Controls.Add(this.comboBoxUnit);
-            this.Controls.Add(this.comboBoxCountry);
-            this.Controls.Add(this.comboBoxProducer);
-            this.Controls.Add(this.textBoxFormMedicine);
+            this.ClientSize = new System.Drawing.Size(894, 334);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtDNSX);
+            this.Controls.Add(this.cmbFormMedicine);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.txtIngredient);
+            this.Controls.Add(this.cmbUnit);
+            this.Controls.Add(this.cmbCountry);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelCountry);
             this.Controls.Add(this.labelUnit);
-            this.Controls.Add(this.labelProducer);
             this.Controls.Add(this.labelNotRecommended);
             this.Controls.Add(this.labeIngredient);
-            this.Controls.Add(this.textBoxNotRecommended);
-            this.Controls.Add(this.textBoxMedicineName);
+            this.Controls.Add(this.txtNotRecommended);
+            this.Controls.Add(this.txtMedicineName);
             this.Controls.Add(this.LabelMedicineName);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "FormNhapThuoc";
             this.Text = "Thêm Thuốc";
+            this.Load += new System.EventHandler(this.FormNhapThuoc_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,20 +237,20 @@
         #endregion
 
         private System.Windows.Forms.Label LabelMedicineName;
-        private System.Windows.Forms.TextBox textBoxMedicineName;
+        private System.Windows.Forms.TextBox txtMedicineName;
         private System.Windows.Forms.Label labeIngredient;
         private System.Windows.Forms.Label labelNotRecommended;
-        private System.Windows.Forms.Label labelProducer;
         private System.Windows.Forms.Label labelUnit;
-        private System.Windows.Forms.ComboBox comboBoxProducer;
-        private System.Windows.Forms.TextBox textBoxNotRecommended;
-        private System.Windows.Forms.ComboBox comboBoxUnit;
-        private System.Windows.Forms.RichTextBox richTextBoxIngredient;
+        private System.Windows.Forms.TextBox txtNotRecommended;
+        private System.Windows.Forms.ComboBox cmbUnit;
+        private System.Windows.Forms.RichTextBox txtIngredient;
         private System.Windows.Forms.Label labelCountry;
-        private System.Windows.Forms.ComboBox comboBoxCountry;
+        private System.Windows.Forms.ComboBox cmbCountry;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxFormMedicine;
-        private System.Windows.Forms.Button buttonClear;
-        private System.Windows.Forms.Button buttonAdd;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.ComboBox cmbFormMedicine;
+        private System.Windows.Forms.DateTimePicker txtDNSX;
+        private System.Windows.Forms.Label label3;
     }
 }

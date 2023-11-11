@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\ProcessDatabase.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,11 +72,11 @@
     <Compile Include="Forms\Functions\FormNhapThuoc.Designer.cs">
       <DependentUpon>FormNhapThuoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Functions\FromThemNV.cs">
+    <Compile Include="Forms\Functions\FormThemNV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Functions\FromThemNV.Designer.cs">
-      <DependentUpon>FromThemNV.cs</DependentUpon>
+    <Compile Include="Forms\Functions\FormThemNV.Designer.cs">
+      <DependentUpon>FormThemNV.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Login\Login.cs">
       <SubType>Form</SubType>
@@ -126,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Functions\FormNhapThuoc.resx">
       <DependentUpon>FormNhapThuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Functions\FormThemNV.resx">
+      <DependentUpon>FormThemNV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

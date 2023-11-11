@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Quan_Ly_Thuoc.Forms.Function;
 using Quan_Ly_Thuoc.Forms.Functions;
 
 namespace Quan_Ly_Thuoc
@@ -19,6 +20,7 @@ namespace Quan_Ly_Thuoc
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+            //Application.Run(new FormNhapThuoc());
         }
     }
 }

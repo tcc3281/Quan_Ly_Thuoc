@@ -98,7 +98,6 @@ namespace Quan_Ly_Thuoc.Forms.Function
 				//MessageBox.Show(sql);
 				pd.RunSQL(sql);
 				this.Close();
-
 			}
 			else
 			{

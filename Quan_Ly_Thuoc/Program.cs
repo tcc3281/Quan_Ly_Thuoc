@@ -19,8 +19,9 @@ namespace Quan_Ly_Thuoc
             //main
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            //Application.Run(new Form1());
             //Application.Run(new FormNhapThuoc());
+            Application.Run(new FormHoaDonBan());
         }
     }
 }

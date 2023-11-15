@@ -1,4 +1,5 @@
 ﻿using Quan_Ly_Thuoc.Data;
+using Quan_Ly_Thuoc.Forms.Functions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,21 +16,52 @@ namespace Quan_Ly_Thuoc
 	public partial class FormHoaDonBan : Form
 	{
 		ProcessDatabase pd = new ProcessDatabase();
+		String maHDB = "";
 
 		private List<string> lThuoc = new List<string>();
-		public FormHoaDonBan()
+		public FormHoaDonBan(String maHDB)
 		{
+			if (maHDB != null)
+			{
+				this.maHDB = maHDB;
+			}
+
 			InitializeComponent();
 		}
 
-		private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+		public void LoadCmb()
 		{
+			DataTable dtNV = pd.ReadTable("Select * from NhanVien");
+			DataTable dtKH = pd.ReadTable("Select * from KhachHang");
 
+			for (int i = 0; i < dtNV.Rows.Count; i++)
+				this.cmbNV.Items.Add(dtNV.Rows[i]["TenNV"]);
+
+			for (int i = 0; i < dtKH.Rows.Count; i++)
+				this.cmbKH.Items.Add(dtKH.Rows[i]["TenKhach"]);
 		}
 
+		private void CreateHDB()
+		{
+			int tien = 0;
+			for (int i = 0; i < lHDB.Items.Count; i++)
+			{
+				tien += int.Parse(lHDB.Items[i].SubItems[2].Text);
+			}
+
+			pd.RunSQL("insert into HoaDonBan values('" + maHDB + "', " +
+				"CONVERT(date, '" + DateTime.Today.ToString("dd/MM/yyyy") + "', 103), " + tien.ToString() + ", " +
+				"(select MaKhach from KhachHang where TenKhach = '" + cmbKH.Text + "'), " +
+				"(select MaNhanVien from NhanVien where TenNV = '" + cmbNV.Text + "'))");
+			//	MessageBox.Show("HoaDonBan (MaHDB, NgayBan, TongTien, MaKhach, MaNhanVien) values('" + maHDB + "', " +
+			//		"CONVERT(date, '" + DateTime.Today.ToString("dd/MM/yyyy") + "', 103), 0, " +
+			//		"(select MaKhach from KhachHang where TenKhach = N'" + cmbKH.Text + "'), " +
+			//		"(select MaNhanVien from NhanVien where TenNV = N'" + cmbNV.Text + "'))");
+		}
 
 		private void FormHoaDon_Load(object sender, EventArgs e)
 		{
+			LoadCmb();
 			DataTable dtThuoc = pd.ReadTable("Select * from DanhMucThuoc");
 			for (int i = 0; i < dtThuoc.Rows.Count; i++)
 				lThuoc.Add(dtThuoc.Rows[i]["TenThuoc"].ToString());
@@ -40,6 +72,24 @@ namespace Quan_Ly_Thuoc
 			}
 
 			txtSearchThuoc.TextChanged += txtSreachThuoc_TextChanged;
+
+			if (maHDB.Length != 7)
+			{
+				maHDB = "HDB";
+				pd.CreateCMD();
+				pd.cmd.CommandText = "Select count(*) from HoaDonBan";
+				pd.Connect();
+				int cnt = (int)pd.cmd.ExecuteScalar() + 1;
+				pd.Disconnect();
+
+				for (int i = 0; i < 3 - cnt.ToString().Length; i++)
+				{
+					maHDB += "0";
+				}
+				maHDB += cnt.ToString();
+			}
+
+			lblMa.Text += maHDB;
 		}
 
 		private void txtSreachThuoc_TextChanged(object sender, EventArgs e)
@@ -76,8 +126,9 @@ namespace Quan_Ly_Thuoc
 		{
 			// chỉnh trong listview
 			int adjust0 = panel7.Width;
-			//lHDB.Columns[0].Width = (int)(adjust0 * 0.55);
-			//lHDB.Columns[1].Width = (int)(adjust0 * 0.45);
+			lHDB.Columns[0].Width = (int)(adjust0 * 0.45);
+			lHDB.Columns[1].Width = (int)(adjust0 * 0.25);
+			lHDB.Columns[2].Width = (int)(adjust0 * 0.30);
 
 			//chỉnh các textbox và button
 
@@ -130,6 +181,40 @@ namespace Quan_Ly_Thuoc
 		{
 			int index = lHDB.SelectedItems[0].Index;
 			txtSL.Value = int.Parse(lHDB.Items[index].SubItems[1].Text);
+		}
+
+		private void btnRemove_Click(object sender, EventArgs e)
+		{
+			int index = lHDB.SelectedItems[0].Index;
+			lHDB.Items.RemoveAt(index);
+		}
+		private void btnThanhToan_Click(object sender, EventArgs e)
+		{
+			CreateHDB();
+			SaveData();
+			FormChiTietHDB CTHDB = new FormChiTietHDB(maHDB);
+			CTHDB.ShowDialog();
+		}
+
+		private void btnCatHD_Click(object sender, EventArgs e)
+		{
+			maHDB += 'C';
+			CreateHDB();
+			SaveData();
+			this.Close();
+		}
+
+		private void SaveData()
+		{
+			pd.RunSQL("delete from ChiTietHDB where MaHDB = '" + maHDB + "'");
+			for (int i = 0; i < lHDB.Items.Count; i++)
+			{
+				string sql = "insert into ChiTietHDB values( " + lHDB.Items[i].SubItems[1].Text +
+					", 0, " + lHDB.Items[i].SubItems[2].Text + ", '" + maHDB + "', " +
+					"(select MaThuoc from DanhMucThuoc where TenThuoc = '" +
+					lHDB.Items[i].SubItems[0].Text + "'))";
+				pd.RunSQL(sql);
+			}
 		}
 	}
 }

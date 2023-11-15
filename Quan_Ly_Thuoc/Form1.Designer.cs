@@ -64,11 +64,10 @@
 			this.signInToolStripMenuLogin = new System.Windows.Forms.ToolStripMenuItem();
 			this.searchToolStripMenuSearch = new System.Windows.Forms.ToolStripMenuItem();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
-			this.dgvThuoc = new System.Windows.Forms.DataGridView();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
+			this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
 			this.menuStrip1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dgvThuoc)).BeginInit();
 			this.tabControl1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -144,7 +143,7 @@
             this.billToolStripMenuItem1,
             this.hóaĐơnBánToolStripMenuItem1});
 			this.showListToolStripMenuItem.Name = "showListToolStripMenuItem";
-			this.showListToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+			this.showListToolStripMenuItem.Size = new System.Drawing.Size(193, 26);
 			this.showListToolStripMenuItem.Text = "Hiện danh sách";
 			// 
 			// medicineToolStripMenuItem
@@ -183,7 +182,7 @@
             this.hóaĐơnBánToolStripMenuItem,
             this.hóaĐơnNhậpToolStripMenuItem});
 			this.billToolStripMenuItem.Name = "billToolStripMenuItem";
-			this.billToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+			this.billToolStripMenuItem.Size = new System.Drawing.Size(193, 26);
 			this.billToolStripMenuItem.Text = "Thêm hóa đơn";
 			// 
 			// hóaĐơnBánToolStripMenuItem
@@ -207,7 +206,7 @@
             this.nhânViênToolStripMenuItem1,
             this.kháchHàngToolStripMenuItem1});
 			this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-			this.updateToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+			this.updateToolStripMenuItem.Size = new System.Drawing.Size(193, 26);
 			this.updateToolStripMenuItem.Text = "Cập nhật";
 			// 
 			// thuốcToolStripMenuItem
@@ -235,26 +234,27 @@
             this.kháchHàngToolStripMenuItem,
             this.nhânViênToolStripMenuItem});
 			this.nhậpToolStripMenuItem.Name = "nhậpToolStripMenuItem";
-			this.nhậpToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+			this.nhậpToolStripMenuItem.Size = new System.Drawing.Size(193, 26);
 			this.nhậpToolStripMenuItem.Text = "Thêm";
 			// 
 			// thuỗToolStripMenuItem
 			// 
 			this.thuỗToolStripMenuItem.Name = "thuỗToolStripMenuItem";
-			this.thuỗToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+			this.thuỗToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
 			this.thuỗToolStripMenuItem.Text = "Thuốc";
 			this.thuỗToolStripMenuItem.Click += new System.EventHandler(this.thuỗToolStripMenuItem_Click);
 			// 
 			// kháchHàngToolStripMenuItem
 			// 
 			this.kháchHàngToolStripMenuItem.Name = "kháchHàngToolStripMenuItem";
-			this.kháchHàngToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+			this.kháchHàngToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
 			this.kháchHàngToolStripMenuItem.Text = "Khách hàng";
+			this.kháchHàngToolStripMenuItem.Click += new System.EventHandler(this.kháchHàngToolStripMenuItem_Click);
 			// 
 			// nhânViênToolStripMenuItem
 			// 
 			this.nhânViênToolStripMenuItem.Name = "nhânViênToolStripMenuItem";
-			this.nhânViênToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+			this.nhânViênToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
 			this.nhânViênToolStripMenuItem.Text = "Nhân viên";
 			this.nhânViênToolStripMenuItem.Click += new System.EventHandler(this.nhânViênToolStripMenuItem_Click);
 			// 
@@ -339,7 +339,7 @@
 			// 
 			// tabPage1
 			// 
-			this.tabPage1.Controls.Add(this.dgvThuoc);
+			this.tabPage1.Controls.Add(this.flowLayoutPanel1);
 			this.tabPage1.Location = new System.Drawing.Point(4, 25);
 			this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.tabPage1.Name = "tabPage1";
@@ -348,17 +348,6 @@
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "tabPage1";
 			this.tabPage1.UseVisualStyleBackColor = true;
-			// 
-			// dgvThuoc
-			// 
-			this.dgvThuoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dgvThuoc.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.dgvThuoc.Location = new System.Drawing.Point(3, 2);
-			this.dgvThuoc.Name = "dgvThuoc";
-			this.dgvThuoc.RowHeadersWidth = 51;
-			this.dgvThuoc.RowTemplate.Height = 24;
-			this.dgvThuoc.Size = new System.Drawing.Size(961, 430);
-			this.dgvThuoc.TabIndex = 0;
 			// 
 			// tabControl1
 			// 
@@ -370,6 +359,14 @@
 			this.tabControl1.SelectedIndex = 0;
 			this.tabControl1.Size = new System.Drawing.Size(975, 463);
 			this.tabControl1.TabIndex = 1;
+			// 
+			// flowLayoutPanel1
+			// 
+			this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 2);
+			this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+			this.flowLayoutPanel1.Size = new System.Drawing.Size(961, 430);
+			this.flowLayoutPanel1.TabIndex = 0;
 			// 
 			// Form1
 			// 
@@ -387,7 +384,6 @@
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
 			this.tabPage1.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.dgvThuoc)).EndInit();
 			this.tabControl1.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
@@ -433,7 +429,7 @@
         private System.Windows.Forms.ToolStripMenuItem kháchHàngToolStripMenuItem1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabControl tabControl1;
-		private System.Windows.Forms.DataGridView dgvThuoc;
+		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
 	}
 }
 

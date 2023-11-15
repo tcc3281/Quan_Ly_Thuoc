@@ -38,7 +38,8 @@ namespace Quan_Ly_Thuoc
 
 		private void hóaĐơnBánToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			FormHoaDonBan hoaDon = new FormHoaDonBan();
+			FormHoaDonBan hoaDon = new FormHoaDonBan("");
+			hoaDon.FormClosed += FormHoaDonBan_FormClosed;
 			hoaDon.ShowDialog();
 		}
 
@@ -58,15 +59,77 @@ namespace Quan_Ly_Thuoc
 			FormThemNV nv = new FormThemNV();
 			nv.ShowDialog();
 		}
-		private void Form1_Load(object sender, EventArgs e)
+
+		private void kháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			if (addThuoc == true)
+			FormKhachHang kh = new FormKhachHang();
+			kh.ShowDialog();
+		}
+
+		private void LoadHDB_Cat()
+		{
+			DataTable dtHDB = pd.ReadTable("SELECT * FROM HoaDonBan WHERE MaHDB LIKE '%C%'");
+
+			for (int i = 0; i < dtHDB.Rows.Count; i++)
 			{
-				addThuoc = false;
-				dgvThuoc.DataSource = pd.ReadTable("select * from DanhMucThuoc");
+				Panel panel = new Panel();
+				panel.BorderStyle = BorderStyle.FixedSingle; // Để có viền
+				panel.Width = 200; // Điều chỉnh chiều rộng của Panel
+				panel.Height = 150; // Điều chỉnh chiều cao của Panel
+
+				Label lblMaHDB = new Label() { Text = "Mã HD:" + dtHDB.Rows[i]["MaHDB"] };
+				Label lblNgayLap = new Label() { Text = "Ngày lập: " + DateTime.Parse(dtHDB.Rows[i]["NgayBan"].
+					ToString()).ToString("dd/MM/yyyy"),
+					AutoSize = true,
+					MaximumSize = new System.Drawing.Size(200, 0)
+				};
+				Label lblTongTien = new Label() { Text = "Tổng tiền:" + dtHDB.Rows[i]["TongTien"].ToString() };
+
+				// Điều chỉnh vị trí và kích thước của các Label
+				lblMaHDB.Location = new Point(10, 10);
+				lblNgayLap.Location = new Point(10, 40);
+				lblTongTien.Location = new Point(10, 70);
+
+				Button viewButton = new Button() { Text = "Xem hóa đơn", AutoSize = true };
+				// Lưu ID vào Tag của Button để có thể lấy khi nhấp vào nó
+				viewButton.Tag = dtHDB.Rows[i]["MaHDB"];
+				// Thêm sự kiện Click
+				viewButton.Click += ViewButton_Click;
+				Button cancelButton = new Button() { Text = "Hủy", AutoSize = true };
+
+				// Điều chỉnh vị trí của các Button
+				viewButton.Location = new Point(10, 100);
+				cancelButton.Location = new Point(10 + viewButton.Width + 10, 100);
+
+				panel.Controls.Add(lblMaHDB);
+				panel.Controls.Add(lblNgayLap);
+				panel.Controls.Add(lblTongTien);
+				panel.Controls.Add(viewButton);
+				panel.Controls.Add(cancelButton);
+
+				flowLayoutPanel1.Controls.Add(panel);
 			}
 		}
 
+		private void ViewButton_Click(object sender, EventArgs e)
+		{
+			string maHDB = (string)((Button)sender).Tag;
+			FormHoaDonBan ct = new FormHoaDonBan(maHDB);
+			ct.FormClosed += FormHoaDonBan_FormClosed;
+			ct.ShowDialog();
+		}
 
+		private void FormHoaDonBan_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			flowLayoutPanel1.Controls.Clear();
+			LoadHDB_Cat();
+		}
+
+		private void Form1_Load(object sender, EventArgs e)
+		{
+			LoadHDB_Cat();
+		}
+
+		
 	}
 }

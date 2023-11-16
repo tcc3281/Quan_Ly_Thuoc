@@ -115,11 +115,12 @@ namespace Quan_Ly_Thuoc
                 item.fomulate_thanhtien();
                 pd.RunSQL(add_CTHDN(item));
             }
+            Close();
         }
         private string add_CTHDN(ChiTietHDN ct)
         {
             string sql;
-            sql = "insert into ChiTietHDN(MaHDN,MaThuoc,SLNhap,DonGia,KhuyenMai,ThanhTien) valuse" +
+            sql = "insert into ChiTietHDN(MaHDN,MaThuoc,SLNhap,DonGia,KhuyenMai,ThanhTien) values" +
                 "('"+ ct.mahd + "','"+ ct.mathuoc +"',"+ ct.sl +"," +
                  ct.dongia +","+ ct.khuyenmai +","+ ct.thanhtien +")";
             return sql;

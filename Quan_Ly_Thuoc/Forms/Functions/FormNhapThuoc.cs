@@ -15,6 +15,9 @@ namespace Quan_Ly_Thuoc.Forms.Function
 	public partial class FormNhapThuoc : Form
 	{
 		ProcessDatabase pd = new ProcessDatabase();
+		List<string> listMDC= new List<string>();
+		List<string> listMNSX= new List<string>();
+		List<string> listMDV= new List<string>();
 		public FormNhapThuoc()
 		{
 			InitializeComponent();
@@ -43,14 +46,24 @@ namespace Quan_Ly_Thuoc.Forms.Function
 			DataTable dtFormMedicine = pd.ReadTable("Select * from DangDieuChe");
 
 			for (int i = 0; i < dtUnit.Rows.Count; i++)
-				this.cmbUnit.Items.Add(dtUnit.Rows[i]["TenDonViTinh"]);
+			{
+                this.cmbUnit.Items.Add(dtUnit.Rows[i]["TenDonViTinh"]);
+				listMDV.Add(dtUnit.Rows[i]["MaDV"].ToString());
+            }
 
-			for (int i = 0; i < dtCountry.Rows.Count; i++)
-				this.cmbCountry.Items.Add(dtCountry.Rows[i]["TenNSX"]);
+            for (int i = 0; i < dtCountry.Rows.Count; i++)
+			{
+                this.cmbCountry.Items.Add(dtCountry.Rows[i]["TenNSX"]);
+				listMNSX.Add(dtCountry.Rows[i]["MaNSX"].ToString());
 
-			for (int i = 0; i < dtFormMedicine.Rows.Count; i++)
-				this.cmbFormMedicine.Items.Add(dtFormMedicine.Rows[i]["TenDangDieuChe"]);
-		}
+            }
+
+            for (int i = 0; i < dtFormMedicine.Rows.Count; i++)
+			{
+                this.cmbFormMedicine.Items.Add(dtFormMedicine.Rows[i]["TenDangDieuChe"]);
+				listMDC.Add(dtFormMedicine.Rows[i]["MaDangDieuChe"].ToString());
+            }
+        }
 
 		private void FormNhapThuoc_Load(object sender, EventArgs e)
 		{
@@ -93,8 +106,8 @@ namespace Quan_Ly_Thuoc.Forms.Function
 			{
 				String sql = "insert into DanhMucThuoc(MaThuoc, TenThuoc, ThanhPhan, MaDangDieuChe, " +
 						"ChongChiDinh, MaDV, MaNSX) values('" + idThuoc + "', N'" + txtMedicineName.Text + "', N'" +
-						txtIngredient.Text + "', N'" + cmbFormMedicine.Text + "', N'" + txtNotRecommended.Text + "', N'" +
-						cmbUnit.Text + "', N'" + cmbCountry.Text + "')";
+						txtIngredient.Text + "', N'" + listMDC[cmbFormMedicine.SelectedIndex] + "', N'" + txtNotRecommended.Text + "', N'" +
+						listMDV[cmbUnit.SelectedIndex] + "', N'" + listMNSX[cmbCountry.SelectedIndex] + "')";
 				//MessageBox.Show(sql);
 				pd.RunSQL(sql);
 				this.Close();
@@ -104,5 +117,10 @@ namespace Quan_Ly_Thuoc.Forms.Function
 				MessageBox.Show("Thông báo!", "Cần điền đầy đủ.");
 			}
 		}
-	}
+
+        private void cmbFormMedicine_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

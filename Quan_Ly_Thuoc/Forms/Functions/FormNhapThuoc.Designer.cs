@@ -50,28 +50,28 @@
             // 
             this.LabelMedicineName.AutoSize = true;
             this.LabelMedicineName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelMedicineName.Location = new System.Drawing.Point(25, 31);
+            this.LabelMedicineName.Location = new System.Drawing.Point(28, 39);
             this.LabelMedicineName.Name = "LabelMedicineName";
-            this.LabelMedicineName.Size = new System.Drawing.Size(83, 20);
+            this.LabelMedicineName.Size = new System.Drawing.Size(100, 25);
             this.LabelMedicineName.TabIndex = 0;
             this.LabelMedicineName.Text = "Tên thuốc";
             // 
             // txtMedicineName
             // 
             this.txtMedicineName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMedicineName.Location = new System.Drawing.Point(177, 24);
+            this.txtMedicineName.Location = new System.Drawing.Point(199, 30);
             this.txtMedicineName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMedicineName.Name = "txtMedicineName";
-            this.txtMedicineName.Size = new System.Drawing.Size(208, 26);
+            this.txtMedicineName.Size = new System.Drawing.Size(234, 30);
             this.txtMedicineName.TabIndex = 1;
             // 
             // labeIngredient
             // 
             this.labeIngredient.AutoSize = true;
             this.labeIngredient.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labeIngredient.Location = new System.Drawing.Point(25, 92);
+            this.labeIngredient.Location = new System.Drawing.Point(28, 115);
             this.labeIngredient.Name = "labeIngredient";
-            this.labeIngredient.Size = new System.Drawing.Size(96, 20);
+            this.labeIngredient.Size = new System.Drawing.Size(118, 25);
             this.labeIngredient.TabIndex = 0;
             this.labeIngredient.Text = "Thành phần";
             // 
@@ -79,9 +79,9 @@
             // 
             this.labelNotRecommended.AutoSize = true;
             this.labelNotRecommended.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelNotRecommended.Location = new System.Drawing.Point(416, 26);
+            this.labelNotRecommended.Location = new System.Drawing.Point(468, 32);
             this.labelNotRecommended.Name = "labelNotRecommended";
-            this.labelNotRecommended.Size = new System.Drawing.Size(120, 20);
+            this.labelNotRecommended.Size = new System.Drawing.Size(143, 25);
             this.labelNotRecommended.TabIndex = 0;
             this.labelNotRecommended.Text = "Chống chỉ định";
             // 
@@ -89,37 +89,37 @@
             // 
             this.labelUnit.AutoSize = true;
             this.labelUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUnit.Location = new System.Drawing.Point(416, 153);
+            this.labelUnit.Location = new System.Drawing.Point(468, 191);
             this.labelUnit.Name = "labelUnit";
-            this.labelUnit.Size = new System.Drawing.Size(88, 20);
+            this.labelUnit.Size = new System.Drawing.Size(103, 25);
             this.labelUnit.TabIndex = 0;
             this.labelUnit.Text = "Đơn vị tính";
             // 
             // txtNotRecommended
             // 
             this.txtNotRecommended.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNotRecommended.Location = new System.Drawing.Point(576, 24);
+            this.txtNotRecommended.Location = new System.Drawing.Point(648, 30);
             this.txtNotRecommended.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNotRecommended.Name = "txtNotRecommended";
-            this.txtNotRecommended.Size = new System.Drawing.Size(282, 26);
+            this.txtNotRecommended.Size = new System.Drawing.Size(317, 30);
             this.txtNotRecommended.TabIndex = 2;
             // 
             // cmbUnit
             // 
             this.cmbUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbUnit.FormattingEnabled = true;
-            this.cmbUnit.Location = new System.Drawing.Point(576, 153);
+            this.cmbUnit.Location = new System.Drawing.Point(648, 191);
             this.cmbUnit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbUnit.Name = "cmbUnit";
-            this.cmbUnit.Size = new System.Drawing.Size(282, 28);
+            this.cmbUnit.Size = new System.Drawing.Size(317, 33);
             this.cmbUnit.TabIndex = 5;
             // 
             // txtIngredient
             // 
-            this.txtIngredient.Location = new System.Drawing.Point(177, 86);
+            this.txtIngredient.Location = new System.Drawing.Point(199, 108);
             this.txtIngredient.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtIngredient.Name = "txtIngredient";
-            this.txtIngredient.Size = new System.Drawing.Size(208, 101);
+            this.txtIngredient.Size = new System.Drawing.Size(234, 125);
             this.txtIngredient.TabIndex = 3;
             this.txtIngredient.Text = "";
             // 
@@ -127,9 +127,9 @@
             // 
             this.labelCountry.AutoSize = true;
             this.labelCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCountry.Location = new System.Drawing.Point(416, 212);
+            this.labelCountry.Location = new System.Drawing.Point(468, 265);
             this.labelCountry.Name = "labelCountry";
-            this.labelCountry.Size = new System.Drawing.Size(116, 20);
+            this.labelCountry.Size = new System.Drawing.Size(137, 25);
             this.labelCountry.TabIndex = 0;
             this.labelCountry.Text = "Nước sản xuất";
             // 
@@ -137,29 +137,29 @@
             // 
             this.cmbCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCountry.FormattingEnabled = true;
-            this.cmbCountry.Location = new System.Drawing.Point(576, 212);
+            this.cmbCountry.Location = new System.Drawing.Point(648, 265);
             this.cmbCountry.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbCountry.Name = "cmbCountry";
-            this.cmbCountry.Size = new System.Drawing.Size(282, 28);
+            this.cmbCountry.Size = new System.Drawing.Size(317, 33);
             this.cmbCountry.TabIndex = 7;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(416, 85);
+            this.label2.Location = new System.Drawing.Point(468, 106);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(117, 20);
+            this.label2.Size = new System.Drawing.Size(138, 25);
             this.label2.TabIndex = 0;
             this.label2.Text = "Dạng điều chế";
             // 
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(420, 282);
+            this.btnClear.Location = new System.Drawing.Point(472, 352);
             this.btnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(126, 42);
+            this.btnClear.Size = new System.Drawing.Size(142, 52);
             this.btnClear.TabIndex = 9;
             this.btnClear.Text = "Hủy";
             this.btnClear.UseVisualStyleBackColor = true;
@@ -168,10 +168,10 @@
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(177, 282);
+            this.btnAdd.Location = new System.Drawing.Point(199, 352);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(140, 42);
+            this.btnAdd.Size = new System.Drawing.Size(158, 52);
             this.btnAdd.TabIndex = 8;
             this.btnAdd.Text = "Thêm thuốc";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -180,34 +180,37 @@
             // cmbFormMedicine
             // 
             this.cmbFormMedicine.FormattingEnabled = true;
-            this.cmbFormMedicine.Location = new System.Drawing.Point(576, 86);
+            this.cmbFormMedicine.Location = new System.Drawing.Point(648, 108);
+            this.cmbFormMedicine.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbFormMedicine.Name = "cmbFormMedicine";
-            this.cmbFormMedicine.Size = new System.Drawing.Size(282, 24);
+            this.cmbFormMedicine.Size = new System.Drawing.Size(317, 28);
             this.cmbFormMedicine.TabIndex = 10;
+            this.cmbFormMedicine.SelectedIndexChanged += new System.EventHandler(this.cmbFormMedicine_SelectedIndexChanged);
             // 
             // txtDNSX
             // 
             this.txtDNSX.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtDNSX.Location = new System.Drawing.Point(177, 232);
+            this.txtDNSX.Location = new System.Drawing.Point(199, 290);
+            this.txtDNSX.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtDNSX.Name = "txtDNSX";
-            this.txtDNSX.Size = new System.Drawing.Size(208, 22);
+            this.txtDNSX.Size = new System.Drawing.Size(234, 26);
             this.txtDNSX.TabIndex = 11;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(25, 234);
+            this.label3.Location = new System.Drawing.Point(28, 292);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(115, 20);
+            this.label3.Size = new System.Drawing.Size(137, 25);
             this.label3.TabIndex = 13;
             this.label3.Text = "Ngày sản xuất";
             // 
             // FormNhapThuoc
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(894, 334);
+            this.ClientSize = new System.Drawing.Size(1006, 418);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtDNSX);
             this.Controls.Add(this.cmbFormMedicine);

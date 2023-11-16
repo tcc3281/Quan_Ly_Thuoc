@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Quan_Ly_Thuoc.Model
 {
+    //test win
     internal class ChiTietHD
     {
         string id_HD, id_Thuoc;

@@ -63,6 +63,13 @@ namespace Quan_Ly_Thuoc.Forms.Functions
 			if (txtTenNV.Text.Trim() == "" || txtSDT.Text.Trim() == "" ||
 				cmbTrinhDo.Text == "" || cmbChuyenMon.Text == "")
 			{
+				MessageBox.Show("Cần nhập tên, số điện thoại, trình độ và chuyên môn của nhân viên.", "Thông báo");
+				return false;
+			}
+
+			if (txtDOB.Value.AddYears(18)>=DateTime.Now)
+			{
+				MessageBox.Show("Nhân viên phải đủ 18 tuổi");
 				return false;
 			}
 			return true;
@@ -136,10 +143,6 @@ namespace Quan_Ly_Thuoc.Forms.Functions
 				//MessageBox.Show(sql);
 				pd.RunSQL(sql);
 				dgvNhanVien.DataSource = pd.ReadTable("select * from NhanVien");
-			}
-			else
-			{
-				MessageBox.Show("Thông báo", "Cần nhập tên, số điện thoại, trình độ và chuyên môn của nhân viên.");
 			}
 		}
 	}

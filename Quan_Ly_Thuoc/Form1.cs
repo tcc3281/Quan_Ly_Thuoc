@@ -130,6 +130,44 @@ namespace Quan_Ly_Thuoc
 			}
 		}
 
+		private void LoadHDN()
+		{
+			DataTable dtHDN = pd.ReadTable("SELECT * FROM HoaDonNhap");
+			for(int i = 0; i < dtHDN.Rows.Count; i++)
+			{
+				Panel panel = new Panel();
+				panel.BorderStyle = BorderStyle.FixedSingle; // Để có viền
+				panel.Width = 200; // Điều chỉnh chiều rộng của Panel
+				panel.Height = 150; // Điều chỉnh chiều cao của Panel
+
+				Label lblMaHDN = new Label() { Text = "Mã HD:" + dtHDN.Rows[i]["MaHDN"] };
+				Label lblNgayLap = new Label()
+				{
+					Text = "Ngày lập: " + DateTime.Parse(dtHDN.Rows[i]["NgayNhap"].
+					ToString()).ToString("dd/MM/yyyy"),
+					AutoSize = true,
+					MaximumSize = new System.Drawing.Size(200, 0)
+				};
+				Label lblTongTien = new Label() { Text = "Tổng tiền:" + dtHDN.Rows[i]["TongTien"].ToString() };
+
+				lblMaHDN.Location = new Point(10, 10);
+				lblNgayLap.Location = new Point(10, 40);
+				lblTongTien.Location = new Point(10, 70);
+
+				Button viewButton = new Button() { Text = "Xem hóa đơn", AutoSize = true };
+				Button cancelButton = new Button() { Text = "Hủy", AutoSize = true };
+				viewButton.Location = new Point(10, 100);
+				cancelButton.Location = new Point(10 + viewButton.Width + 10, 100);
+
+				panel.Controls.Add(lblMaHDN);
+				panel.Controls.Add(lblNgayLap);
+				panel.Controls.Add(lblTongTien);
+				panel.Controls.Add(viewButton);
+
+				flowLayoutPanel2.Controls.Add(panel);
+			}
+		}
+
 		private void CancelButton_Click(object sender, EventArgs e)
 		{
 			string maHDB = (string)((Button)sender).Tag;
@@ -169,7 +207,7 @@ namespace Quan_Ly_Thuoc
 			}
 
 			LoadHDB_Cat();
-			
+			LoadHDN();
 		}
         private void xóaToolStripMenuItem_Click(object sender, EventArgs e)
         {

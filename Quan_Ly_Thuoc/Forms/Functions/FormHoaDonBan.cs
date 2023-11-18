@@ -50,7 +50,7 @@ namespace Quan_Ly_Thuoc
 			pd.RunSQL("insert into HoaDonBan(MaHDB, NgayBan, TongTien, MaKhach, MaNhanVien, TrangThai) values('" + maHDB + "', " +
 				"CONVERT(date, '" + DateTime.Today.ToString("dd/MM/yyyy") + "', 103), " + tien.ToString() + ", " +
 				"(select MaKhach from KhachHang where TenKhach = N'" + cmbKH.Text + "'), " +
-				"(select MaNhanVien from NhanVien where TenNV = N'" + cmbNV.Text + "'),"+ TrangThai +")");
+				"(select MaNhanVien from NhanVien where TenNV = N'" + cmbNV.Text + "')," + TrangThai + ")");
 			//	MessageBox.Show("HoaDonBan (MaHDB, NgayBan, TongTien, MaKhach, MaNhanVien) values('" + maHDB + "', " +
 			//		"CONVERT(date, '" + DateTime.Today.ToString("dd/MM/yyyy") + "', 103), 0, " +
 			//		"(select MaKhach from KhachHang where TenKhach = N'" + cmbKH.Text + "'), " +
@@ -243,7 +243,7 @@ namespace Quan_Ly_Thuoc
 			if (cnt == 1)
 			{
 				string maNV = "", maKH = "";
-				if(cmbNV.Text != "")
+				if (cmbNV.Text != "")
 				{
 					DataTable dtNV = pd.ReadTable("select * from NhanVien where TenNV = N'" + cmbNV.Text + "'");
 					maNV = dtNV.Rows[0]["MaNhanVien"].ToString();
@@ -260,6 +260,12 @@ namespace Quan_Ly_Thuoc
 			}
 			else CreateHDB(1);
 			SaveData();
+			for (int i = 0; i < lHDB.Items.Count; i++)
+			{
+				int sl = int.Parse(lHDB.Items[i].SubItems[1].Text);
+				string ten = lHDB.Items[i].SubItems[0].Text;
+				pd.RunSQL("update DanhMucThuoc set SLHienCo = SLHienCo - " + sl.ToString() + " where TenThuoc = N'" + ten + "'");
+			}
 			MessageBox.Show("Số tiền thanh toán là: " + ThanhTien());
 			this.Close();
 		}

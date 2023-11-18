@@ -44,6 +44,7 @@
             this.cmbFormMedicine = new System.Windows.Forms.ComboBox();
             this.txtDNSX = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LabelMedicineName
@@ -156,7 +157,7 @@
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(472, 352);
+            this.btnClear.Location = new System.Drawing.Point(448, 352);
             this.btnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(142, 52);
@@ -206,11 +207,22 @@
             this.label3.TabIndex = 13;
             this.label3.Text = "Ngày sản xuất";
             // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(665, 352);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(132, 52);
+            this.btnUpdate.TabIndex = 14;
+            this.btnUpdate.Text = "Sửa";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            // 
             // FormNhapThuoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1006, 418);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtDNSX);
             this.Controls.Add(this.cmbFormMedicine);
@@ -255,5 +267,6 @@
         private System.Windows.Forms.ComboBox cmbFormMedicine;
         private System.Windows.Forms.DateTimePicker txtDNSX;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }

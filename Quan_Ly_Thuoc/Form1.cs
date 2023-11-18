@@ -18,37 +18,34 @@ namespace Quan_Ly_Thuoc
 	{
 		ProcessDatabase pd = new ProcessDatabase();
 		internal static bool addThuoc = true;
+		List<TabPage> tabs = new List<TabPage>();
 
 		public Form1()
 		{
 			InitializeComponent();
 		}
-
 		private void signInToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Login login = new Login();
 			login.ShowDialog();
 		}
-
 		private void searchToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Search search = new Search();
 			search.ShowDialog();
 		}
-
 		private void hóaĐơnBánToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			FormHoaDonBan hoaDon = new FormHoaDonBan("");
 			hoaDon.FormClosed += FormHoaDonBan_FormClosed;
 			hoaDon.ShowDialog();
 		}
-
 		private void thuỗToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			FormNhapThuoc formNhapThuoc = new FormNhapThuoc();
-			formNhapThuoc.ShowDialog();
+			formNhapThuoc.setAdd();
+            formNhapThuoc.ShowDialog();
 		}
-
 		private void hóaĐơnNhậpToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			FormHoaDonNhap hoaDon = new FormHoaDonNhap();
@@ -59,13 +56,11 @@ namespace Quan_Ly_Thuoc
 			FormThemNV nv = new FormThemNV();
 			nv.ShowDialog();
 		}
-
 		private void kháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			FormKhachHang kh = new FormKhachHang();
 			kh.ShowDialog();
 		}
-
 		private void LoadHDB_Cat()
 		{
 			DataTable dtHDB = pd.ReadTable("SELECT * FROM HoaDonBan WHERE MaHDB LIKE '%C%'");
@@ -110,7 +105,6 @@ namespace Quan_Ly_Thuoc
 				flowLayoutPanel1.Controls.Add(panel);
 			}
 		}
-
 		private void ViewButton_Click(object sender, EventArgs e)
 		{
 			string maHDB = (string)((Button)sender).Tag;
@@ -118,24 +112,99 @@ namespace Quan_Ly_Thuoc
 			ct.FormClosed += FormHoaDonBan_FormClosed;
 			ct.ShowDialog();
 		}
-
 		private void FormHoaDonBan_FormClosed(object sender, FormClosedEventArgs e)
 		{
 			flowLayoutPanel1.Controls.Clear();
 			LoadHDB_Cat();
 		}
-
 		private void Form1_Load(object sender, EventArgs e)
 		{
 			LoadHDB_Cat();
 		}
-
         private void xóaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TabPage selectedTab = tabControl1.SelectedTab;
+            TabPage selectedTab = tabControl.SelectedTab;
 
             // Xóa tabpage đó khỏi tabcontrol
-            tabControl1.TabPages.Remove(selectedTab);
+            tabControl.TabPages.Remove(selectedTab);
+        }
+		private TabPage newTabPage(string name)
+		{
+            TabPage tabPage = new TabPage();
+            tabPage.ContextMenuStrip = this.menuStripTabPage;
+            tabPage.Text = name;
+            tabPage.UseVisualStyleBackColor = true;
+            tabControl.TabPages.Add(tabPage);
+            tabControl.SelectedTab = tabPage;
+			return tabPage;
+        }
+        private void medicineToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+			string name = "Danh sách thuốc";
+			foreach( TabPage item in tabControl.TabPages)
+			{
+				if (item.Text == name)
+				{
+                    tabControl.SelectedTab = item;
+                    return;
+				}
+			}
+            //tạo tabpage mới
+            TabPage tabPage = newTabPage(name);
+			//them datagridview
+			DataGridView data= new DataGridView();
+			string sql = "select a.MaThuoc,a.TenThuoc,a.ThanhPhan,a.DonGiaNhap,a.GiaBan,a.SLHienCo,a.NgaySX,a.HanSD,a.ChongChiDinh,b.TenNSX,c.TenDangDieuChe,d.TenDonViTinh\r\nfrom DanhMucThuoc a join NuocSX b on a.MaNSX=b.MaNSX\r\n\t\tjoin DangDieuChe c on a.MaDangDieuChe=c.MaDangDieuChe\r\n\t\tjoin DonViTinh d on a.MaDV=d.MaDV";
+
+            data.DataSource = pd.ReadTable(sql);
+			tabPage.Controls.Add(data);
+			data.Dock= DockStyle.Fill;
+        }
+        private void cútomerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string name = "Danh sách khách hàng";
+            foreach (TabPage item in tabControl.TabPages)
+            {
+                if (item.Text == name)
+                {
+                    tabControl.SelectedTab = item;
+                    return;
+                }
+            }
+            //tạo tabpage mới
+            TabPage tabPage = newTabPage(name);
+            //them datagridview
+            DataGridView data = new DataGridView();
+            data.DataSource = pd.ReadTable("select * from KhachHang");
+            tabPage.Controls.Add(data);
+            data.Dock = DockStyle.Fill;
+        }
+
+        private void staffToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string name = "Danh sách NhanVien";
+            foreach (TabPage item in tabControl.TabPages)
+            {
+                if (item.Text == name)
+                {
+                    tabControl.SelectedTab = item;
+                    return;
+                }
+            }
+            //tạo tabpage mới
+            TabPage tabPage = newTabPage(name);
+			string sql= "select a.MaNhanVien,a.TenNV,a.GioiTinh,a.GioiTinh,a.DiaChi,a.DienThoai,b.TenTrinhDo,c.TenChuyenMon\r\nfrom NhanVien a join TrinhDo b on a.MaTrinhDo=b.MaTrinhDo\r\n\t\tjoin ChuyenMon c on a.MaChuyenMon=c.MaChuyenMon";
+            //them datagridview
+            DataGridView data = new DataGridView();
+            data.DataSource = pd.ReadTable(sql);
+            tabPage.Controls.Add(data);
+            data.Dock = DockStyle.Fill;
+        }
+
+        private void thuốcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormNhapThuoc formNhapThuoc = new FormNhapThuoc();
+            formNhapThuoc.setUpdate();
+            formNhapThuoc.ShowDialog();
         }
     }
 }

@@ -122,5 +122,13 @@ namespace Quan_Ly_Thuoc.Forms.Function
         {
 
         }
+		public void setAdd()
+		{
+			btnUpdate.Enabled = false;
+		}
+        public void setUpdate()
+        {
+            btnAdd.Enabled = false;
+        }
     }
 }

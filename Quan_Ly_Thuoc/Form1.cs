@@ -70,7 +70,20 @@ namespace Quan_Ly_Thuoc
 		private void LoadHDB_Cat()
 		{
 			DataTable dtHDB = pd.ReadTable("SELECT * FROM HoaDonBan");
-
+			FlowLayoutPanel flowLayoutPanel=new FlowLayoutPanel();
+			bool flag = true;
+            foreach (var item in tabControl.SelectedTab.Controls)
+			{
+				if (item is FlowLayoutPanel)
+				{
+					flowLayoutPanel = (FlowLayoutPanel)item;
+					flowLayoutPanel.Controls.Clear();
+					flag = false;
+					break;
+				}
+				else break;
+			}
+			
 			for (int i = 0; i < dtHDB.Rows.Count; i++)
 			{
 				Panel panel = new Panel();
@@ -126,8 +139,16 @@ namespace Quan_Ly_Thuoc
 				if(ck == 0)
 				panel.Controls.Add(cancelButton);
 
-				flowLayoutPanel1.Controls.Add(panel);
+				flowLayoutPanel.Controls.Add(panel);
 			}
+			var tabPage = tabControl.SelectedTab;
+			if (flag == true)//chua co
+			{
+				flowLayoutPanel.Dock = DockStyle.Fill;
+                tabPage.Controls.Add(flowLayoutPanel);
+				flowLayoutPanel.AutoScroll = true;
+			}
+			
 		}
 
 		private void CancelButton_Click(object sender, EventArgs e)
@@ -140,8 +161,16 @@ namespace Quan_Ly_Thuoc
 			pd.RunSQL("delete HoaDonBan where MaHDB = '" + maHDB + "'");
 			pd.Disconnect();
 
-			flowLayoutPanel1.Controls.Clear();
-			LoadHDB_Cat();
+            foreach (Control control in tabControl.SelectedTab.Controls)
+            {
+                if (control is FlowLayoutPanel)
+                {
+                    FlowLayoutPanel flowLayoutPanel = (FlowLayoutPanel)control;
+					flowLayoutPanel.Controls.Clear();
+					break;
+                }
+            }
+            LoadHDB_Cat();
 		}
 		private void ViewButton_Click(object sender, EventArgs e)
 		{
@@ -152,8 +181,19 @@ namespace Quan_Ly_Thuoc
 		}
 		private void FormHoaDonBan_FormClosed(object sender, FormClosedEventArgs e)
 		{
-			flowLayoutPanel1.Controls.Clear();
-			LoadHDB_Cat();
+			if (tabControl.TabCount == 0) return;
+			if (tabControl.SelectedTab.Text != "Danh sách hóa đơn bán") return;
+
+            foreach (Control control in tabControl.SelectedTab.Controls)
+            {
+                if (control is FlowLayoutPanel)
+                {
+                    FlowLayoutPanel flowLayoutPanel = (FlowLayoutPanel)control;
+                    flowLayoutPanel.Controls.Clear();
+                    break;
+                }
+            }
+            LoadHDB_Cat();
 		}
 		private void Form1_Load(object sender, EventArgs e)
 		{
@@ -162,20 +202,13 @@ namespace Quan_Ly_Thuoc
 			pd.Connect();
 			int cnt = (int)pd.cmd.ExecuteScalar();
 			pd.Disconnect();
-			if(cnt == 0)
-			{
-				pd.RunSQL("insert into KhachHang(MaKhach, TenKhach) values('KH001', 'None')");
-				pd.RunSQL("insert into NhanVien(MaNhanVien, TenNV) values('NV001', 'None')");
-			}
 
-			LoadHDB_Cat();
+
 			
 		}
         private void xóaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             TabPage selectedTab = tabControl.SelectedTab;
-
-            // Xóa tabpage đó khỏi tabcontrol
             tabControl.TabPages.Remove(selectedTab);
         }
 		private TabPage newTabPage(string name)
@@ -257,6 +290,20 @@ namespace Quan_Ly_Thuoc
             formNhapThuoc.ShowDialog();
         }
 
-		
-	}
+        private void hóaĐơnBánToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            string name = "Danh sách hóa đơn bán";
+            foreach (TabPage item in tabControl.TabPages)
+            {
+                if (item.Text == name)
+                {
+                    tabControl.SelectedTab = item;
+                    return;
+                }
+            }
+            //tạo tabpage mới
+            TabPage tabPage = newTabPage(name);
+			LoadHDB_Cat();
+        }
+    }
 }

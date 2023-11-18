@@ -102,11 +102,14 @@ namespace Quan_Ly_Thuoc
 			{
 				maHDB = "HDB";
 				pd.CreateCMD();
-				pd.cmd.CommandText = "Select count(*) from HoaDonBan";
+				pd.cmd.CommandText = "Select top(1) MaHDB from HoaDonBan order by MaHDB desc";
 				pd.Connect();
-				int cnt = (int)pd.cmd.ExecuteScalar() + 1;
+				int cnt = 0;
+				string ma = (string)pd.cmd.ExecuteScalar();
+				if (ma == null) cnt = 1;
+				else cnt = int.Parse(ma.Substring(3)) + 1;
+				
 				pd.Disconnect();
-
 				for (int i = 0; i < 3 - cnt.ToString().Length; i++)
 				{
 					maHDB += "0";

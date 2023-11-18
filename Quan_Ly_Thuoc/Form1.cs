@@ -181,10 +181,10 @@ namespace Quan_Ly_Thuoc
 
         private void xóaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TabPage selectedTab = tabControl1.SelectedTab;
+            TabPage selectedTab = tabControl.SelectedTab;
 
             // Xóa tabpage đó khỏi tabcontrol
-            tabControl1.TabPages.Remove(selectedTab);
+            tabControl.TabPages.Remove(selectedTab);
         }
 
 		

@@ -402,26 +402,7 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1083, 544);
             this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.ContextMenuStrip = this.contextMenuStrip1;
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1089, 548);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Danh sách thuốc";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.xóaToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(116, 36);
-            this.contextMenuStrip1.Text = "Xóa";
+            
             // 
             // xóaToolStripMenuItem
             // 

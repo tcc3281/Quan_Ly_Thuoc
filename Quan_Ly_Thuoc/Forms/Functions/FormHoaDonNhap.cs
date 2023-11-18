@@ -65,9 +65,9 @@ namespace Quan_Ly_Thuoc
             txtMaHD.Text = IDHDN();
 			dgvCTHDN.DataSource = pd.ReadTable("select * from ChiTietHDN");
 
-            DataTable dtNV = pd.ReadTable("select * from NhanVien");
-            DataTable dtNCC = pd.ReadTable("select * from NhaCungCap");
-            DataTable dtThuoc = pd.ReadTable("select * from DanhMucTHuoc");
+            DataTable dtNV = pd.ReadTable("select * from NhanVien order by tennv asc");
+            DataTable dtNCC = pd.ReadTable("select * from NhaCungCap order by TenNCC asc");
+            DataTable dtThuoc = pd.ReadTable("select * from DanhMucTHuoc order by TenThuoc asc");
 
             for (int i = 0; i < dtNV.Rows.Count; i++)
             {
@@ -163,7 +163,5 @@ namespace Quan_Ly_Thuoc
             thanhtien = sl * dongia;
             thanhtien =thanhtien * (float)((100-khuyenmai)*1.0/100);
         }
-      
-
     }
 }

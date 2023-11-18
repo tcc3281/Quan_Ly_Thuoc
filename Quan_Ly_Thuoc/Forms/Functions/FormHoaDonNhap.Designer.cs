@@ -173,6 +173,8 @@
             // 
             // cmbNCC
             // 
+            this.cmbNCC.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbNCC.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbNCC.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbNCC.FormattingEnabled = true;
             this.cmbNCC.Location = new System.Drawing.Point(180, 86);
@@ -193,6 +195,8 @@
             // 
             // cmbNVThucHien
             // 
+            this.cmbNVThucHien.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbNVThucHien.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbNVThucHien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbNVThucHien.FormattingEnabled = true;
             this.cmbNVThucHien.Location = new System.Drawing.Point(180, 44);
@@ -256,6 +260,8 @@
             // 
             // cmbThuoc
             // 
+            this.cmbThuoc.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbThuoc.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbThuoc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbThuoc.FormattingEnabled = true;
             this.cmbThuoc.Location = new System.Drawing.Point(712, 2);

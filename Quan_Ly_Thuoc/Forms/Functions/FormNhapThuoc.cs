@@ -104,10 +104,76 @@ namespace Quan_Ly_Thuoc.Forms.Function
 			String idThuoc = IDThuoc();
 			if (Validate())
 			{
-				String sql = "insert into DanhMucThuoc(MaThuoc, TenThuoc, ThanhPhan, MaDangDieuChe, " +
-						"ChongChiDinh, MaDV, MaNSX) values('" + idThuoc + "', N'" + txtMedicineName.Text + "', N'" +
-						txtIngredient.Text + "', N'" + listMDC[cmbFormMedicine.SelectedIndex] + "', N'" + txtNotRecommended.Text + "', N'" +
-						listMDV[cmbUnit.SelectedIndex] + "', N'" + listMNSX[cmbCountry.SelectedIndex] + "')";
+				//Them Dang dieu che
+				pd.CreateCMD();
+				pd.cmd.CommandText = "Select count(*) from DangDieuChe where TenDangDieuChe = N'" + cmbFormMedicine.Text + "'";
+				pd.Connect();
+				int valDDC = (int)pd.cmd.ExecuteScalar();
+				pd.Disconnect();
+				if (valDDC == 0)
+				{
+					pd.cmd.CommandText = "Select count(*) from DangDieuChe";
+					pd.Connect();
+					int cnt = (int)pd.cmd.ExecuteScalar() + 1;
+					pd.Disconnect();
+					String result = "DDC";
+					for (int i = 0; i < 3 - cnt.ToString().Length; i++)
+					{
+						result += "0";
+					}
+					result += (cnt.ToString());
+					pd.RunSQL("insert into DangDieuChe(MaDangDieuChe, TenDangDieuChe) values('" +
+						result + "', N'" + cmbFormMedicine.Text + "')");
+				}
+				//Them don vi tinh
+				pd.CreateCMD();
+				pd.cmd.CommandText = "Select count(*) from DonViTinh where TenDonViTinh = N'" + cmbUnit.Text + "'";
+				pd.Connect();
+				int valDV = (int)pd.cmd.ExecuteScalar();
+				pd.Disconnect();
+				if (valDV == 0)
+				{
+					pd.cmd.CommandText = "Select count(*) from DonViTinh";
+					pd.Connect();
+					int cnt = (int)pd.cmd.ExecuteScalar() + 1;
+					pd.Disconnect();
+					String result = "DV";
+					for (int i = 0; i < 3 - cnt.ToString().Length; i++)
+					{
+						result += "0";
+					}
+					result += (cnt.ToString());
+					pd.RunSQL("insert into DonViTinh(MaDV, TenDonViTinh) values('" +
+						result + "', N'" + cmbUnit.Text + "')");
+				}
+				//Them nuoc san xuat
+				pd.CreateCMD();
+				pd.cmd.CommandText = "Select count(*) from NuocSX where TenNSX = N'" + cmbCountry.Text + "'";
+				pd.Connect();
+				int valNSX = (int)pd.cmd.ExecuteScalar();
+				pd.Disconnect();
+				if (valNSX == 0)
+				{
+					pd.cmd.CommandText = "Select count(*) from NuocSX";
+					pd.Connect();
+					int cnt = (int)pd.cmd.ExecuteScalar() + 1;
+					pd.Disconnect();
+					String result = "NC";
+					for (int i = 0; i < 3 - cnt.ToString().Length; i++)
+					{
+						result += "0";
+					}
+					result += (cnt.ToString());
+					pd.RunSQL("insert into NuocSX(MaNSX, TenNSX) values('" +
+						result + "', N'" + cmbCountry.Text + "')");
+				}
+
+				String sql = "insert into DanhMucThuoc(MaThuoc, TenThuoc, ThanhPhan, ChongChiDinh, " +
+						"MaDangDieuChe, MaDV, MaNSX) values('" + idThuoc + "', N'" + txtMedicineName.Text + "', N'" +
+						txtIngredient.Text + "', N'" + txtNotRecommended.Text + "'," +
+						"(select MaDangDieuChe from DangDieuChe where TenDangDieuChe = N'" + cmbFormMedicine.Text + "'), " +
+						"(select MaDV from DonViTinh where TenDonViTinh = N'" + cmbUnit.Text + "'), " +
+						"(select MaNSX from NuocSX where TenNSX = N'" + cmbCountry.Text + "'))";
 				//MessageBox.Show(sql);
 				pd.RunSQL(sql);
 				this.Close();

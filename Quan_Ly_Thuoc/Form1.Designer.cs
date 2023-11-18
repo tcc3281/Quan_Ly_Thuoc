@@ -66,15 +66,12 @@
 			this.signInToolStripMenuLogin = new System.Windows.Forms.ToolStripMenuItem();
 			this.searchToolStripMenuSearch = new System.Windows.Forms.ToolStripMenuItem();
 			this.tabControl = new System.Windows.Forms.TabControl();
-			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.menuStripTabPage = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
 			this.menuStrip1.SuspendLayout();
 			this.tabControl.SuspendLayout();
-			this.tabPage1.SuspendLayout();
 			this.menuStripTabPage.SuspendLayout();
 			this.tabPage2.SuspendLayout();
 			this.SuspendLayout();
@@ -360,7 +357,6 @@
 			// 
 			// tabControl
 			// 
-			this.tabControl.Controls.Add(this.tabPage1);
 			this.tabControl.Controls.Add(this.tabPage2);
 			this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tabControl.Location = new System.Drawing.Point(0, 28);
@@ -372,16 +368,6 @@
 			// 
 			// tabPage1
 			// 
-			this.tabPage1.ContextMenuStrip = this.menuStripTabPage;
-			this.tabPage1.Controls.Add(this.flowLayoutPanel1);
-			this.tabPage1.Location = new System.Drawing.Point(4, 25);
-			this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-			this.tabPage1.Name = "tabPage1";
-			this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-			this.tabPage1.Size = new System.Drawing.Size(967, 432);
-			this.tabPage1.TabIndex = 0;
-			this.tabPage1.Text = "Danh sách hóa đơn bán";
-			this.tabPage1.UseVisualStyleBackColor = true;
 			// 
 			// menuStripTabPage
 			// 
@@ -401,11 +387,6 @@
 			// 
 			// flowLayoutPanel1
 			// 
-			this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 2);
-			this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-			this.flowLayoutPanel1.Size = new System.Drawing.Size(961, 428);
-			this.flowLayoutPanel1.TabIndex = 0;
 			// 
 			// tabPage2
 			// 
@@ -442,7 +423,6 @@
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
 			this.tabControl.ResumeLayout(false);
-			this.tabPage1.ResumeLayout(false);
 			this.menuStripTabPage.ResumeLayout(false);
 			this.tabPage2.ResumeLayout(false);
 			this.ResumeLayout(false);

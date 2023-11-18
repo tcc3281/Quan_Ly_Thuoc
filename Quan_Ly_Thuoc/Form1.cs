@@ -241,7 +241,7 @@ namespace Quan_Ly_Thuoc
 			int cnt = (int)pd.cmd.ExecuteScalar();
 			pd.Disconnect();
 
-
+			LoadHDN();
 			
 		}
         private void xóaToolStripMenuItem_Click(object sender, EventArgs e)

@@ -164,8 +164,8 @@ namespace Quan_Ly_Thuoc
 			pd.Disconnect();
 			if(cnt == 0)
 			{
-				pd.RunSQL("insert into KhachHang(MaKhach, TenKhach) values('KH001', 'None')");
-				pd.RunSQL("insert into NhanVien(MaNhanVien, TenNV) values('NV001', 'None')");
+				pd.RunSQL("insert into KhachHang(MaKhach, TenKhach) values('KH000', 'None')");
+				pd.RunSQL("insert into NhanVien(MaNhanVien, TenNV) values('NV000', 'None')");
 			}
 
 			LoadHDB_Cat();

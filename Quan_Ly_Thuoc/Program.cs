@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Quan_Ly_Thuoc.Forms.Function;
+using Quan_Ly_Thuoc.Forms.Search;
 using Quan_Ly_Thuoc.Forms.Functions;
 using Quan_Ly_Thuoc.Model;
 

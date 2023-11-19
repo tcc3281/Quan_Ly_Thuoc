@@ -15,10 +15,10 @@ namespace Quan_Ly_Thuoc.Forms.Function
 	public partial class FormNhapThuoc : Form
 	{
 		ProcessDatabase pd = new ProcessDatabase();
-		List<string> listMDC= new List<string>();
-		List<string> listMNSX= new List<string>();
-		List<string> listMDV= new List<string>();
-		List<string> listCongdungShow = new List<string>();
+		DataTable dtUnit;
+		DataTable dtCountry;
+		DataTable dtFormMedicine;
+		DataTable dtCongdung;
 		List<string> listCongdungSelected = new List<string>();
 		public FormNhapThuoc()
 		{
@@ -43,33 +43,29 @@ namespace Quan_Ly_Thuoc.Forms.Function
 
 		private void Loadcmb()
 		{
-			DataTable dtUnit = pd.ReadTable("Select * from DonViTinh");
-			DataTable dtCountry = pd.ReadTable("Select * from NuocSX");
-			DataTable dtFormMedicine = pd.ReadTable("Select * from DangDieuChe");
-			DataTable dtCongdung = pd.ReadTable("select * from CongDung");
+			dtUnit = pd.ReadTable("Select * from DonViTinh");
+			dtCountry = pd.ReadTable("Select * from NuocSX");
+			dtFormMedicine = pd.ReadTable("Select * from DangDieuChe");
+			dtCongdung = pd.ReadTable("select * from CongDung");
 
 			for (int i = 0; i < dtUnit.Rows.Count; i++)
 			{
                 this.cmbUnit.Items.Add(dtUnit.Rows[i]["TenDonViTinh"]);
-				listMDV.Add(dtUnit.Rows[i]["MaDV"].ToString());
             }
 
             for (int i = 0; i < dtCountry.Rows.Count; i++)
 			{
                 this.cmbCountry.Items.Add(dtCountry.Rows[i]["TenNSX"]);
-				listMNSX.Add(dtCountry.Rows[i]["MaNSX"].ToString());
 
             }
 
             for (int i = 0; i < dtFormMedicine.Rows.Count; i++)
 			{
                 this.cmbFormMedicine.Items.Add(dtFormMedicine.Rows[i]["TenDangDieuChe"]);
-				listMDC.Add(dtFormMedicine.Rows[i]["MaDangDieuChe"].ToString());
             }
 			for(int i=0;i<dtCongdung.Rows.Count;i++)
 			{
 				this.cmbFunction.Items.Add(dtCongdung.Rows[i]["TenCongDung"]);
-				listCongdungShow.Add(dtCongdung.Rows[i]["MaCongDung"].ToString());
 			}
         }
 
@@ -131,7 +127,6 @@ namespace Quan_Ly_Thuoc.Forms.Function
 				sql+= s;
 			}
 			sql=sql.Remove(sql.Length - 1, 1);
-			txtIngredient.Text = sql;
 			pd.RunSQL(sql);
 		}
 		private void buttonAdd_Click(object sender, EventArgs e)
@@ -217,10 +212,6 @@ namespace Quan_Ly_Thuoc.Forms.Function
 			}
 		}
 
-        private void cmbFormMedicine_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 		public void setAdd()
 		{
 			btnUpdate.Enabled = false;
@@ -228,47 +219,111 @@ namespace Quan_Ly_Thuoc.Forms.Function
         public void setUpdate()
         {
             btnAdd.Enabled = false;
-			txtMedicineCode.ReadOnly = false;
+			txtMedicineCode.ReadOnly=false;
         }
 
         private void btnAddFunction_Click(object sender, EventArgs e)
         {
-			if (listCongdungSelected.Contains(listCongdungShow[cmbFunction.SelectedIndex]))
+			if (listCongdungSelected.Contains(dtCongdung.Rows[cmbFunction.SelectedIndex]["MaCongDung"].ToString()))
 			{
-				MessageBox.Show("Bạn đã thêm chức năng này!");
+				MessageBox.Show("Bạn đã thêm công dụng này!");
 				return;
 			}
 			listBoxFunction.Items.Add(cmbFunction.SelectedItem.ToString());
-			listCongdungSelected.Add(listCongdungShow[cmbFunction.SelectedIndex].ToString());
+			listCongdungSelected.Add(dtCongdung.Rows[cmbFunction.SelectedIndex]["MaCongDung"].ToString());
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btnRemove_Click(object sender, EventArgs e)
         {
-			int select=listBoxFunction.SelectedIndex;
-			MessageBox.Show(select.ToString());
-			if (select < 0)
-			{
-				MessageBox.Show("Hãy chọn công dụng muốn xóa");
-			}
-			else
-			{
-				listBoxFunction.Items.RemoveAt(select);
-				listCongdungSelected.RemoveAt(select);
-			}
+            int select = listBoxFunction.SelectedIndex;
+            MessageBox.Show(select.ToString());
+            if (select < 0)
+            {
+                MessageBox.Show("Hãy chọn công dụng muốn xóa");
+            }
+            else
+            {
+                listBoxFunction.Items.RemoveAt(select);
+                listCongdungSelected.RemoveAt(select);
+            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
+			string sql = "update DanhMucThuoc\r\nset TenThuoc=N'" + txtMedicineName.Text
+				+ "',\r\n\tThanhPhan=N'" + txtIngredient.Text
+				+ "',\r\n\tChongChiDinh=N'" + txtNotRecommended.Text
+				+ "',\r\n\tMaDangDieuChe='" + dtFormMedicine.Rows[cmbFormMedicine.SelectedIndex]["MaDangDieuChe"].ToString()
+				+ "',\r\n\tMaDV='" + dtUnit.Rows[cmbUnit.SelectedIndex]["MaDV"]
+				+ "',\r\n\tMaNSX='" + dtCountry.Rows[cmbCountry.SelectedIndex]["MaNSX"] 
+				+"',\r\n\tNgaySX='"+txtDNSX.Text+"',\r\n\tHanSD='"+txtHSD.Text+"'"+
+				"where MaThuoc='"+ txtMedicineCode.Text + "'";
+			try
+			{
+                pd.RunSQL(sql);
+                pd.RunSQL("delete from Thuoc_CongDung where MaThuoc='" + txtMedicineCode.Text + "'");
+                insertCongDung();
+				MessageBox.Show("Đã cập nhật thành công!");
+			}
+			catch
+			{
+				MessageBox.Show("Lỗi!");
+			}
+			Close();
         }
+
+		public void show_medicine(string name)
+		{
+            DataTable table = pd.ReadTable("select a.MaThuoc,a.TenThuoc,a.ThanhPhan,a.NgaySX,a.HanSD,a.ChongChiDinh,d.TenNSX,b.TenDangDieuChe,c.TenDonViTinh,f.MaCongDung,f.TenCongDung\r\nfrom DanhMucThuoc a join DangDieuChe b on a.MaDangDieuChe=b.MaDangDieuChe\r\n\t\tjoin DonViTinh c on a.MaDV=c.MaDV\r\n\t\tjoin NuocSX d on a.MaNSX=d.MaNSX\r\n\t\tjoin Thuoc_CongDung e on a.MaThuoc=e.MaThuoc\r\n\t\tjoin CongDung f on e.MaCongDung=f.MaCongDung\r\nwhere a.TenThuoc = '"+name+"'\r\n");
+			txtMedicineName.Text = table.Rows[0]["TenThuoc"].ToString();
+            txtIngredient.Text = table.Rows[0]["ThanhPhan"].ToString();
+            txtNotRecommended.Text = table.Rows[0]["ChongChiDinh"].ToString();
+			txtDNSX.Text = table.Rows[0]["NgaySX"].ToString();
+			txtHSD.Text = table.Rows[0]["HanSD"].ToString();
+			for(int i=0;i<dtFormMedicine.Rows.Count;i++)
+			{
+				if (dtFormMedicine.Rows[i]["TenDangDieuChe"].ToString() == table.Rows[0]["TenDangDieuChe"].ToString())
+				{
+					cmbFormMedicine.SelectedIndex = i;
+					break;
+				}
+			}
+            for (int i = 0; i < dtCountry.Rows.Count; i++)
+            {
+                if (dtCountry.Rows[i]["TenNSX"].ToString() == table.Rows[0]["TenNSX"].ToString())
+                {
+                    cmbCountry.SelectedIndex = i;
+                    break;
+                }
+            }
+            for (int i = 0; i < dtUnit.Rows.Count; i++)
+            {
+                if (dtUnit.Rows[i]["TenDonViTinh"].ToString() == table.Rows[0]["TenDonViTinh"].ToString())
+                {
+                    cmbUnit.SelectedIndex = i;
+                    break;
+                }
+            }
+			//add cong dung
+			for(int i=0;i<table.Rows.Count;i++)
+			{
+				listBoxFunction.Items.Add(table.Rows[i]["TenCongDung"]);
+				listCongdungSelected.Add(table.Rows[i]["MaCongDung"].ToString());
+			}
+        }
+		public void setView()
+		{
+			btnAdd.Enabled=false;
+			btnRemoveFunction.Enabled=false;
+			btnClear.Enabled=false;
+			btnAddFunction.Enabled=false;
+			btnUpdate.Enabled=false;
+		}
 
         private void txtMedicineCode_Leave(object sender, EventArgs e)
         {
-			string code = txtMedicineCode.Text;
-			DataTable table = pd.ReadTable("select * from danhmucthuoc where MaThuoc='" + code+"'");
-			txtMedicineName.Text = table.Rows[0]["TenThuoc"].ToString();
-			txtIngredient.Text = table.Rows[0]["ThanhPhan"].ToString();
-			txtNotRecommended.Text = table.Rows[0]["ChongChiDinh"].ToString();
+            listBoxFunction.Items.Clear();
+            string name = pd.ReadTable("select TenThuoc from DanhMucThuoc where MaThuoc='" + txtMedicineCode.Text + "'").Rows[0]["TenThuoc"].ToString();
+			show_medicine(name);
         }
     }
 }

@@ -343,5 +343,6 @@ namespace Quan_Ly_Thuoc
             TabPage tabPage = newTabPage(name);
 			LoadHDB_Cat();
         }
+
     }
 }

@@ -52,7 +52,7 @@
             this.btnAddFunction = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.listBoxFunction = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnRemoveFunction = new System.Windows.Forms.Button();
             this.txtHSD = new System.Windows.Forms.DateTimePicker();
             this.labelHSD = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -128,6 +128,7 @@
             // 
             // txtIngredient
             // 
+            this.txtIngredient.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIngredient.Location = new System.Drawing.Point(198, 172);
             this.txtIngredient.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtIngredient.Name = "txtIngredient";
@@ -197,7 +198,6 @@
             this.cmbFormMedicine.Name = "cmbFormMedicine";
             this.cmbFormMedicine.Size = new System.Drawing.Size(317, 28);
             this.cmbFormMedicine.TabIndex = 10;
-            this.cmbFormMedicine.SelectedIndexChanged += new System.EventHandler(this.cmbFormMedicine_SelectedIndexChanged);
             // 
             // txtDNSX
             // 
@@ -305,16 +305,16 @@
             this.listBoxFunction.Size = new System.Drawing.Size(394, 235);
             this.listBoxFunction.TabIndex = 0;
             // 
-            // button1
+            // btnRemoveFunction
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(603, 480);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(190, 52);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Xóa chức năng";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnRemoveFunction.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveFunction.Location = new System.Drawing.Point(603, 480);
+            this.btnRemoveFunction.Name = "btnRemoveFunction";
+            this.btnRemoveFunction.Size = new System.Drawing.Size(190, 52);
+            this.btnRemoveFunction.TabIndex = 17;
+            this.btnRemoveFunction.Text = "Xóa chức năng";
+            this.btnRemoveFunction.UseVisualStyleBackColor = true;
+            this.btnRemoveFunction.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // txtHSD
             // 
@@ -341,7 +341,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1006, 622);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnRemoveFunction);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnAddFunction);
             this.Controls.Add(this.btnUpdate);
@@ -404,7 +404,7 @@
         private System.Windows.Forms.Button btnAddFunction;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ListBox listBoxFunction;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnRemoveFunction;
         private System.Windows.Forms.DateTimePicker txtHSD;
         private System.Windows.Forms.Label labelHSD;
     }

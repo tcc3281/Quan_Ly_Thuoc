@@ -42,7 +42,6 @@ namespace Quan_Ly_Thuoc
 			cmbKH.Text = "None";
 			cmbNV.Text = "None";
 		}
-
 		private void CreateHDB(int TrangThai)
 		{
 			float tien = ThanhTien();

@@ -14,12 +14,12 @@ using Quan_Ly_Thuoc.Forms.Login;
 using Quan_Ly_Thuoc.Forms.Search;
 namespace Quan_Ly_Thuoc
 {
-	public partial class Form1 : Form
+	public partial class QL_Thuoc : Form
 	{
 		ProcessDatabase pd = new ProcessDatabase();
 		internal static bool addThuoc = true;
 		List<TabPage> tabs = new List<TabPage>();
-		public Form1()
+		public QL_Thuoc()
 		{
 			InitializeComponent();
 		}
@@ -433,7 +433,6 @@ namespace Quan_Ly_Thuoc
         {
 			add_tabpage_HDN();
         }
-
         private void hóaĐơnBánToolStripMenuItem2_Click(object sender, EventArgs e)
         {
 			FormSearchHDN form = new FormSearchHDN(this);

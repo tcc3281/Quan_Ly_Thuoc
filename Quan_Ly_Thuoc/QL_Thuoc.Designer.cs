@@ -1,6 +1,6 @@
 ﻿namespace Quan_Ly_Thuoc
 {
-    partial class Form1
+    partial class QL_Thuoc
     {
         /// <summary>
         /// Required designer variable.

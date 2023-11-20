@@ -135,6 +135,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmb_staff);
             this.Controls.Add(this.cmb_Medicine);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormSearchHDN";
             this.Text = "Tìm kiếm hóa đơn nhập";
             this.Load += new System.EventHandler(this.FormSearchHDN_Load);

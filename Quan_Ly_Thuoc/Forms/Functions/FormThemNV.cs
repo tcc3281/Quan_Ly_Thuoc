@@ -23,9 +23,10 @@ namespace Quan_Ly_Thuoc.Forms.Functions
 		private string IDNV()
 		{
 			pd.CreateCMD();
-			pd.cmd.CommandText = "Select count(*) from NhanVien";
+			pd.cmd.CommandText = "Select top(1) MaNhanVien from NhanVien order by MaNhanVien";
 			pd.Connect();
-			int cnt = (int)pd.cmd.ExecuteScalar() + 1;
+			string s = (string)pd.cmd.ExecuteScalar();
+			int cnt = int.Parse(s.Substring(2)) + 1;
 			pd.Disconnect();
 
 			String result = "NV";

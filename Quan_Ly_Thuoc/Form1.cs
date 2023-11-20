@@ -153,9 +153,32 @@ namespace Quan_Ly_Thuoc
 			
 		}
 		//load tabpage hdn
-		private void LoadHDN()
+		private void LoadHDN(string medicine = "", string staff = "", string producer = "")
 		{
-			DataTable dtHDN = pd.ReadTable("SELECT * FROM HoaDonNhap");
+			const string string_empty = "";
+			string sql = "select distinct a.MaHDN,a.MaNhanVien,a.MaNCC,a.NgayNhap,a.TongTien from HoaDonNhap a join ChiTIetHDN b on a.MaHDN=b.MaHDN ";
+			int res = 0;
+			if (producer != string_empty)
+			{
+				sql += "where ";
+				sql += "a.MaNCC= N'" + producer  + "'";
+				res++;
+			}
+            if (staff != string_empty)
+            {
+				if (res > 0) sql += " and ";
+				else sql += "where ";
+                sql += "a.MaNhanVien= N'" + staff + "'";
+                res++;
+            }
+            if (medicine != string_empty)
+            {
+				if (res > 0) sql += " and ";
+				else sql += "where ";
+                sql += "b.MaThuoc= N'" + medicine + "'";
+            }
+
+            DataTable dtHDN = pd.ReadTable(sql);
             FlowLayoutPanel flowLayoutPanel = new FlowLayoutPanel();
             bool flag = true;
             foreach (var item in tabControl.SelectedTab.Controls)
@@ -384,20 +407,21 @@ namespace Quan_Ly_Thuoc
             TabPage tabPage = newTabPage(name);
 			LoadHDB_Cat();
         }
-        private void add_tabpage_HDN()
+        public void add_tabpage_HDN(string medicine="", string staff = "", string producer = "")
         {
             string name = "Danh sách hóa đơn nhập";
+			bool flag = true;
             foreach (TabPage item in tabControl.TabPages)
             {
                 if (item.Text == name)
                 {
                     tabControl.SelectedTab = item;
-                    return;
+					flag=false;
+					break;
                 }
             }
-            //tạo tabpage mới
-            TabPage tabPage = newTabPage(name);
-            LoadHDN();
+			if (flag) newTabPage(name);
+            LoadHDN(medicine,staff,producer);
         }
         private void thuốcToolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -408,6 +432,12 @@ namespace Quan_Ly_Thuoc
         private void billToolStripMenuItem1_Click(object sender, EventArgs e)
         {
 			add_tabpage_HDN();
+        }
+
+        private void hóaĐơnBánToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+			FormSearchHDN form = new FormSearchHDN(this);
+			form.ShowDialog();
         }
     }
 }

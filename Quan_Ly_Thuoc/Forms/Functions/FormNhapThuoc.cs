@@ -1,13 +1,7 @@
 ﻿using Quan_Ly_Thuoc.Data;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Quan_Ly_Thuoc.Forms.Function
@@ -26,12 +20,10 @@ namespace Quan_Ly_Thuoc.Forms.Function
             Loadcmb();
             IDThuoc();
         }
-		//reset lại dữ liệu đã nhập trong form
 		private void buttonClear_Click(object sender, EventArgs e)
 		{
 			clear();
 		}
-
 		private void clear()
 		{
 			txtMedicineName.Text = string.Empty;
@@ -42,7 +34,6 @@ namespace Quan_Ly_Thuoc.Forms.Function
 			cmbUnit.Text = string.Empty;
 			cmbFunction.Text=string.Empty;
 		}
-
 		private void Loadcmb()
 		{
 			dtUnit = pd.ReadTable("Select * from DonViTinh");
@@ -70,12 +61,10 @@ namespace Quan_Ly_Thuoc.Forms.Function
 				this.cmbFunction.Items.Add(dtCongdung.Rows[i]["TenCongDung"]);
 			}
         }
-
 		private void FormNhapThuoc_Load(object sender, EventArgs e)
 		{
 			Loadcmb();
 		}
-
 		private string IDThuoc()
 		{
 			pd.CreateCMD();
@@ -116,7 +105,6 @@ namespace Quan_Ly_Thuoc.Forms.Function
 
 			return true;
 		}
-
 		private void insertCongDung()
 		{
 			string sql = "insert Thuoc_CongDung (MaThuoc,MaCongDung) values ";
@@ -212,7 +200,6 @@ namespace Quan_Ly_Thuoc.Forms.Function
 				this.Close();
 			}
 		}
-
 		public void setAdd()
 		{
 			btnUpdate.Enabled = false;
@@ -222,7 +209,6 @@ namespace Quan_Ly_Thuoc.Forms.Function
             btnAdd.Enabled = false;
 			txtMedicineCode.ReadOnly=false;
         }
-
         private void btnAddFunction_Click(object sender, EventArgs e)
         {
 			if (listCongdungSelected.Contains(dtCongdung.Rows[cmbFunction.SelectedIndex]["MaCongDung"].ToString()))
@@ -247,7 +233,6 @@ namespace Quan_Ly_Thuoc.Forms.Function
                 listCongdungSelected.RemoveAt(select);
             }
         }
-
         private void btnUpdate_Click(object sender, EventArgs e)
         {
 			string sql = "update DanhMucThuoc\r\nset TenThuoc=N'" + txtMedicineName.Text
@@ -271,7 +256,6 @@ namespace Quan_Ly_Thuoc.Forms.Function
 			}
 			Close();
         }
-
 		public void show_medicine(string name)
 		{
             DataTable table = pd.ReadTable("select a.MaThuoc,a.TenThuoc,a.ThanhPhan,a.NgaySX,a.HanSD,a.ChongChiDinh,d.TenNSX,b.TenDangDieuChe,c.TenDonViTinh,f.MaCongDung,f.TenCongDung\r\nfrom DanhMucThuoc a join DangDieuChe b on a.MaDangDieuChe=b.MaDangDieuChe\r\n\t\tjoin DonViTinh c on a.MaDV=c.MaDV\r\n\t\tjoin NuocSX d on a.MaNSX=d.MaNSX\r\n\t\tjoin Thuoc_CongDung e on a.MaThuoc=e.MaThuoc\r\n\t\tjoin CongDung f on e.MaCongDung=f.MaCongDung\r\nwhere a.TenThuoc = '"+name+"'\r\n");
@@ -320,7 +304,6 @@ namespace Quan_Ly_Thuoc.Forms.Function
 			btnAddFunction.Enabled=false;
 			btnUpdate.Enabled=false;
 		}
-
         private void txtMedicineCode_Leave(object sender, EventArgs e)
         {
             listBoxFunction.Items.Clear();

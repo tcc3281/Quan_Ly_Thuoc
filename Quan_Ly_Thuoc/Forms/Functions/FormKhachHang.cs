@@ -1,14 +1,7 @@
 ﻿using Quan_Ly_Thuoc.Data;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Quan_Ly_Thuoc.Forms.Functions
 {
@@ -19,12 +12,10 @@ namespace Quan_Ly_Thuoc.Forms.Functions
         {
             InitializeComponent();
         }
-
         private void FormKhachHang_Load(object sender, EventArgs e)
         {
             txtMaKH.Text = IDKH();
         }
-
 		private string IDKH()
 		{
 			pd.CreateCMD();
@@ -42,7 +33,6 @@ namespace Quan_Ly_Thuoc.Forms.Functions
 			result += (cnt.ToString());
 			return result;
 		}
-
 		private void btnImortImg_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -59,7 +49,6 @@ namespace Quan_Ly_Thuoc.Forms.Functions
                 ImgUser.Image = image;
             }
         }
-
         private bool Validate()
         {
             if (txtTenKH.Text.Trim() == "" || txtSDT.Text.Trim() == "")
@@ -68,7 +57,6 @@ namespace Quan_Ly_Thuoc.Forms.Functions
             }
             return true;
         }
-
 		private void btnLuu_Click(object sender, EventArgs e)
 		{
             if (Validate())
@@ -85,7 +73,6 @@ namespace Quan_Ly_Thuoc.Forms.Functions
                 MessageBox.Show("Cần điền tên và số điện thoại khách hàng.", "Thông báo");
             }
 		}
-
 		private void btnHuy_Click(object sender, EventArgs e)
 		{
             this.Close();

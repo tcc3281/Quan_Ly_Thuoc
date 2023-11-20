@@ -1,12 +1,6 @@
 ﻿using Quan_Ly_Thuoc.Data;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Quan_Ly_Thuoc.Forms.Search
@@ -24,7 +18,6 @@ namespace Quan_Ly_Thuoc.Forms.Search
             loadData();
             this.form = form;
         }
-
         private void FormSearchHDN_Load(object sender, EventArgs e)
         {
         }
@@ -46,7 +39,6 @@ namespace Quan_Ly_Thuoc.Forms.Search
                 cmb_producer.Items.Add(tableNCC.Rows[i]["TenNCC"].ToString());
             }
         }
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
             search(

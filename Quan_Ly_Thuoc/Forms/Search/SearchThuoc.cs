@@ -1,16 +1,10 @@
-﻿using BTL;
-using Quan_Ly_Thuoc.Data;
+﻿using Quan_Ly_Thuoc.Data;
 using Quan_Ly_Thuoc.Forms.Function;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace Quan_Ly_Thuoc.Forms.Search
 {
@@ -54,7 +48,6 @@ namespace Quan_Ly_Thuoc.Forms.Search
                 lName.Add(tableThuoc.Rows[i]["TenThuoc"].ToString().ToLower());
             }
         }
-
         private void listBoxName_DoubleClick(object sender, EventArgs e)
         {
             FormNhapThuoc form = new FormNhapThuoc();
@@ -62,7 +55,6 @@ namespace Quan_Ly_Thuoc.Forms.Search
             form.setView();
             form.ShowDialog();
         }
-
         private void btn_search_function_Click(object sender, EventArgs e)
         {
             listBoxFunction.Items.Clear();
@@ -77,7 +69,6 @@ namespace Quan_Ly_Thuoc.Forms.Search
                 listBoxFunction.Items.Add(tableThuoc.Rows[i]["TenThuoc"].ToString());
             }
         }
-
         private void listBoxFunction_DoubleClick(object sender, EventArgs e)
         {
             FormNhapThuoc form = new FormNhapThuoc();
@@ -85,7 +76,6 @@ namespace Quan_Ly_Thuoc.Forms.Search
             form.setView();
             form.ShowDialog();
         }
-
         private void btn_search_ingredient_Click(object sender, EventArgs e)
         {
             listBoxIngredient.Items.Clear();
@@ -100,7 +90,6 @@ namespace Quan_Ly_Thuoc.Forms.Search
                 listBoxIngredient.Items.Add(tableThuoc.Rows[i]["TenThuoc"].ToString());
             }
         }
-
         private void listBoxIngredient_DoubleClick(object sender, EventArgs e)
         {
             FormNhapThuoc form = new FormNhapThuoc();
@@ -108,7 +97,6 @@ namespace Quan_Ly_Thuoc.Forms.Search
             form.setView();
             form.ShowDialog();
         }
-
         private void Search_Load(object sender, EventArgs e)
         {
             Search_Name("");
@@ -116,7 +104,6 @@ namespace Quan_Ly_Thuoc.Forms.Search
             Search_Ingredient("");
 			txt_search_name.TextChanged += txt_search_name_TextChanged;
         }
-
 		private void txt_search_name_TextChanged(object sender, EventArgs e)
 		{
 			var newList = new List<string>(lName.Cast<string>());

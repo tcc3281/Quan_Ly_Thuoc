@@ -13,14 +13,12 @@ namespace Quan_Ly_Thuoc
 		List<string> listMNCC = new List<string>();
 		List<string> listThuoc = new List<string>();
 		List<ChiTietHDN> dsCTHD = new List<ChiTietHDN>();
-
 		String maHDN = "";
 		public FormHoaDonNhap(string maHDN)
 		{
 			InitializeComponent();
 			this.maHDN = maHDN;
 		}
-
 		private string IDHDN()
 		{
 			pd.CreateCMD();
@@ -38,7 +36,6 @@ namespace Quan_Ly_Thuoc
 			result += (cnt.ToString());
 			return result;
 		}
-
 		private void FormHoaDonNhap_Load(object sender, EventArgs e)
 		{
 			DataTable dtNV = pd.ReadTable("select * from NhanVien order by tennv asc");
@@ -136,8 +133,6 @@ namespace Quan_Ly_Thuoc
 			}
 			txtThanhTienHDN.Text = sum.ToString();
 		}
-
-
 		private void txtDonGia_KeyPress(object sender, KeyPressEventArgs e)
 		{
 			if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
@@ -145,8 +140,6 @@ namespace Quan_Ly_Thuoc
 				e.Handled = true;
 			}
 		}
-
-
 		private void btnIn_Click(object sender, EventArgs e)
 		{
 			//them hoa don nhap
@@ -224,7 +217,6 @@ namespace Quan_Ly_Thuoc
 
 			TongTien();
 		}
-
 		private void btnSua_Click(object sender, EventArgs e)
 		{
 			int index = listViewThuoc.SelectedItems[0].Index;

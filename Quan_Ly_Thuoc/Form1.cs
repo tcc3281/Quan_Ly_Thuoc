@@ -19,54 +19,55 @@ namespace Quan_Ly_Thuoc
 		ProcessDatabase pd = new ProcessDatabase();
 		internal static bool addThuoc = true;
 		List<TabPage> tabs = new List<TabPage>();
-
 		public Form1()
 		{
 			InitializeComponent();
 		}
+		//show login
 		private void signInToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Login login = new Login();
 			login.ShowDialog();
 		}
-		private void searchToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			Search search = new Search();
-			search.ShowDialog();
-		}
+		//show form hdb
 		private void hóaĐơnBánToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			FormHoaDonBan hoaDon = new FormHoaDonBan("");
 			hoaDon.FormClosed += FormHoaDonBan_FormClosed;
 			hoaDon.ShowDialog();
 		}
+		//show form thuoc
 		private void thuỗToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			FormNhapThuoc formNhapThuoc = new FormNhapThuoc();
 			formNhapThuoc.setAdd();
             formNhapThuoc.ShowDialog();
 		}
+		//show form hdn
 		private void hóaĐơnNhậpToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			FormHoaDonNhap hoaDon = new FormHoaDonNhap();
 			hoaDon.ShowDialog();
 		}
+		//show form nhan vien
 		private void nhânViênToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			FormThemNV nv = new FormThemNV();
 			nv.ShowDialog();
 		}
+		//show form nha cung cap
 		private void nhàCungCấpToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			FormNhaCungCap ncc = new FormNhaCungCap();
 			ncc.ShowDialog();
 		}
-
+		//show form khach hang
 		private void kháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			FormKhachHang kh = new FormKhachHang();
 			kh.ShowDialog();
 		}
+		//load tabpage hd b
 		private void LoadHDB_Cat()
 		{
 			DataTable dtHDB = pd.ReadTable("SELECT * FROM HoaDonBan");
@@ -150,11 +151,25 @@ namespace Quan_Ly_Thuoc
 			}
 			
 		}
-
+		//load tabpage hdn
 		private void LoadHDN()
 		{
 			DataTable dtHDN = pd.ReadTable("SELECT * FROM HoaDonNhap");
-			for(int i = 0; i < dtHDN.Rows.Count; i++)
+            FlowLayoutPanel flowLayoutPanel = new FlowLayoutPanel();
+            bool flag = true;
+            foreach (var item in tabControl.SelectedTab.Controls)
+            {
+                if (item is FlowLayoutPanel)
+                {
+                    flowLayoutPanel = (FlowLayoutPanel)item;
+                    flowLayoutPanel.Controls.Clear();
+                    flag = false;
+                    break;
+                }
+                else break;
+            }
+
+            for (int i = 0; i < dtHDN.Rows.Count; i++)
 			{
 				Panel panel = new Panel();
 				panel.BorderStyle = BorderStyle.FixedSingle; // Để có viền
@@ -185,11 +200,18 @@ namespace Quan_Ly_Thuoc
 				panel.Controls.Add(lblTongTien);
 				panel.Controls.Add(viewButton);
 
-				flowLayoutPanel2.Controls.Add(panel);
+				flowLayoutPanel.Controls.Add(panel);
 			}
-		}
-
-		private void CancelButton_Click(object sender, EventArgs e)
+            var tabPage = tabControl.SelectedTab;
+            if (flag == true)//chua co
+            {
+                flowLayoutPanel.Dock = DockStyle.Fill;
+                tabPage.Controls.Add(flowLayoutPanel);
+                flowLayoutPanel.AutoScroll = true;
+            }
+        }
+		
+        private void CancelButton_Click(object sender, EventArgs e)
 		{
 			string maHDB = (string)((Button)sender).Tag;
 			pd.CreateCMD();
@@ -240,8 +262,6 @@ namespace Quan_Ly_Thuoc
 			pd.Connect();
 			int cnt = (int)pd.cmd.ExecuteScalar();
 			pd.Disconnect();
-
-			LoadHDN();
 			
 		}
         private void xóaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -302,7 +322,7 @@ namespace Quan_Ly_Thuoc
 
         private void staffToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string name = "Danh sách NhanVien";
+            string name = "Danh sách Nhân viên";
             foreach (TabPage item in tabControl.TabPages)
             {
                 if (item.Text == name)
@@ -343,6 +363,30 @@ namespace Quan_Ly_Thuoc
             TabPage tabPage = newTabPage(name);
 			LoadHDB_Cat();
         }
+        private void add_tabpage_HDN()
+        {
+            string name = "Danh sách hóa đơn nhập";
+            foreach (TabPage item in tabControl.TabPages)
+            {
+                if (item.Text == name)
+                {
+                    tabControl.SelectedTab = item;
+                    return;
+                }
+            }
+            //tạo tabpage mới
+            TabPage tabPage = newTabPage(name);
+            LoadHDN();
+        }
+        private void thuốcToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            SearchThuoc search = new SearchThuoc();
+            search.ShowDialog();
+        }
 
+        private void billToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+			add_tabpage_HDN();
+        }
     }
 }

@@ -23,7 +23,9 @@ namespace Quan_Ly_Thuoc.Forms.Function
 		public FormNhapThuoc()
 		{
 			InitializeComponent();
-		}
+            Loadcmb();
+            IDThuoc();
+        }
 		//reset lại dữ liệu đã nhập trong form
 		private void buttonClear_Click(object sender, EventArgs e)
 		{
@@ -72,7 +74,6 @@ namespace Quan_Ly_Thuoc.Forms.Function
 		private void FormNhapThuoc_Load(object sender, EventArgs e)
 		{
 			Loadcmb();
-			IDThuoc();
 		}
 
 		private string IDThuoc()
@@ -274,6 +275,7 @@ namespace Quan_Ly_Thuoc.Forms.Function
 		public void show_medicine(string name)
 		{
             DataTable table = pd.ReadTable("select a.MaThuoc,a.TenThuoc,a.ThanhPhan,a.NgaySX,a.HanSD,a.ChongChiDinh,d.TenNSX,b.TenDangDieuChe,c.TenDonViTinh,f.MaCongDung,f.TenCongDung\r\nfrom DanhMucThuoc a join DangDieuChe b on a.MaDangDieuChe=b.MaDangDieuChe\r\n\t\tjoin DonViTinh c on a.MaDV=c.MaDV\r\n\t\tjoin NuocSX d on a.MaNSX=d.MaNSX\r\n\t\tjoin Thuoc_CongDung e on a.MaThuoc=e.MaThuoc\r\n\t\tjoin CongDung f on e.MaCongDung=f.MaCongDung\r\nwhere a.TenThuoc = '"+name+"'\r\n");
+			txtMedicineCode.Text = table.Rows[0]["MaThuoc"].ToString();
 			txtMedicineName.Text = table.Rows[0]["TenThuoc"].ToString();
             txtIngredient.Text = table.Rows[0]["ThanhPhan"].ToString();
             txtNotRecommended.Text = table.Rows[0]["ChongChiDinh"].ToString();

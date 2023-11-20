@@ -84,11 +84,11 @@
     <Compile Include="Forms\Login\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Search\Search.cs">
+    <Compile Include="Forms\Search\SearchThuoc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Search\Search.Designer.cs">
-      <DependentUpon>Search.cs</DependentUpon>
+    <Compile Include="Forms\Search\SearchThuoc.Designer.cs">
+      <DependentUpon>SearchThuoc.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Functions\FormHoaDonBan.cs">
       <SubType>Form</SubType>
@@ -135,8 +135,8 @@
     <EmbeddedResource Include="Forms\Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Search\Search.resx">
-      <DependentUpon>Search.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Search\SearchThuoc.resx">
+      <DependentUpon>SearchThuoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Functions\FormHoaDonBan.resx">
       <DependentUpon>FormHoaDonBan.cs</DependentUpon>

@@ -1,6 +1,6 @@
 ﻿namespace Quan_Ly_Thuoc.Forms.Search
 {
-    partial class Search
+    partial class SearchThuoc
     {
         /// <summary>
         /// Required designer variable.
@@ -309,15 +309,15 @@
             this.listBoxIngredient.TabIndex = 0;
             this.listBoxIngredient.DoubleClick += new System.EventHandler(this.listBoxIngredient_DoubleClick);
             // 
-            // Search
+            // SearchThuoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(988, 491);
             this.Controls.Add(this.tabControl);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Search";
-            this.Text = "Search";
+            this.Name = "SearchThuoc";
+            this.Text = "Tìm kiếm thuốc";
             this.Load += new System.EventHandler(this.Search_Load);
             this.tabControl.ResumeLayout(false);
             this.tabPageName.ResumeLayout(false);

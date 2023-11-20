@@ -13,11 +13,11 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace Quan_Ly_Thuoc.Forms.Search
 {
-    public partial class Search : Form
+    public partial class SearchThuoc : Form
     {
         ProcessDatabase pd=new ProcessDatabase();
         DataTable tableThuoc;
-        public Search()
+        public SearchThuoc()
         {
             InitializeComponent();
         }

@@ -16,9 +16,9 @@ namespace Quan_Ly_Thuoc.Data
         public SqlDataAdapter adapter;
         public DataSet dset;
 
-        //string conStr = "Data Source=.\\sqlexpress;Initial Catalog=QL_Thuoc;Integrated Security=True";
-        string conStr = "Data Source=DESKTOP-U9CQUB1;Initial Catalog=QL_Thuoc;" +
-            "Integrated Security=True";
+        string conStr = "Data Source=.\\sqlexpress;Initial Catalog=QL_Thuoc;Integrated Security=True";
+        //string conStr = "Data Source=DESKTOP-U9CQUB1;Initial Catalog=QL_Thuoc;" +
+        //    "Integrated Security=True";
 
         public ProcessDatabase()
         {

@@ -1,4 +1,5 @@
-﻿using Quan_Ly_Thuoc.Data;
+﻿using BTL;
+using Quan_Ly_Thuoc.Data;
 using Quan_Ly_Thuoc.Forms.Function;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,8 @@ namespace Quan_Ly_Thuoc.Forms.Search
     {
         ProcessDatabase pd=new ProcessDatabase();
         DataTable tableThuoc;
+
+        List<String> lName = new List<string>();
         public SearchThuoc()
         {
             InitializeComponent();
@@ -34,6 +37,7 @@ namespace Quan_Ly_Thuoc.Forms.Search
             for (int i = 0; i < tableThuoc.Rows.Count; i++)
             {
                 listBoxName.Items.Add(tableThuoc.Rows[i]["TenThuoc"].ToString());
+                lName.Add(tableThuoc.Rows[i]["TenThuoc"].ToString().ToLower());
             }
         }
 
@@ -96,6 +100,30 @@ namespace Quan_Ly_Thuoc.Forms.Search
             Search_Name("");
             Search_Function("");
             Search_Ingredient("");
+			txt_search_name.TextChanged += txt_search_name_TextChanged;
         }
-    }
+
+		private void txt_search_name_TextChanged(object sender, EventArgs e)
+		{
+			var newList = new List<string>(lName.Cast<string>());
+			var itemsToRemove = new List<string>();
+			string searchText = txt_search_name.Text.ToLower();
+
+			foreach (string s in newList)
+			{
+				if (!s.Contains(searchText))
+				{
+					itemsToRemove.Add(s);
+				}
+			}
+
+			foreach (string item in itemsToRemove)
+			{
+				newList.Remove(item);
+			}
+
+			listBoxName.Items.Clear();
+			listBoxName.Items.AddRange(newList.ToArray());
+		}
+	}
 }

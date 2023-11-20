@@ -46,7 +46,8 @@ namespace Quan_Ly_Thuoc
 		//show form hdn
 		private void hóaĐơnNhậpToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			FormHoaDonNhap hoaDon = new FormHoaDonNhap();
+			FormHoaDonNhap hoaDon = new FormHoaDonNhap("");
+			hoaDon.FormClosed += FormHoaDonNhap_FormClosed;
 			hoaDon.ShowDialog();
 		}
 		//show form nhan vien
@@ -98,7 +99,7 @@ namespace Quan_Ly_Thuoc
 					AutoSize = true,
 					MaximumSize = new System.Drawing.Size(200, 0)
 				};
-				Label lblTongTien = new Label() { Text = "Tổng tiền:" + dtHDB.Rows[i]["TongTien"].ToString() };
+				Label lblTongTien = new Label() { Text = "Tổng tiền: " + dtHDB.Rows[i]["TongTien"].ToString() };
 				Label lblTrangThai = new Label();
 				int ck = int.Parse(dtHDB.Rows[i]["TrangThai"].ToString());
 				// Kiểm tra giá trị của cột "TrangThai"
@@ -122,7 +123,7 @@ namespace Quan_Ly_Thuoc
 				// Lưu ID vào Tag của Button để có thể lấy khi nhấp vào nó
 				viewButton.Tag = dtHDB.Rows[i]["MaHDB"];
 				// Thêm sự kiện Click
-				viewButton.Click += ViewButton_Click;
+				viewButton.Click += ViewButtonHDB_Click;
 				Button cancelButton = new Button() { Text = "Hủy", AutoSize = true };
 				// Lưu ID vào Tag của Button để có thể lấy khi nhấp vào nó
 				cancelButton.Tag = dtHDB.Rows[i]["MaHDB"];
@@ -184,16 +185,17 @@ namespace Quan_Ly_Thuoc
 					AutoSize = true,
 					MaximumSize = new System.Drawing.Size(200, 0)
 				};
-				Label lblTongTien = new Label() { Text = "Tổng tiền:" + dtHDN.Rows[i]["TongTien"].ToString() };
+				Label lblTongTien = new Label() { Text = "Tổng tiền: " + dtHDN.Rows[i]["TongTien"].ToString() };
 
 				lblMaHDN.Location = new Point(10, 10);
 				lblNgayLap.Location = new Point(10, 40);
 				lblTongTien.Location = new Point(10, 70);
 
 				Button viewButton = new Button() { Text = "Xem hóa đơn", AutoSize = true };
-				Button cancelButton = new Button() { Text = "Hủy", AutoSize = true };
 				viewButton.Location = new Point(10, 100);
-				cancelButton.Location = new Point(10 + viewButton.Width + 10, 100);
+				//Them su kien xem
+				viewButton.Tag = dtHDN.Rows[i]["MaHDN"];
+				viewButton.Click += ViewButtonHDN_Click;
 
 				panel.Controls.Add(lblMaHDN);
 				panel.Controls.Add(lblNgayLap);
@@ -210,8 +212,33 @@ namespace Quan_Ly_Thuoc
                 flowLayoutPanel.AutoScroll = true;
             }
         }
-		
-        private void CancelButton_Click(object sender, EventArgs e)
+
+		private void ViewButtonHDN_Click(object sender, EventArgs e)
+		{
+			string maHDN = (string)((Button)sender).Tag;
+			FormHoaDonNhap ct = new FormHoaDonNhap(maHDN);
+			ct.FormClosed += FormHoaDonNhap_FormClosed;
+			ct.ShowDialog();
+		}
+
+		private void FormHoaDonNhap_FormClosed(object sender, FormClosedEventArgs e)
+		{
+			if (tabControl.TabCount == 0) return;
+			if (tabControl.SelectedTab.Text != "Danh sách hóa đơn nhập") return;
+
+			foreach (Control control in tabControl.SelectedTab.Controls)
+			{
+				if (control is FlowLayoutPanel)
+				{
+					FlowLayoutPanel flowLayoutPanel = (FlowLayoutPanel)control;
+					flowLayoutPanel.Controls.Clear();
+					break;
+				}
+			}
+			LoadHDN();
+		}
+
+		private void CancelButton_Click(object sender, EventArgs e)
 		{
 			string maHDB = (string)((Button)sender).Tag;
 			pd.CreateCMD();
@@ -232,7 +259,7 @@ namespace Quan_Ly_Thuoc
             }
             LoadHDB_Cat();
 		}
-		private void ViewButton_Click(object sender, EventArgs e)
+		private void ViewButtonHDB_Click(object sender, EventArgs e)
 		{
 			string maHDB = (string)((Button)sender).Tag;
 			FormHoaDonBan ct = new FormHoaDonBan(maHDB);
@@ -256,13 +283,7 @@ namespace Quan_Ly_Thuoc
             LoadHDB_Cat();
 		}
 		private void Form1_Load(object sender, EventArgs e)
-		{
-			pd.CreateCMD();
-			pd.cmd.CommandText = "Select count(*) from KhachHang";
-			pd.Connect();
-			int cnt = (int)pd.cmd.ExecuteScalar();
-			pd.Disconnect();
-			
+		{			
 		}
         private void xóaToolStripMenuItem_Click(object sender, EventArgs e)
         {

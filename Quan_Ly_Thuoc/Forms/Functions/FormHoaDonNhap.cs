@@ -13,9 +13,12 @@ namespace Quan_Ly_Thuoc
 		List<string> listMNCC = new List<string>();
 		List<string> listThuoc = new List<string>();
 		List<ChiTietHDN> dsCTHD = new List<ChiTietHDN>();
-		public FormHoaDonNhap()
+
+		String maHDN = "";
+		public FormHoaDonNhap(string maHDN)
 		{
 			InitializeComponent();
+			this.maHDN = maHDN;
 		}
 
 		private string IDHDN()
@@ -37,6 +40,29 @@ namespace Quan_Ly_Thuoc
 
 		private void FormHoaDonNhap_Load(object sender, EventArgs e)
 		{
+			DataTable dtNV = pd.ReadTable("select * from NhanVien order by tennv asc");
+			DataTable dtNCC = pd.ReadTable("select * from NhaCungCap order by TenNCC asc");
+			DataTable dtThuoc = pd.ReadTable("select * from DanhMucTHuoc order by TenThuoc asc");
+
+			for (int i = 0; i < dtNV.Rows.Count; i++)
+			{
+				this.cmbNVThucHien.Items.Add(dtNV.Rows[i]["TenNV"]);
+				listMNV.Add(dtNV.Rows[i]["MaNhanVien"].ToString());
+			}
+			for (int i = 0; i < dtNCC.Rows.Count; i++)
+			{
+				this.cmbNCC.Items.Add(dtNCC.Rows[i]["TenNCC"]);
+				listMNCC.Add(dtNCC.Rows[i]["MaNCC"].ToString());
+			}
+			for (int i = 0; i < dtThuoc.Rows.Count; i++)
+			{
+				this.cmbThuoc.Items.Add(dtThuoc.Rows[i]["TenThuoc"]);
+				listThuoc.Add(dtThuoc.Rows[i]["MaThuoc"].ToString());
+			}
+			cmbNVThucHien.Text = "None";
+			cmbNCC.Text = "None";
+
+			//Thiet ke cho listviewThuoc
 			// 
 			// mathuoc
 			// 
@@ -62,29 +88,40 @@ namespace Quan_Ly_Thuoc
 			// 
 			this.km.Text = "Khuyến mãi";
 			this.km.Width = (int)(tableLayoutPanel1.Width * 0.15);
-			txtMaHD.Text = IDHDN();
-			dgvCTHDN.DataSource = pd.ReadTable("select * from ChiTietHDN");
 
-            DataTable dtNV = pd.ReadTable("select * from NhanVien order by tennv asc");
-            DataTable dtNCC = pd.ReadTable("select * from NhaCungCap order by TenNCC asc");
-            DataTable dtThuoc = pd.ReadTable("select * from DanhMucTHuoc order by TenThuoc asc");
+			if (maHDN == "")
+			{
+				txtMaHD.Text = IDHDN();
+			}
+			else
+			{
+				DataTable dtThuocHDN = pd.ReadTable("select a.MaThuoc, TenThuoc, SLNhap, DonGia, KhuyenMai from ChiTietHDN a inner join DanhMucThuoc b on a.MaThuoc = b.MaThuoc where MaHDN = '" + maHDN + "'");
+				for (int i = 0; i < dtThuocHDN.Rows.Count; i++)
+				{
+					ListViewItem item = new ListViewItem();
+					item.Text = dtThuocHDN.Rows[i]["MaThuoc"].ToString();
+					item.SubItems.Add(dtThuocHDN.Rows[i]["TenThuoc"].ToString());
+					item.SubItems.Add(dtThuocHDN.Rows[i]["SLNhap"].ToString());
+					item.SubItems.Add(dtThuocHDN.Rows[i]["DonGia"].ToString());
+					item.SubItems.Add(dtThuocHDN.Rows[i]["KhuyenMai"].ToString());
 
-			for (int i = 0; i < dtNV.Rows.Count; i++)
-			{
-				this.cmbNVThucHien.Items.Add(dtNV.Rows[i]["TenNV"]);
-				listMNV.Add(dtNV.Rows[i]["MaNhanVien"].ToString());
-			}
-			for (int i = 0; i < dtNCC.Rows.Count; i++)
-			{
-				this.cmbNCC.Items.Add(dtNCC.Rows[i]["TenNCC"]);
-				listMNCC.Add(dtNCC.Rows[i]["MaNCC"].ToString());
-			}
-			for (int i = 0; i < dtThuoc.Rows.Count; i++)
-			{
-				this.cmbThuoc.Items.Add(dtThuoc.Rows[i]["TenThuoc"]);
-				listThuoc.Add(dtThuoc.Rows[i]["MaThuoc"].ToString());
-			}
+					listViewThuoc.Items.Add(item);
+				}
 
+				TongTien();
+
+				DataTable dtHDN = pd.ReadTable("select * from HoaDonNhap where MaHDN = '" + maHDN + "'");
+				txtNgayNhap.Text = dtHDN.Rows[0]["NgayNhap"].ToString();
+				txtMaHD.Text = maHDN;
+				dtNV = pd.ReadTable("select * from NhanVien where MaNhanVien = '" + dtHDN.Rows[0]["MaNhanVien"] + "'");
+				cmbNVThucHien.Text = dtNV.Rows[0]["TenNV"].ToString();
+				dtNCC = pd.ReadTable("select * from NhaCungCap where MaNCC = '" + dtHDN.Rows[0]["MaNCC"] + "'");
+				cmbNCC.Text = dtNCC.Rows[0]["TenNCC"].ToString();
+
+				btnAddTHuoc.Enabled = false;
+				btnIn.Enabled = false;
+				btnSua.Enabled = false;
+			}
 		}
 		private void TongTien()
 		{

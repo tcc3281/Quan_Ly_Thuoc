@@ -18,7 +18,7 @@ namespace Quan_Ly_Thuoc.Data
 
         string conStr = "Data Source=.\\sqlexpress;Initial Catalog=QL_Thuoc;Integrated Security=True";
         //string conStr = "Data Source=DESKTOP-U9CQUB1;Initial Catalog=QL_Thuoc;" +
-        //    "Integrated Security=True";
+        // "Integrated Security=True";
 
         public ProcessDatabase()
         {

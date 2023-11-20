@@ -24,9 +24,10 @@ namespace Quan_Ly_Thuoc
 		private string IDHDN()
 		{
 			pd.CreateCMD();
-			pd.cmd.CommandText = "Select count(*) from ChiTietHDN";
+			pd.cmd.CommandText = "Select top(1) MaHDN from ChiTietHDN order by MaHDN desc ";
 			pd.Connect();
-			int cnt = (int)pd.cmd.ExecuteScalar() + 1;
+			string s=(string)pd.cmd.ExecuteScalar();
+			int cnt = int.Parse(s.Substring(3))+1;
 			pd.Disconnect();
 
 			String result = "HDN";

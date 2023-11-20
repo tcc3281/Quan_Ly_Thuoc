@@ -28,9 +28,10 @@ namespace Quan_Ly_Thuoc.Forms.Functions
 		private string IDKH()
 		{
 			pd.CreateCMD();
-			pd.cmd.CommandText = "Select count(*) from KhachHang";
+			pd.cmd.CommandText = "Select top(1) makhach from KhachHang order by makhach desc";
 			pd.Connect();
-			int cnt = (int)pd.cmd.ExecuteScalar() + 1;
+            string s=(string)pd.cmd.ExecuteScalar();
+            int cnt = int.Parse(s.Substring(2)) + 1;
 			pd.Disconnect();
 
 			String result = "KH";

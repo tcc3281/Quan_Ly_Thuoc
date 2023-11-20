@@ -30,11 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportPDFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.medicineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,6 +65,7 @@
             this.tabControl = new System.Windows.Forms.TabControl();
             this.menuStripTabPage = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xuấtExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.menuStripTabPage.SuspendLayout();
             this.SuspendLayout();
@@ -80,51 +76,16 @@
             this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
             this.fileToolStripMenuItem,
             this.analystToolStripMenuItem,
             this.signInToolStripMenuLogin,
-            this.searchToolStripMenuSearch});
+            this.searchToolStripMenuSearch,
+            this.xuấtExcelToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1097, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(1097, 36);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newToolStripMenuItem,
-            this.openToolStripMenuItem,
-            this.saveToolStripMenuItem,
-            this.exportPDFToolStripMenuItem});
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(54, 29);
-            this.toolStripMenuItem1.Text = "File";
-            // 
-            // newToolStripMenuItem
-            // 
-            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(208, 34);
-            this.newToolStripMenuItem.Text = "New";
-            // 
-            // openToolStripMenuItem
-            // 
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(208, 34);
-            this.openToolStripMenuItem.Text = "Open";
-            // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(208, 34);
-            this.saveToolStripMenuItem.Text = "Save";
-            // 
-            // exportPDFToolStripMenuItem
-            // 
-            this.exportPDFToolStripMenuItem.Name = "exportPDFToolStripMenuItem";
-            this.exportPDFToolStripMenuItem.Size = new System.Drawing.Size(208, 34);
-            this.exportPDFToolStripMenuItem.Text = "Export Excel";
             // 
             // fileToolStripMenuItem
             // 
@@ -146,7 +107,7 @@
             this.billToolStripMenuItem1,
             this.hóaĐơnBánToolStripMenuItem1});
             this.showListToolStripMenuItem.Name = "showListToolStripMenuItem";
-            this.showListToolStripMenuItem.Size = new System.Drawing.Size(235, 34);
+            this.showListToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.showListToolStripMenuItem.Text = "Hiện danh sách";
             // 
             // medicineToolStripMenuItem
@@ -190,7 +151,7 @@
             this.hóaĐơnBánToolStripMenuItem,
             this.hóaĐơnNhậpToolStripMenuItem});
             this.billToolStripMenuItem.Name = "billToolStripMenuItem";
-            this.billToolStripMenuItem.Size = new System.Drawing.Size(235, 34);
+            this.billToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.billToolStripMenuItem.Text = "Thêm hóa đơn";
             // 
             // hóaĐơnBánToolStripMenuItem
@@ -214,7 +175,7 @@
             this.nhânViênToolStripMenuItem1,
             this.kháchHàngToolStripMenuItem1});
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(235, 34);
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.updateToolStripMenuItem.Text = "Cập nhật";
             // 
             // thuốcToolStripMenuItem
@@ -244,7 +205,7 @@
             this.nhânViênToolStripMenuItem,
             this.nhàCungCấpToolStripMenuItem});
             this.nhậpToolStripMenuItem.Name = "nhậpToolStripMenuItem";
-            this.nhậpToolStripMenuItem.Size = new System.Drawing.Size(235, 34);
+            this.nhậpToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.nhậpToolStripMenuItem.Text = "Thêm";
             // 
             // thuỗToolStripMenuItem
@@ -359,25 +320,25 @@
             // thuốcToolStripMenuItem1
             // 
             this.thuốcToolStripMenuItem1.Name = "thuốcToolStripMenuItem1";
-            this.thuốcToolStripMenuItem1.Size = new System.Drawing.Size(270, 34);
+            this.thuốcToolStripMenuItem1.Size = new System.Drawing.Size(229, 34);
             this.thuốcToolStripMenuItem1.Text = "Thuốc";
             this.thuốcToolStripMenuItem1.Click += new System.EventHandler(this.thuốcToolStripMenuItem1_Click);
             // 
             // hóaĐơnBánToolStripMenuItem2
             // 
             this.hóaĐơnBánToolStripMenuItem2.Name = "hóaĐơnBánToolStripMenuItem2";
-            this.hóaĐơnBánToolStripMenuItem2.Size = new System.Drawing.Size(270, 34);
+            this.hóaĐơnBánToolStripMenuItem2.Size = new System.Drawing.Size(229, 34);
             this.hóaĐơnBánToolStripMenuItem2.Text = "Hóa đơn nhập";
             this.hóaĐơnBánToolStripMenuItem2.Click += new System.EventHandler(this.hóaĐơnBánToolStripMenuItem2_Click);
             // 
             // tabControl
             // 
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl.Location = new System.Drawing.Point(0, 33);
+            this.tabControl.Location = new System.Drawing.Point(0, 36);
             this.tabControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1097, 581);
+            this.tabControl.Size = new System.Drawing.Size(1097, 578);
             this.tabControl.TabIndex = 1;
             // 
             // menuStripTabPage
@@ -395,6 +356,12 @@
             this.xóaToolStripMenuItem.Size = new System.Drawing.Size(161, 32);
             this.xóaToolStripMenuItem.Text = "Đóng Tab";
             this.xóaToolStripMenuItem.Click += new System.EventHandler(this.xóaToolStripMenuItem_Click);
+            // 
+            // xuấtExcelToolStripMenuItem
+            // 
+            this.xuấtExcelToolStripMenuItem.Name = "xuấtExcelToolStripMenuItem";
+            this.xuấtExcelToolStripMenuItem.Size = new System.Drawing.Size(107, 32);
+            this.xuấtExcelToolStripMenuItem.Text = "Xuất excel";
             // 
             // Form1
             // 
@@ -420,12 +387,7 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exportPDFToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem showListToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem medicineToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cútomerToolStripMenuItem;
@@ -460,6 +422,7 @@
 		private System.Windows.Forms.ToolStripMenuItem nhàCungCấpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thuốcToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem hóaĐơnBánToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem xuấtExcelToolStripMenuItem;
     }
 }
 

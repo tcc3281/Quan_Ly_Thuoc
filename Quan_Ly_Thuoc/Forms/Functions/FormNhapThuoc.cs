@@ -324,8 +324,17 @@ namespace Quan_Ly_Thuoc.Forms.Function
         private void txtMedicineCode_Leave(object sender, EventArgs e)
         {
             listBoxFunction.Items.Clear();
-            string name = pd.ReadTable("select TenThuoc from DanhMucThuoc where MaThuoc='" + txtMedicineCode.Text + "'").Rows[0]["TenThuoc"].ToString();
-			show_medicine(name);
+			try
+			{
+                string name = pd.ReadTable("select TenThuoc from DanhMucThuoc where MaThuoc='" + txtMedicineCode.Text + "'").Rows[0]["TenThuoc"].ToString();
+				show_medicine(name);
+            }
+            catch (System.IndexOutOfRangeException)
+			{
+				MessageBox.Show("Mã thuốc không hợp lệ!");
+				txtMedicineCode.Focus();
+			}
+			
         }
     }
 }

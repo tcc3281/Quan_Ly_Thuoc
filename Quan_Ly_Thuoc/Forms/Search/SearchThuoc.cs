@@ -18,13 +18,27 @@ namespace Quan_Ly_Thuoc.Forms.Search
     {
         ProcessDatabase pd=new ProcessDatabase();
         DataTable tableThuoc;
-
+        DataTable tableChucNang;
+        DataTable tableTP;
         List<String> lName = new List<string>();
         public SearchThuoc()
         {
             InitializeComponent();
+            Load_cmb();
         }
-
+        private void Load_cmb()
+        {
+            tableChucNang = pd.ReadTable("select * from CongDung");
+            tableTP = pd.ReadTable("select thanhphan from Danhmucthuoc");
+            for(int i=0;i<tableChucNang.Rows.Count;i++) 
+            {
+                cmb_search_function.Items.Add(tableChucNang.Rows[i]["TenCongDung"]);
+            }
+            for (int i = 0; i < tableTP.Rows.Count; i++)
+            {
+                cmb_search_ingredient.Items.Add(tableTP.Rows[i]["ThanhPhan"]);
+            }
+        }
         private void btn_search_name_Click(object sender, EventArgs e)
         {
             listBoxName.Items.Clear();
@@ -52,7 +66,7 @@ namespace Quan_Ly_Thuoc.Forms.Search
         private void btn_search_function_Click(object sender, EventArgs e)
         {
             listBoxFunction.Items.Clear();
-            Search_Function(txt_search_function.Text);
+            Search_Function(cmb_search_function.Text);
         }
         private void Search_Function(string function)
         {
@@ -75,7 +89,7 @@ namespace Quan_Ly_Thuoc.Forms.Search
         private void btn_search_ingredient_Click(object sender, EventArgs e)
         {
             listBoxIngredient.Items.Clear();
-            Search_Ingredient(txt_search_ingredient.Text);
+            Search_Ingredient(cmb_search_ingredient.Text);
         }
         public void Search_Ingredient(string ingredient)
         {

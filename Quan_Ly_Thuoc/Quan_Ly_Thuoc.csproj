@@ -84,6 +84,12 @@
     <Compile Include="Forms\Login\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Search\FormSearchHDN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Search\FormSearchHDN.Designer.cs">
+      <DependentUpon>FormSearchHDN.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Search\SearchThuoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Search\FormSearchHDN.resx">
+      <DependentUpon>FormSearchHDN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Search\SearchThuoc.resx">
       <DependentUpon>SearchThuoc.cs</DependentUpon>

@@ -407,19 +407,24 @@ namespace Quan_Ly_Thuoc
 			if (flag) newTabPage(name);
             LoadHDN(medicine,staff,producer);
         }
-        private void thuốcToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void thuocToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SearchThuoc search = new SearchThuoc();
             search.ShowDialog();
         }
-        private void billToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void billToolStripMenuItem_Click(object sender, EventArgs e)
         {
 			add_tabpage_HDN();
         }
-        private void hóaĐơnBánToolStripMenuItem2_Click(object sender, EventArgs e)
+        private void hoaĐonBanToolStripMenuItem_Click(object sender, EventArgs e)
         {
 			FormSearchHDN form = new FormSearchHDN(this);
 			form.ShowDialog();
+        }
+
+        private void danhSachThuocToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Quan_Ly_Thuoc.Data;
 using Quan_Ly_Thuoc.Forms.Function;
@@ -17,8 +12,6 @@ namespace Quan_Ly_Thuoc
 	public partial class QL_Thuoc : Form
 	{
 		ProcessDatabase pd = new ProcessDatabase();
-		internal static bool addThuoc = true;
-		List<TabPage> tabs = new List<TabPage>();
 		public QL_Thuoc()
 		{
 			InitializeComponent();
@@ -68,7 +61,7 @@ namespace Quan_Ly_Thuoc
 			FormKhachHang kh = new FormKhachHang();
 			kh.ShowDialog();
 		}
-		//load tabpage hd b
+		//load tabpage hdb
 		private void LoadHDB_Cat()
 		{
 			DataTable dtHDB = pd.ReadTable("SELECT * FROM HoaDonBan");
@@ -235,7 +228,6 @@ namespace Quan_Ly_Thuoc
                 flowLayoutPanel.AutoScroll = true;
             }
         }
-
 		private void ViewButtonHDN_Click(object sender, EventArgs e)
 		{
 			string maHDN = (string)((Button)sender).Tag;
@@ -243,7 +235,6 @@ namespace Quan_Ly_Thuoc
 			ct.FormClosed += FormHoaDonNhap_FormClosed;
 			ct.ShowDialog();
 		}
-
 		private void FormHoaDonNhap_FormClosed(object sender, FormClosedEventArgs e)
 		{
 			if (tabControl.TabCount == 0) return;
@@ -260,7 +251,6 @@ namespace Quan_Ly_Thuoc
 			}
 			LoadHDN();
 		}
-
 		private void CancelButton_Click(object sender, EventArgs e)
 		{
 			string maHDB = (string)((Button)sender).Tag;
@@ -304,9 +294,6 @@ namespace Quan_Ly_Thuoc
                 }
             }
             LoadHDB_Cat();
-		}
-		private void Form1_Load(object sender, EventArgs e)
-		{			
 		}
         private void xóaToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -363,7 +350,6 @@ namespace Quan_Ly_Thuoc
             tabPage.Controls.Add(data);
             data.Dock = DockStyle.Fill;
         }
-
         private void staffToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string name = "Danh sách Nhân viên";
@@ -384,14 +370,12 @@ namespace Quan_Ly_Thuoc
             tabPage.Controls.Add(data);
             data.Dock = DockStyle.Fill;
         }
-
         private void thuốcToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormNhapThuoc formNhapThuoc = new FormNhapThuoc();
             formNhapThuoc.setUpdate();
             formNhapThuoc.ShowDialog();
         }
-
         private void hóaĐơnBánToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             string name = "Danh sách hóa đơn bán";
@@ -428,7 +412,6 @@ namespace Quan_Ly_Thuoc
             SearchThuoc search = new SearchThuoc();
             search.ShowDialog();
         }
-
         private void billToolStripMenuItem1_Click(object sender, EventArgs e)
         {
 			add_tabpage_HDN();

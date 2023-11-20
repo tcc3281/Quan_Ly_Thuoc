@@ -1,12 +1,5 @@
 ﻿using Quan_Ly_Thuoc.Data;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Quan_Ly_Thuoc.Forms.Functions
@@ -18,7 +11,6 @@ namespace Quan_Ly_Thuoc.Forms.Functions
         {
             InitializeComponent();
         }
-
         private String IDNCC()
         {
 			String id = "NCC";
@@ -36,13 +28,11 @@ namespace Quan_Ly_Thuoc.Forms.Functions
 			id += cnt.ToString();
 			return id;
 		}
-
 		private void FormNhaCungCap_Load(object sender, EventArgs e)
 		{
 			txtMaNCC.Text = IDNCC();
 			dgvNCC.DataSource = pd.ReadTable("select * from NhaCungCap");
 		}
-
 		private void btnInsert_Click(object sender, EventArgs e)
 		{
 			string sql = "insert into NhaCungCap values(N'" + txtMaNCC.Text + "',N'" +

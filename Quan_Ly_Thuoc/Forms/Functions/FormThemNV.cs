@@ -1,13 +1,6 @@
-﻿using BTL;
-using Quan_Ly_Thuoc.Data;
+﻿using Quan_Ly_Thuoc.Data;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Quan_Ly_Thuoc.Forms.Functions
@@ -19,7 +12,6 @@ namespace Quan_Ly_Thuoc.Forms.Functions
 		{
 			InitializeComponent();
 		}
-
 		private string IDNV()
 		{
 			pd.CreateCMD();
@@ -37,7 +29,6 @@ namespace Quan_Ly_Thuoc.Forms.Functions
 			result += (cnt.ToString());
 			return result;
 		}
-
 		private void Loadcmb()
 		{
 			DataTable dtTrinhDo = pd.ReadTable("Select * from TrinhDo");
@@ -52,13 +43,11 @@ namespace Quan_Ly_Thuoc.Forms.Functions
 			cmbGioiTinh.Items.Add("Nam");
 			cmbGioiTinh.Items.Add("Nữ");
 		}
-
 		private void FromThemNV_Load(object sender, EventArgs e)
 		{
 			Loadcmb();
 			dgvNhanVien.DataSource = pd.ReadTable("select * from NhanVien");
 		}
-
 		private bool Validate()
 		{
 			if (txtTenNV.Text.Trim() == "" || txtSDT.Text.Trim() == "" ||
@@ -75,7 +64,6 @@ namespace Quan_Ly_Thuoc.Forms.Functions
 			}
 			return true;
 		}
-
 		private void btnThem_Click(object sender, EventArgs e)
 		{
 			if (Validate() == true)

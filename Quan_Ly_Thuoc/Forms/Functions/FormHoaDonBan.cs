@@ -1,23 +1,16 @@
 ﻿using Quan_Ly_Thuoc.Data;
-using Quan_Ly_Thuoc.Forms.Functions;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Quan_Ly_Thuoc
 {
 	public partial class FormHoaDonBan : Form
 	{
 		ProcessDatabase pd = new ProcessDatabase();
-		String maHDB = "";
-
+		string maHDB = "";
 		private List<string> lThuoc = new List<string>();
 		public FormHoaDonBan(String maHDB)
 		{
@@ -28,7 +21,6 @@ namespace Quan_Ly_Thuoc
 
 			InitializeComponent();
 		}
-
 		public void LoadCmb()
 		{
 			DataTable dtNV = pd.ReadTable("Select * from NhanVien");
@@ -55,7 +47,6 @@ namespace Quan_Ly_Thuoc
 			//		"(select MaKhach from KhachHang where TenKhach = N'" + cmbKH.Text + "'), " +
 			//		"(select MaNhanVien from NhanVien where TenNV = N'" + cmbNV.Text + "'))");
 		}
-
 		private void FormHoaDon_Load(object sender, EventArgs e)
 		{
 			LoadCmb();
@@ -118,7 +109,6 @@ namespace Quan_Ly_Thuoc
 
 			lblMa.Text += maHDB;
 		}
-
 		private void txtSreachThuoc_TextChanged(object sender, EventArgs e)
 		{
 			var newList = new List<string>(lThuoc.Cast<string>());
@@ -141,13 +131,10 @@ namespace Quan_Ly_Thuoc
 			listThuoc.Items.Clear();
 			listThuoc.Items.AddRange(newList.ToArray());
 		}
-
-
 		private void FormHoaDon_SizeChanged(object sender, EventArgs e)
 		{
 			setWidthColumns();
 		}
-
 		//chỉnh các component khi thu phóng
 		private void setWidthColumns()
 		{
@@ -162,7 +149,6 @@ namespace Quan_Ly_Thuoc
 			btnSearchThuoc.Height = txtSearchThuoc.Height;
 
 		}
-
 		private float UpdateGia(String tenThuoc)
 		{
 			pd.CreateCMD();
@@ -180,7 +166,6 @@ namespace Quan_Ly_Thuoc
 			pd.Disconnect();
 			return gia;
 		}
-
 		private void listThuoc_MouseDoubleClick(object sender, MouseEventArgs e)
 		{
 			String tenThuoc = listThuoc.SelectedItem.ToString();
@@ -213,7 +198,6 @@ namespace Quan_Ly_Thuoc
 				lHDB.Items[index].SubItems[2].Text = (sl * gia).ToString();
 			}
 		}
-
 		private void btnSuaSL_Click(object sender, EventArgs e)
 		{
 			int index = lHDB.SelectedItems[0].Index;
@@ -223,13 +207,11 @@ namespace Quan_Ly_Thuoc
 
 			txtSL.ResetText();
 		}
-
 		private void lHDB_DoubleClick(object sender, EventArgs e)
 		{
 			int index = lHDB.SelectedItems[0].Index;
 			txtSL.Value = int.Parse(lHDB.Items[index].SubItems[1].Text);
 		}
-
 		private void btnRemove_Click(object sender, EventArgs e)
 		{
 			int index = lHDB.SelectedItems[0].Index;
@@ -271,7 +253,6 @@ namespace Quan_Ly_Thuoc
 			MessageBox.Show("Số tiền thanh toán là: " + ThanhTien());
 			this.Close();
 		}
-
 		private void btnCatHD_Click(object sender, EventArgs e)
 		{
 			pd.CreateCMD();
@@ -302,7 +283,6 @@ namespace Quan_Ly_Thuoc
 			SaveData();
 			this.Close();
 		}
-
 		private float ThanhTien()
 		{
 			float tien = 0;
@@ -313,7 +293,6 @@ namespace Quan_Ly_Thuoc
 
 			return tien;
 		}
-
 		private void SaveData()
 		{
 			pd.RunSQL("delete from ChiTietHDB where MaHDB = '" + maHDB + "'");

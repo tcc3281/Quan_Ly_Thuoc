@@ -160,7 +160,8 @@ namespace Quan_Ly_Thuoc
 				int sl = int.Parse(listViewThuoc.Items[i].SubItems[2].Text);
 				float gia = float.Parse(listViewThuoc.Items[i].SubItems[3].Text);
 				sql = "update DanhMucThuoc set SLHienCo = isnull(SLHienCo,0) + " + sl +
-					", DonGiaNhap = " + gia + ", GiaBan = " + (gia*1.1);
+					", DonGiaNhap = " + gia + ", GiaBan = " + (gia*1.1)+" where MaThuoc='"
+					+ listViewThuoc.Items[i].SubItems[0].Text + "'";
 				pd.RunSQL(sql);
 			}
 			

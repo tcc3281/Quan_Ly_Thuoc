@@ -48,11 +48,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\ProcessDatabase.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="QL_Thuoc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="QL_Thuoc.Designer.cs">
+      <DependentUpon>QL_Thuoc.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Functions\FormKhachHang.cs">
       <SubType>Form</SubType>
@@ -119,8 +119,8 @@
     <Compile Include="Models\Thuoc.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="QL_Thuoc.resx">
+      <DependentUpon>QL_Thuoc.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Functions\FormHoaDonNhap.resx">

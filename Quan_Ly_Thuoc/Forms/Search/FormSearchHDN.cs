@@ -17,8 +17,8 @@ namespace Quan_Ly_Thuoc.Forms.Search
         DataTable tableThuoc;
         DataTable tableNhanVien;
         DataTable tableNCC;
-        Form1 form;
-        public FormSearchHDN(Form1 form)
+        QL_Thuoc form;
+        public FormSearchHDN(QL_Thuoc form)
         {
             InitializeComponent();
             loadData();

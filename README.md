@@ -1,1 +1,1 @@
-# Quan_Ly_Thuoc
+# Quản lý Thuốc

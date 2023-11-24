@@ -17,16 +17,27 @@ namespace Quan_Ly_Thuoc.Forms.Functions
 			pd.CreateCMD();
 			pd.cmd.CommandText = "Select top(1) MaNhanVien from NhanVien order by MaNhanVien";
 			pd.Connect();
-			string s = (string)pd.cmd.ExecuteScalar();
-			int cnt = int.Parse(s.Substring(2)) + 1;
-			pd.Disconnect();
-
-			String result = "NV";
-			for (int i = 0; i < 3 - cnt.ToString().Length; i++)
+			string s;
+			int cnt = 1;
+            string result = "NV";
+			try
 			{
-				result += "0";
+				s = (string)pd.cmd.ExecuteScalar();
+				cnt = int.Parse(s.Substring(2)) + 1;
 			}
-			result += (cnt.ToString());
+			catch (System.NullReferenceException)
+			{
+				cnt = 1;
+			}
+			finally
+			{ 
+				pd.Disconnect();
+                for (int i = 0; i < 3 - cnt.ToString().Length; i++)
+                {
+                    result += "0";
+                }
+                result += (cnt.ToString());
+            }
 			return result;
 		}
 		private void Loadcmb()

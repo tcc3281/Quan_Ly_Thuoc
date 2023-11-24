@@ -70,17 +70,28 @@ namespace Quan_Ly_Thuoc.Forms.Function
 			pd.CreateCMD();
 			pd.cmd.CommandText = "Select top(1) Mathuoc from DanhMucThuoc order by Mathuoc desc";
 			pd.Connect();
-			string s=(string)pd.cmd.ExecuteScalar();
-			int cnt = int.Parse(s.Substring(1))+1;
-			pd.Disconnect();
-
-			string result = "T";
-			for (int i = 0; i < 3 - cnt.ToString().Length; i++)
+			string s;
+			int cnt=1;
+            string result = "T";
+            try
 			{
-				result += "0";
+				s = (string)pd.cmd.ExecuteScalar();
+				cnt = int.Parse(s.Substring(1)) + 1;
 			}
-			result += (cnt.ToString());
-			txtMedicineCode.Text = result.ToString();
+			catch (System.NullReferenceException)
+			{
+				cnt = 1;
+			}
+			finally
+			{
+				pd.Disconnect();
+				for (int i = 0; i < 3 - cnt.ToString().Length; i++)
+				{
+					result += "0";
+					result += (cnt.ToString());
+					txtMedicineCode.Text = result.ToString();
+				}
+			}
 			return result;
 		}
 		private bool Validate()
@@ -208,6 +219,7 @@ namespace Quan_Ly_Thuoc.Forms.Function
         {
             btnAdd.Enabled = false;
 			txtMedicineCode.ReadOnly=false;
+			Text = "Cập nhật thuốc";
         }
         private void btnAddFunction_Click(object sender, EventArgs e)
         {
@@ -258,6 +270,7 @@ namespace Quan_Ly_Thuoc.Forms.Function
         }
 		public void show_medicine(string name)
 		{
+            Text = name;
             DataTable table = pd.ReadTable("select a.MaThuoc,a.TenThuoc,a.ThanhPhan,a.NgaySX,a.HanSD,a.ChongChiDinh,d.TenNSX,b.TenDangDieuChe,c.TenDonViTinh,f.MaCongDung,f.TenCongDung\r\nfrom DanhMucThuoc a join DangDieuChe b on a.MaDangDieuChe=b.MaDangDieuChe\r\n\t\tjoin DonViTinh c on a.MaDV=c.MaDV\r\n\t\tjoin NuocSX d on a.MaNSX=d.MaNSX\r\n\t\tjoin Thuoc_CongDung e on a.MaThuoc=e.MaThuoc\r\n\t\tjoin CongDung f on e.MaCongDung=f.MaCongDung\r\nwhere a.TenThuoc = '"+name+"'\r\n");
 			txtMedicineCode.Text = table.Rows[0]["MaThuoc"].ToString();
 			txtMedicineName.Text = table.Rows[0]["TenThuoc"].ToString();
@@ -302,7 +315,7 @@ namespace Quan_Ly_Thuoc.Forms.Function
 			btnRemoveFunction.Enabled=false;
 			btnClear.Enabled=false;
 			btnAddFunction.Enabled=false;
-			btnUpdate.Enabled=false;
+			btnUpdate.Enabled = false;			
 		}
         private void txtMedicineCode_Leave(object sender, EventArgs e)
         {
@@ -314,8 +327,13 @@ namespace Quan_Ly_Thuoc.Forms.Function
             }
             catch (System.IndexOutOfRangeException)
 			{
-				MessageBox.Show("Mã thuốc không hợp lệ!");
-				txtMedicineCode.Focus();
+				if (btnAdd.Enabled == false)
+				{
+					MessageBox.Show("Mã thuốc không hợp lệ!");
+					txtMedicineCode.Focus();
+				}
+				
+				
 			}
 			
         }

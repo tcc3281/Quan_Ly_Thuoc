@@ -476,4 +476,6 @@ values
 ('HDB011', 'T033', 1, 10000, 0),
 ('HDB011', 'T026', 6, 20000, 0),
 ('HDB011', 'T019', 5, 15000, 0);
-
+select a.MaThuoc as Mã Thuốc,a.TenThuoc as Tên Thuốc,a.ThanhPhan as Thành phần,a.DonGiaNhap as Giá nhập ,a.GiaBan as Giá bán,a.SLHienCo as Số lượng hiện có,a.NgaySX as Ngày sản xuất,a.HanSD as Hạn sử dụng,a.ChongChiDinh as Chống chỉ định,b.TenNSX as Tên nhà sản xuất,c.TenDangDieuChe as Tên dạng điều chế,d.TenDonViTinh as Đơn vị tính\r\nfrom DanhMucThuoc a join NuocSX b on a.MaNSX=b.MaNSX
+join DangDieuChe c on a.MaDangDieuChe=c.MaDangDieuChe
+join DonViTinh d on a.MaDV=d.MaDV

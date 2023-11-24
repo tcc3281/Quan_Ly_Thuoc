@@ -45,7 +45,7 @@ namespace Quan_Ly_Thuoc.Forms.Search
             for (int i = 0; i < tableThuoc.Rows.Count; i++)
             {
                 listBoxName.Items.Add(tableThuoc.Rows[i]["TenThuoc"].ToString());
-                lName.Add(tableThuoc.Rows[i]["TenThuoc"].ToString().ToLower());
+                lName.Add(tableThuoc.Rows[i]["TenThuoc"].ToString());
             }
         }
         private void listBoxName_DoubleClick(object sender, EventArgs e)
@@ -112,7 +112,7 @@ namespace Quan_Ly_Thuoc.Forms.Search
 
 			foreach (string s in newList)
 			{
-				if (!s.Contains(searchText))
+				if (!s.ToLower().Contains(searchText.ToLower()))
 				{
 					itemsToRemove.Add(s);
 				}
@@ -126,5 +126,7 @@ namespace Quan_Ly_Thuoc.Forms.Search
 			listBoxName.Items.Clear();
 			listBoxName.Items.AddRange(newList.ToArray());
 		}
-	}
+
+
+    }
 }

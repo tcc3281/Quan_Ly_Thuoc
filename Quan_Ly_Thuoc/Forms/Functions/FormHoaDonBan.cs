@@ -95,19 +95,28 @@ namespace Quan_Ly_Thuoc
 				pd.cmd.CommandText = "Select top(1) MaHDB from HoaDonBan order by MaHDB desc";
 				pd.Connect();
 				int cnt = 0;
-				string ma = (string)pd.cmd.ExecuteScalar();
-				if (ma == null) cnt = 1;
-				else cnt = int.Parse(ma.Substring(3)) + 1;
-				
-				pd.Disconnect();
-				for (int i = 0; i < 3 - cnt.ToString().Length; i++)
+				try
 				{
-					maHDB += "0";
+					string ma = (string)pd.cmd.ExecuteScalar();
+					cnt = int.Parse(ma.Substring(3)) + 1;
 				}
-				maHDB += cnt.ToString();
+				catch(System.NullReferenceException)
+				{
+					cnt = 1;
+				}
+				finally
+				{
+                    pd.Disconnect();
+                    for (int i = 0; i < 3 - cnt.ToString().Length; i++)
+                    {
+                        maHDB += "0";
+                    }
+                    maHDB += cnt.ToString();
+                    lblMa.Text += maHDB;
+                }
 			}
 
-			lblMa.Text += maHDB;
+			
 		}
 		private void txtSreachThuoc_TextChanged(object sender, EventArgs e)
 		{
@@ -117,7 +126,7 @@ namespace Quan_Ly_Thuoc
 
 			foreach (string s in newList)
 			{
-				if (!s.Contains(searchText))
+				if (!s.ToLower().Contains(searchText.ToLower()))
 				{
 					itemsToRemove.Add(s);
 				}
@@ -305,5 +314,7 @@ namespace Quan_Ly_Thuoc
 				pd.RunSQL(sql);
 			}
 		}
-	}
+
+
+    }
 }

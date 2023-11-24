@@ -325,11 +325,11 @@ namespace Quan_Ly_Thuoc
             TabPage tabPage = newTabPage(name);
 			//them datagridview
 			DataGridView data= new DataGridView();
-			string sql = "select a.MaThuoc,a.TenThuoc,a.ThanhPhan,a.DonGiaNhap,a.GiaBan,a.SLHienCo,a.NgaySX,a.HanSD,a.ChongChiDinh,b.TenNSX,c.TenDangDieuChe,d.TenDonViTinh\r\nfrom DanhMucThuoc a join NuocSX b on a.MaNSX=b.MaNSX\r\n\t\tjoin DangDieuChe c on a.MaDangDieuChe=c.MaDangDieuChe\r\n\t\tjoin DonViTinh d on a.MaDV=d.MaDV";
-
+			string sql = "select a.MaThuoc as 'Mã Thuốc',a.TenThuoc as 'Tên Thuốc',a.ThanhPhan as 'Thành phần',a.DonGiaNhap as 'Giá nhập' ,a.GiaBan as 'Giá bán',a.SLHienCo as 'Số lượng hiện có',a.NgaySX as 'Ngày sản xuất',a.HanSD as 'Hạn sử dụng',a.ChongChiDinh as 'Chống chỉ định',b.TenNSX as 'Tên nhà sản xuất',c.TenDangDieuChe as 'Tên dạng điều chế',d.TenDonViTinh as 'Đơn vị tính'\r\nfrom DanhMucThuoc a join NuocSX b on a.MaNSX=b.MaNSX\r\n\t\tjoin DangDieuChe c on a.MaDangDieuChe=c.MaDangDieuChe\r\n\t\tjoin DonViTinh d on a.MaDV=d.MaDV";
             data.DataSource = pd.ReadTable(sql);
 			tabPage.Controls.Add(data);
 			data.Dock= DockStyle.Fill;
+            data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
         private void cútomerToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -349,6 +349,7 @@ namespace Quan_Ly_Thuoc
             data.DataSource = pd.ReadTable("select * from KhachHang");
             tabPage.Controls.Add(data);
             data.Dock = DockStyle.Fill;
+			data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
         private void staffToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -369,6 +370,7 @@ namespace Quan_Ly_Thuoc
             data.DataSource = pd.ReadTable(sql);
             tabPage.Controls.Add(data);
             data.Dock = DockStyle.Fill;
+            data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
         private void thuốcToolStripMenuItem_Click(object sender, EventArgs e)
         {

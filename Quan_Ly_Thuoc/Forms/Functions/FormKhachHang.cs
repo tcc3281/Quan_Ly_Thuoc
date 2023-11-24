@@ -22,15 +22,26 @@ namespace Quan_Ly_Thuoc.Forms.Functions
 			pd.cmd.CommandText = "Select top(1) makhach from KhachHang order by makhach desc";
 			pd.Connect();
             string s=(string)pd.cmd.ExecuteScalar();
-            int cnt = int.Parse(s.Substring(2)) + 1;
-			pd.Disconnect();
-
-			String result = "KH";
-			for (int i = 0; i < 3 - cnt.ToString().Length; i++)
-			{
-				result += "0";
-			}
-			result += (cnt.ToString());
+            int cnt = 0;
+            string result = "KH";
+            try
+            {
+                cnt = int.Parse(s.Substring(2)) + 1;
+            }
+            catch (System.NullReferenceException)
+            {
+                cnt = 1;
+            }
+            finally
+            {
+                pd.Disconnect();
+                for (int i = 0; i < 3 - cnt.ToString().Length; i++)
+			    {
+				    result += "0";
+			    }
+			    result += (cnt.ToString());
+            }
+			
 			return result;
 		}
 		private void btnImortImg_Click(object sender, EventArgs e)

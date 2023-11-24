@@ -258,9 +258,9 @@
             this.labelMedicineCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMedicineCode.Location = new System.Drawing.Point(27, 41);
             this.labelMedicineCode.Name = "labelMedicineCode";
-            this.labelMedicineCode.Size = new System.Drawing.Size(100, 25);
+            this.labelMedicineCode.Size = new System.Drawing.Size(93, 25);
             this.labelMedicineCode.TabIndex = 0;
-            this.labelMedicineCode.Text = "Tên thuốc";
+            this.labelMedicineCode.Text = "Mã thuốc";
             // 
             // txtMedicineCode
             // 

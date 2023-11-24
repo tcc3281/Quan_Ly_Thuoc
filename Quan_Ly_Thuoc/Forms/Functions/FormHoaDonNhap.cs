@@ -24,16 +24,28 @@ namespace Quan_Ly_Thuoc
 			pd.CreateCMD();
 			pd.cmd.CommandText = "Select top(1) MaHDN from ChiTietHDN order by MaHDN desc ";
 			pd.Connect();
-			string s=(string)pd.cmd.ExecuteScalar();
-			int cnt = int.Parse(s.Substring(3))+1;
-			pd.Disconnect();
-
-			String result = "HDN";
-			for (int i = 0; i < 3 - cnt.ToString().Length; i++)
+			
+			int cnt=1;
+            string result = "HDN";
+            try
 			{
-				result += "0";
+				string s=(string)pd.cmd.ExecuteScalar();
+				cnt = int.Parse(s.Substring(3))+1;
 			}
-			result += (cnt.ToString());
+			catch (System.NullReferenceException)
+			{
+				cnt = 1;
+			}
+			finally
+			{
+                pd.Disconnect();
+                for (int i = 0; i < 3 - cnt.ToString().Length; i++)
+                {
+                    result += "0";
+                }
+                result += (cnt.ToString());
+                
+            }
 			return result;
 		}
 		private void FormHoaDonNhap_Load(object sender, EventArgs e)

@@ -21,7 +21,6 @@ namespace Quan_Ly_Thuoc
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new QL_Thuoc());
-            //Application.Run(new FormSearchHDN());
         }
     }
 }

@@ -36,6 +36,24 @@
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
@@ -51,6 +69,30 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\ProcessDatabase.cs" />
+    <Compile Include="Forms\Reports\FormdsHDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reports\FormdsHDB.Designer.cs">
+      <DependentUpon>FormdsHDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reports\FormdsHDN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reports\FormdsHDN.Designer.cs">
+      <DependentUpon>FormdsHDN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reports\FormdsNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reports\FormdsNV.Designer.cs">
+      <DependentUpon>FormdsNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reports\FormThuocConHSD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reports\FormThuocConHSD.Designer.cs">
+      <DependentUpon>FormThuocConHSD.cs</DependentUpon>
+    </Compile>
     <Compile Include="QL_Thuoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +164,29 @@
     <Compile Include="Models\Thuoc.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QL_ThuocDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QL_ThuocDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\NV_HDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NV_HDB.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Forms\Reports\FormdsHDB.resx">
+      <DependentUpon>FormdsHDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reports\FormdsHDN.resx">
+      <DependentUpon>FormdsHDN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reports\FormdsNV.resx">
+      <DependentUpon>FormdsNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reports\FormThuocConHSD.resx">
+      <DependentUpon>FormThuocConHSD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QL_Thuoc.resx">
       <DependentUpon>QL_Thuoc.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -163,6 +228,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reports\ReportHDB.rdlc" />
+    <EmbeddedResource Include="Reports\ReportHDN.rdlc" />
+    <EmbeddedResource Include="Reports\ReportNV.rdlc" />
+    <EmbeddedResource Include="Reports\ReportThuocConHSD.rdlc" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -172,6 +242,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="QL_ThuocDataSet.xsc">
+      <DependentUpon>QL_ThuocDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QL_ThuocDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QL_ThuocDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QL_ThuocDataSet.xss">
+      <DependentUpon>QL_ThuocDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\NV_HDB.xsc">
+      <DependentUpon>NV_HDB.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\NV_HDB.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NV_HDB.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\NV_HDB.xss">
+      <DependentUpon>NV_HDB.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -180,6 +272,19 @@
   <ItemGroup>
     <Content Include="Images\search.png" />
     <Content Include="Images\user.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

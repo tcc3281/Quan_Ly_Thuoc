@@ -6,6 +6,7 @@ using Quan_Ly_Thuoc.Data;
 using Quan_Ly_Thuoc.Forms.Function;
 using Quan_Ly_Thuoc.Forms.Functions;
 using Quan_Ly_Thuoc.Forms.Login;
+using Quan_Ly_Thuoc.Forms.Reports;
 using Quan_Ly_Thuoc.Forms.Search;
 namespace Quan_Ly_Thuoc
 {
@@ -428,5 +429,29 @@ namespace Quan_Ly_Thuoc
         {
 
         }
-    }
+
+		private void thuốcCònHạnSửDụngToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			FormThuocConHSD f = new FormThuocConHSD();
+			f.ShowDialog();
+		}
+
+		private void danhSáchHóaĐơnNhậpToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			FormdsHDN f = new FormdsHDN();
+			f.ShowDialog();
+		}
+
+		private void danhSáchHóaĐơnBánToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			FormdsHDB f = new FormdsHDB();
+			f.ShowDialog();
+		}
+
+		private void danhSáchNhânViênToolStripMenuItem1_Click(object sender, EventArgs e)
+		{
+			FormdsNV f = new FormdsNV();
+			f.ShowDialog();
+		}
+	}
 }

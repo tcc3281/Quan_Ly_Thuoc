@@ -467,7 +467,7 @@ namespace Quan_Ly_Thuoc
             exsheet.get_Range("A2").Font.Size = 16;
             exsheet.get_Range("A2").Font.Color = Color.Red;
             exsheet.get_Range("A2").Font.Bold = true;
-            exsheet.get_Range("A2").HorizontalAlignment = HorizontalAlignment.Center;
+            exsheet.get_Range("A2").HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
             exsheet.get_Range("A2").Value = "Danh sách thuốc của cửa hàng";
 
             exsheet.Name = "Danh sách thuốc";
@@ -541,8 +541,7 @@ namespace Quan_Ly_Thuoc
 
 
             SaveFileDialog saveFile = new SaveFileDialog();
-            saveFile.Filter = "Excel Document(*.xls)|*.xls |Word Document(*.doc) | *.doc | All files(*.*) | *.* ";
-            saveFile.FilterIndex = 1;
+            saveFile.Filter = "Excel Document(*.xlsx)|*.xlsx |Word Document(*.doc) | *.doc | All files(*.*) | *.* "; saveFile.FilterIndex = 1;
             saveFile.AddExtension = true;
             saveFile.DefaultExt = ".xls";
             saveFile.RestoreDirectory = true;
@@ -568,7 +567,7 @@ namespace Quan_Ly_Thuoc
             exsheet.get_Range("A2").Font.Size = 16;
             exsheet.get_Range("A2").Font.Color = Color.Red;
             exsheet.get_Range("A2").Font.Bold = true;
-            exsheet.get_Range("A2").VerticalAlignment = VerticalAlignment.Center;
+            exsheet.get_Range("A2").HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
             exsheet.get_Range("A2").Value = "Danh sách nhân viên";
 
             exsheet.Name = "Danh sách nhân viên";
@@ -619,8 +618,7 @@ namespace Quan_Ly_Thuoc
 
 
             SaveFileDialog saveFile = new SaveFileDialog();
-            saveFile.Filter = "Excel Document(*.xls)|*.xls |Word Document(*.doc) | *.doc | All files(*.*) | *.* ";
-            saveFile.FilterIndex = 1;
+            saveFile.Filter = "Excel Document(*.xlsx)|*.xlsx |Word Document(*.doc) | *.doc | All files(*.*) | *.* "; saveFile.FilterIndex = 1;
             saveFile.AddExtension = true;
             saveFile.DefaultExt = ".xls";
             saveFile.RestoreDirectory = true;
@@ -646,7 +644,7 @@ namespace Quan_Ly_Thuoc
             exsheet.get_Range("A2").Font.Size = 16;
             exsheet.get_Range("A2").Font.Color = Color.Red;
             exsheet.get_Range("A2").Font.Bold = true;
-            exsheet.get_Range("A2").VerticalAlignment = VerticalAlignment.Center;
+            exsheet.get_Range("A2").HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
             exsheet.get_Range("A2").Value = "Danh sách khách hàng";
 
             exsheet.Name = "Danh sách khách hàng";
@@ -682,8 +680,7 @@ namespace Quan_Ly_Thuoc
 
 
             SaveFileDialog saveFile = new SaveFileDialog();
-            saveFile.Filter = "Excel Document(*.xls)|*.xls |Word Document(*.doc) | *.doc | All files(*.*) | *.* ";
-            saveFile.FilterIndex = 1;
+            saveFile.Filter = "Excel Document(*.xlsx)|*.xlsx |Word Document(*.doc) | *.doc | All files(*.*) | *.* "; saveFile.FilterIndex = 1;
             saveFile.AddExtension = true;
             saveFile.DefaultExt = ".xls";
             saveFile.RestoreDirectory = true;
@@ -709,7 +706,7 @@ namespace Quan_Ly_Thuoc
             exsheet.get_Range("A2").Font.Size = 16;
             exsheet.get_Range("A2").Font.Color = Color.Red;
             exsheet.get_Range("A2").Font.Bold = true;
-            exsheet.get_Range("A2").VerticalAlignment = VerticalAlignment.Center;
+            exsheet.get_Range("A2").HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
             exsheet.get_Range("A2").Value = "Danh sách hóa đơn nhập";
 
             exsheet.Name = "Danh sách hóa đơn nhập";
@@ -749,7 +746,7 @@ namespace Quan_Ly_Thuoc
 
 
             SaveFileDialog saveFile = new SaveFileDialog();
-            saveFile.Filter = "Excel Document(*.xls)|*.xls |Word Document(*.doc) | *.doc | All files(*.*) | *.* ";
+            saveFile.Filter = "Excel Document(*.xlsx)|*.xlsx |Word Document(*.doc) | *.doc | All files(*.*) | *.* ";
             saveFile.FilterIndex = 1;
             saveFile.AddExtension = true;
             saveFile.DefaultExt = ".xls";
@@ -776,7 +773,7 @@ namespace Quan_Ly_Thuoc
             exsheet.get_Range("A2").Font.Size = 16;
             exsheet.get_Range("A2").Font.Color = Color.Red;
             exsheet.get_Range("A2").Font.Bold = true;
-            exsheet.get_Range("A2").VerticalAlignment = VerticalAlignment.Center;
+            exsheet.get_Range("A2").HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
             exsheet.get_Range("A2").Value = "Danh sách hóa đơn bán";
 
             exsheet.Name = "Danh sách hóa đơn bán";
@@ -816,10 +813,10 @@ namespace Quan_Ly_Thuoc
 
 
             SaveFileDialog saveFile = new SaveFileDialog();
-            saveFile.Filter = "Excel Document(*.xls)|*.xls |Word Document(*.doc) | *.doc | All files(*.*) | *.* ";
+            saveFile.Filter = "Excel Document(*.xlsx)|*.xlsx |Word Document(*.doc) | *.doc | All files(*.*) | *.* ";
             saveFile.FilterIndex = 1;
             saveFile.AddExtension = true;
-            saveFile.DefaultExt = ".xls";
+            saveFile.DefaultExt = ".xlsx";
             saveFile.RestoreDirectory = true;
             if (saveFile.ShowDialog() == DialogResult.OK)
             {

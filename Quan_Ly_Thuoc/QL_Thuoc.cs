@@ -626,6 +626,7 @@ namespace Quan_Ly_Thuoc
             {
                 exbook.SaveAs(saveFile.FileName.ToString());
                 MessageBox.Show("Xuất file thành công");
+                exapp.Quit();
 
             }
         }
@@ -688,6 +689,7 @@ namespace Quan_Ly_Thuoc
             {
                 exbook.SaveAs(saveFile.FileName.ToString());
                 MessageBox.Show("Xuất file thành công");
+                exapp.Quit();
 
             }
         }
@@ -755,7 +757,7 @@ namespace Quan_Ly_Thuoc
             {
                 exbook.SaveAs(saveFile.FileName.ToString());
                 MessageBox.Show("Xuất file thành công");
-
+                exapp.Quit();
             }
         }
 
@@ -822,7 +824,7 @@ namespace Quan_Ly_Thuoc
             {
                 exbook.SaveAs(saveFile.FileName.ToString());
                 MessageBox.Show("Xuất file thành công");
-
+                exapp.Quit();
             }
         }
     }

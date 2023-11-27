@@ -309,6 +309,34 @@ namespace Quan_Ly_Thuoc
             TabPage selectedTab = tabControl.SelectedTab;
             tabControl.TabPages.Remove(selectedTab);
         }
+        private void reloadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TabPage selectedTab = tabControl.SelectedTab;
+            MessageBox.Show(selectedTab.Text);
+            foreach(var item in selectedTab.Controls)
+            {
+                if(item is DataGridView)
+                {
+                    DataGridView data=(DataGridView)item;
+                    if (selectedTab.Text == "Danh sách thuốc")
+                    {
+                        string sql = "select a.MaThuoc as 'Mã Thuốc',a.TenThuoc as 'Tên Thuốc',a.ThanhPhan as 'Thành phần',a.DonGiaNhap as 'Giá nhập' ,a.GiaBan as 'Giá bán',a.SLHienCo as 'Số lượng',a.NgaySX as 'Ngày sản xuất',a.HanSD as 'Hạn sử dụng',a.ChongChiDinh as 'Chống chỉ định',b.TenNSX as 'Nước sản xuất',c.TenDangDieuChe as 'Dạng điều chế',d.TenDonViTinh as 'Đơn vị tính'\r\nfrom DanhMucThuoc a join NuocSX b on a.MaNSX=b.MaNSX\r\n\t\tjoin DangDieuChe c on a.MaDangDieuChe=c.MaDangDieuChe\r\n\t\tjoin DonViTinh d on a.MaDV=d.MaDV";
+                        data.DataSource = pd.ReadTable(sql);
+                    }
+                    else if (selectedTab.Text == "Danh sách khách hàng")
+                    {
+                        string sql = "select MaKhach as N'Mã khách', TenKhach as N'Tên khách' , DiaChi as N'Địa chỉ', DienThoai as N'Số điện thoại' from KhachHang";
+                        data.DataSource = pd.ReadTable(sql);
+                    }
+                    else if (selectedTab.Text == "Danh sách Nhân viên")
+                    {
+                        string sql = "select a.MaNhanVien as N'Mã nhân viên',a.TenNV as N'Tên nhân viên',a.GioiTinh as N'Giới tính',a.DiaChi as N'Địa chỉ',a.DienThoai as N'Số điện thoại',b.TenTrinhDo as N'Trình độ',c.TenChuyenMon as N'Chuyên môn'\r\nfrom NhanVien a join TrinhDo b on a.MaTrinhDo=b.MaTrinhDo\r\n\t\tjoin ChuyenMon c on a.MaChuyenMon=c.MaChuyenMon";
+                        data.DataSource = pd.ReadTable(sql);
+                    }
+                    else;
+                }
+            }
+        }
         private TabPage newTabPage(string name)
         {
             TabPage tabPage = new TabPage();

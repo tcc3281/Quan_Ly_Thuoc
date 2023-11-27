@@ -8,7 +8,10 @@ namespace Quan_Ly_Thuoc.Forms.Functions
 	public partial class FormThemNV : Form
 	{
 		ProcessDatabase pd = new ProcessDatabase();
-		public FormThemNV()
+		DataTable dtTrinhDo;
+		DataTable dtChuyenMon;
+		string mnv;
+        public FormThemNV()
 		{
 			InitializeComponent();
 		}
@@ -42,8 +45,8 @@ namespace Quan_Ly_Thuoc.Forms.Functions
 		}
 		private void Loadcmb()
 		{
-			DataTable dtTrinhDo = pd.ReadTable("Select * from TrinhDo");
-			DataTable dtChuyenMon = pd.ReadTable("Select * from ChuyenMon");
+			dtTrinhDo = pd.ReadTable("Select * from TrinhDo");
+			dtChuyenMon = pd.ReadTable("Select * from ChuyenMon");
 
 			for (int i = 0; i < dtTrinhDo.Rows.Count; i++)
 				this.cmbTrinhDo.Items.Add(dtTrinhDo.Rows[i]["TenTrinhDo"]);
@@ -57,8 +60,12 @@ namespace Quan_Ly_Thuoc.Forms.Functions
 		private void FromThemNV_Load(object sender, EventArgs e)
 		{
 			Loadcmb();
-			dgvNhanVien.DataSource = pd.ReadTable("select * from NhanVien");
+			show_dvg();
 		}
+		private void show_dvg()
+		{
+            dgvNhanVien.DataSource = pd.ReadTable("select a.MaNhanVien as N'Mã nhân viên', a.TenNV as N'Tên nhân viên', a.NgaySinh as N'Ngày sinh' ,a.DiaChi as N'Địa chỉ', \r\na.DienThoai as N'Số điện thoại',\r\na.GioiTinh as N'Giới tính',b.TenTrinhDo as N'Trình độ',c.TenChuyenMon as N'Chuyên môn'\r\nfrom NhanVien a join Trinhdo b on a.MaTrinhdo= b.matrinhdo\r\n\t\t\tjoin ChuyenMon c on a.MaChuyenMon=c.MaChuyenMon");
+        }
 		private bool Validate()
 		{
 			if (txtTenNV.Text.Trim() == "" || txtSDT.Text.Trim() == "" ||
@@ -142,8 +149,65 @@ namespace Quan_Ly_Thuoc.Forms.Functions
 								txtSDT.Text + "', N'" + takeIdCM + "', N'" + takeIdTD + "')";
 				//MessageBox.Show(sql);
 				pd.RunSQL(sql);
-				dgvNhanVien.DataSource = pd.ReadTable("select * from NhanVien");
+				show_dvg();
 			}
 		}
-	}
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+			if (Validate())
+			{
+				string sql = "Update Nhanvien " +
+					"set TenNV=N'" + txtTenNV.Text + "'," +
+					"NgaySinh=N'" + txtDOB.Text + "'," +
+					"Diachi=N'"+txtDiaChi.Text+"'," +
+					"GioiTinh=N'"+cmbGioiTinh.Text+"'," +
+					"DienThoai=N'"+txtSDT.Text+"'," +
+					"MaChuyenMon=N'" + dtChuyenMon.Rows[cmbChuyenMon.SelectedIndex]["Machuyenmon"].ToString() + "'," +
+					"MaTrinhdo=N'"+ dtTrinhDo.Rows[cmbTrinhDo.SelectedIndex]["MaTrinhDo"].ToString() + "' " +
+					"where Manhanvien=N'" + mnv + "'";
+
+				pd.CreateCMD();
+				pd.RunSQL(sql);
+				show_dvg();
+			}
+			else
+			{
+				MessageBox.Show("Chọn nhân viên muôn cập nhập!");
+			}
+        }
+
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+			this.Close();
+        }
+
+        private void dgvNhanVien_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+			var row = dgvNhanVien.SelectedRows;
+
+			txtTenNV.Text = row[0].Cells["Tên nhân viên"].Value.ToString();
+			txtDOB.Text = row[0].Cells["Ngày sinh"].Value.ToString();
+			txtDiaChi.Text = row[0].Cells["Địa chỉ"].Value.ToString();
+			txtSDT.Text = row[0].Cells["Số điện thoại"].Value.ToString();
+			cmbGioiTinh.Text = row[0].Cells["Giới tính"].Value.ToString();
+			cmbChuyenMon.Text = row[0].Cells["Chuyên môn"].Value.ToString();
+			cmbTrinhDo.Text = row[0].Cells["Trình độ"].Value.ToString();
+			mnv = row[0].Cells["Mã nhân viên"].Value.ToString();
+        }
+		public void showNV(string s)
+		{
+			DataTable dt = pd.ReadTable("select a.MaNhanVien as N'Mã nhân viên', a.TenNV as N'Tên nhân viên', a.NgaySinh as N'Ngày sinh' ,a.DiaChi as N'Địa chỉ', \r\na.DienThoai as N'Số điện thoại',\r\na.GioiTinh as N'Giới tính',b.TenTrinhDo as N'Trình độ',c.TenChuyenMon as N'Chuyên môn'\r\nfrom NhanVien a join Trinhdo b on a.MaTrinhdo= b.matrinhdo\r\n\t\t\tjoin ChuyenMon c on a.MaChuyenMon=c.MaChuyenMon where manhanvien=N'" + s + "'");
+
+            txtTenNV.Text = dt.Rows[0]["Tên nhân viên"].ToString();
+            txtDOB.Text = dt.Rows[0]["Ngày sinh"].ToString();
+            txtDiaChi.Text = dt.Rows[0]["Địa chỉ"].ToString();
+            txtSDT.Text = dt.Rows[0]["Số điện thoại"].ToString();
+            cmbGioiTinh.Text = dt.Rows[0]["Giới tính"].ToString();
+            cmbChuyenMon.Text = dt.Rows[0]["Chuyên môn"].ToString();
+            cmbTrinhDo.Text = dt.Rows[0]["Trình độ"].ToString();
+            mnv = dt.Rows[0]["Mã nhân viên"].ToString();
+        }
+    }
 }

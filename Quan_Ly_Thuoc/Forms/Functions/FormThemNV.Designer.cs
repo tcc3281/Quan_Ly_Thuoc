@@ -45,7 +45,6 @@
             this.dgvNhanVien = new System.Windows.Forms.DataGridView();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
             this.txtDOB = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
@@ -197,6 +196,7 @@
             this.dgvNhanVien.RowTemplate.Height = 24;
             this.dgvNhanVien.Size = new System.Drawing.Size(867, 293);
             this.dgvNhanVien.TabIndex = 0;
+            this.dgvNhanVien.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvNhanVien_RowHeaderMouseDoubleClick);
             // 
             // btnThem
             // 
@@ -218,26 +218,18 @@
             this.btnSua.TabIndex = 16;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Location = new System.Drawing.Point(799, 136);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(84, 29);
-            this.btnXoa.TabIndex = 17;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnHuy
             // 
-            this.btnHuy.Location = new System.Drawing.Point(799, 189);
+            this.btnHuy.Location = new System.Drawing.Point(799, 135);
             this.btnHuy.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(84, 29);
             this.btnHuy.TabIndex = 18;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // txtDOB
             // 
@@ -255,7 +247,6 @@
             this.ClientSize = new System.Drawing.Size(900, 562);
             this.Controls.Add(this.txtDOB);
             this.Controls.Add(this.btnHuy);
-            this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.groupBox1);
@@ -302,7 +293,6 @@
 		private System.Windows.Forms.DataGridView dgvNhanVien;
 		private System.Windows.Forms.Button btnThem;
 		private System.Windows.Forms.Button btnSua;
-		private System.Windows.Forms.Button btnXoa;
 		private System.Windows.Forms.Button btnHuy;
 		private System.Windows.Forms.DateTimePicker txtDOB;
 	}

@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
+using System.DirectoryServices.ActiveDirectory;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
@@ -16,6 +18,7 @@ namespace Quan_Ly_Thuoc
     public partial class QL_Thuoc : Form
     {
         ProcessDatabase pd = new ProcessDatabase();
+        DataGridView temp=new DataGridView();
         public QL_Thuoc()
         {
             InitializeComponent();
@@ -316,8 +319,10 @@ namespace Quan_Ly_Thuoc
             tabControl.SelectedTab = tabPage;
             return tabPage;
         }
+
         private void medicineToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
             string name = "Danh sách thuốc";
             foreach (TabPage item in tabControl.TabPages)
             {
@@ -331,11 +336,22 @@ namespace Quan_Ly_Thuoc
             TabPage tabPage = newTabPage(name);
             //them datagridview
             DataGridView data = new DataGridView();
+            data.RowHeaderMouseDoubleClick+=new System.Windows.Forms.DataGridViewCellMouseEventHandler(double_click);
             string sql = "select a.MaThuoc as 'Mã Thuốc',a.TenThuoc as 'Tên Thuốc',a.ThanhPhan as 'Thành phần',a.DonGiaNhap as 'Giá nhập' ,a.GiaBan as 'Giá bán',a.SLHienCo as 'Số lượng',a.NgaySX as 'Ngày sản xuất',a.HanSD as 'Hạn sử dụng',a.ChongChiDinh as 'Chống chỉ định',b.TenNSX as 'Nước sản xuất',c.TenDangDieuChe as 'Dạng điều chế',d.TenDonViTinh as 'Đơn vị tính'\r\nfrom DanhMucThuoc a join NuocSX b on a.MaNSX=b.MaNSX\r\n\t\tjoin DangDieuChe c on a.MaDangDieuChe=c.MaDangDieuChe\r\n\t\tjoin DonViTinh d on a.MaDV=d.MaDV";
             data.DataSource = pd.ReadTable(sql);
             tabPage.Controls.Add(data);
             data.Dock = DockStyle.Fill;
             data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            void double_click(object s, DataGridViewCellMouseEventArgs en)
+            {
+                var row = data.SelectedRows;
+
+                FormNhapThuoc formNhapThuoc = new FormNhapThuoc();
+                formNhapThuoc.open_medicine(row[0].Cells["Mã Thuốc"].Value.ToString());
+                formNhapThuoc.setUpdate();
+                formNhapThuoc.ShowDialog();
+
+            }
         }
         private void cútomerToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -352,11 +368,21 @@ namespace Quan_Ly_Thuoc
             TabPage tabPage = newTabPage(name);
             //them datagridview
             DataGridView data = new DataGridView();
+            data.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(double_click);
             string sql = "select MaKhach as N'Mã khách', TenKhach as N'Tên khách' , DiaChi as N'Địa chỉ', DienThoai as N'Số điện thoại' from KhachHang";
             data.DataSource = pd.ReadTable(sql);
             tabPage.Controls.Add(data);
             data.Dock = DockStyle.Fill;
             data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            void double_click(object s, DataGridViewCellMouseEventArgs en)
+            {
+                var row = data.SelectedRows;
+               
+                FormKhachHang formkhach = new FormKhachHang();
+                formkhach.set_view(row[0].Cells["Mã Khách"].Value.ToString());
+                formkhach.ShowDialog();
+
+            }
         }
         private void staffToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -374,10 +400,20 @@ namespace Quan_Ly_Thuoc
             string sql = "select a.MaNhanVien as N'Mã nhân viên',a.TenNV as N'Tên nhân viên',a.GioiTinh as N'Giới tính',a.DiaChi as N'Địa chỉ',a.DienThoai as N'Số điện thoại',b.TenTrinhDo as N'Trình độ',c.TenChuyenMon as N'Chuyên môn'\r\nfrom NhanVien a join TrinhDo b on a.MaTrinhDo=b.MaTrinhDo\r\n\t\tjoin ChuyenMon c on a.MaChuyenMon=c.MaChuyenMon";
             //them datagridview
             DataGridView data = new DataGridView();
+            data.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(double_click);
             data.DataSource = pd.ReadTable(sql);
             tabPage.Controls.Add(data);
             data.Dock = DockStyle.Fill;
             data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            void double_click(object s, DataGridViewCellMouseEventArgs en)
+            {
+                var row = data.SelectedRows;
+
+                FormThemNV form = new FormThemNV();
+                form.showNV(row[0].Cells["Mã nhân viên"].Value.ToString());
+                form.ShowDialog();
+
+            }
         }
         private void thuốcToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -826,6 +862,19 @@ namespace Quan_Ly_Thuoc
                 MessageBox.Show("Xuất file thành công");
                 exapp.Quit();
             }
+        }
+
+        private void nhânViênToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormKhachHang form = new FormKhachHang();
+            form.set_update();
+            form.ShowDialog();
+        }
+
+        private void kháchHàngToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormThemNV form = new FormThemNV();
+            form.ShowDialog();
         }
     }
 }

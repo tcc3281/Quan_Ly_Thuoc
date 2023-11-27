@@ -319,23 +319,29 @@ namespace Quan_Ly_Thuoc.Forms.Function
 		}
         private void txtMedicineCode_Leave(object sender, EventArgs e)
         {
+			leave_event();
+        }
+		public void open_medicine(string s)
+		{
+			txtMedicineCode.Text = s;
+			leave_event();
+		}
+		private void leave_event()
+		{
             listBoxFunction.Items.Clear();
-			try
-			{
+            try
+            {
                 string name = pd.ReadTable("select TenThuoc from DanhMucThuoc where MaThuoc='" + txtMedicineCode.Text + "'").Rows[0]["TenThuoc"].ToString();
-				show_medicine(name);
+                show_medicine(name);
             }
             catch (System.IndexOutOfRangeException)
-			{
-				if (btnAdd.Enabled == false)
-				{
-					MessageBox.Show("Mã thuốc không hợp lệ!");
-					txtMedicineCode.Focus();
-				}
-				
-				
-			}
-			
+            {
+                if (btnAdd.Enabled == false)
+                {
+                    MessageBox.Show("Mã thuốc không hợp lệ!");
+                    txtMedicineCode.Focus();
+                }
+            }
         }
     }
 }

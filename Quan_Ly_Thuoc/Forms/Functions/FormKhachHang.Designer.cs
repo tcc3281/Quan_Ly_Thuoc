@@ -139,6 +139,7 @@
             this.txtMaKH.ReadOnly = true;
             this.txtMaKH.Size = new System.Drawing.Size(257, 26);
             this.txtMaKH.TabIndex = 4;
+            this.txtMaKH.Leave += new System.EventHandler(this.txtMaKH_Leave);
             // 
             // txtTenKH
             // 
@@ -176,7 +177,6 @@
             this.btnHuy.TabIndex = 9;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = true;
-            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnLuu
             // 

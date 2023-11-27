@@ -1,5 +1,6 @@
 ﻿using Quan_Ly_Thuoc.Data;
 using System;
+using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -11,10 +12,11 @@ namespace Quan_Ly_Thuoc.Forms.Functions
         public FormKhachHang()
         {
             InitializeComponent();
+            txtMaKH.Text = IDKH();
         }
         private void FormKhachHang_Load(object sender, EventArgs e)
         {
-            txtMaKH.Text = IDKH();
+            
         }
 		private string IDKH()
 		{
@@ -70,23 +72,63 @@ namespace Quan_Ly_Thuoc.Forms.Functions
         }
 		private void btnLuu_Click(object sender, EventArgs e)
 		{
+            bool check_update()
+            {
+                DataTable dt = pd.ReadTable("select * from KhachHang where Makhach = '" + txtMaKH.Text + "'");
+                if (dt.Rows.Count > 0) return false;
+                else return true;
+
+            }
             if (Validate())
             {
-                String sql = "insert into KhachHang(MaKhach, TenKhach, DiaChi, DienThoai) " +
-                    "values('" + txtMaKH.Text + "', N'" + txtTenKH.Text + "', N'" + 
-                    txtDiaChi.Text + "','" + txtSDT.Text + "')";
-				//MessageBox.Show(sql);
-				pd.RunSQL(sql);
-                this.Close();
+                if (check_update())
+                {
+                    string sql = "insert into KhachHang(MaKhach, TenKhach, DiaChi, DienThoai) " +
+                        "values('" + txtMaKH.Text + "', N'" + txtTenKH.Text + "', N'" + 
+                        txtDiaChi.Text + "','" + txtSDT.Text + "')";
+				    //MessageBox.Show(sql);
+				    pd.RunSQL(sql);
+                    this.Close();
+                }
+                else
+                {
+                    string sql = "update KhachHang set TenKhach=N'"+txtTenKH.Text+"',DiaChi=N'"+txtDiaChi.Text+"',DienThoai=N'"+txtSDT.Text+"' where MaKhach= N'"+txtMaKH.Text+"'";
+                    //MessageBox.Show(sql);
+                    pd.RunSQL(sql);
+                    this.Close();
+                }
+                
 			}
             else
             {
                 MessageBox.Show("Cần điền tên và số điện thoại khách hàng.", "Thông báo");
             }
 		}
-		private void btnHuy_Click(object sender, EventArgs e)
-		{
-            this.Close();
-		}
-	}
+        public void set_view(string ma)
+        {
+            DataTable dt = pd.ReadTable("select * from khachhang where makhach=N'"+ma+"'");
+            txtMaKH.Text = dt.Rows[0]["Makhach"].ToString();
+            txtTenKH.Text = dt.Rows[0]["tenkhach"].ToString();
+            txtDiaChi.Text = dt.Rows[0]["Diachi"].ToString();
+            txtSDT.Text = dt.Rows[0]["DienThoai"].ToString();
+        }
+        public void set_update()
+        {
+            txtMaKH.ReadOnly = false;
+        }
+
+        private void txtMaKH_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                set_view(txtMaKH.Text);
+            }
+            catch (IndexOutOfRangeException)
+            {
+                MessageBox.Show("Mã nhân viên không hợp lệ!");
+                txtMaKH.Focus();
+            }
+            
+        }
+    }
 }

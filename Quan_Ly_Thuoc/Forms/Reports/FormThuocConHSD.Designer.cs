@@ -84,7 +84,7 @@
 			this.Controls.Add(this.groupBox2);
 			this.Controls.Add(this.groupBox1);
 			this.Name = "FormThuocConHSD";
-			this.Text = "FormThuocConHSD";
+			this.Text = "Báo cáo thuốc";
 			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.Load += new System.EventHandler(this.FormThuocConHSD_Load);
 			this.groupBox1.ResumeLayout(false);

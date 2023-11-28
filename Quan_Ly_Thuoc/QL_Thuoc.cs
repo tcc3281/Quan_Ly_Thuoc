@@ -312,7 +312,6 @@ namespace Quan_Ly_Thuoc
         private void reloadToolStripMenuItem_Click(object sender, EventArgs e)
         {
             TabPage selectedTab = tabControl.SelectedTab;
-            MessageBox.Show(selectedTab.Text);
             foreach(var item in selectedTab.Controls)
             {
                 if(item is DataGridView)

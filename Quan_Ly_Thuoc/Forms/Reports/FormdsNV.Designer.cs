@@ -143,7 +143,7 @@
 			this.Controls.Add(this.groupBox2);
 			this.Controls.Add(this.groupBox1);
 			this.Name = "FormdsNV";
-			this.Text = "FormdsNV";
+			this.Text = "Báo cáo nhân viên";
 			this.Load += new System.EventHandler(this.FormdsNV_Load);
 			this.groupBox2.ResumeLayout(false);
 			this.groupBox1.ResumeLayout(false);

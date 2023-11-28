@@ -143,7 +143,7 @@
 			this.Controls.Add(this.groupBox2);
 			this.Controls.Add(this.groupBox1);
 			this.Name = "FormdsHDB";
-			this.Text = "FormdsHDB";
+			this.Text = "Báo cáo hóa đơn bán";
 			this.Load += new System.EventHandler(this.FormdsHDB_Load);
 			this.groupBox2.ResumeLayout(false);
 			this.groupBox1.ResumeLayout(false);

@@ -18,7 +18,7 @@ namespace Quan_Ly_Thuoc.Forms.Functions
 		private string IDNV()
 		{
 			pd.CreateCMD();
-			pd.cmd.CommandText = "Select top(1) MaNhanVien from NhanVien order by MaNhanVien";
+			pd.cmd.CommandText = "Select top(1) MaNhanVien from NhanVien order by MaNhanVien desc";
 			pd.Connect();
 			string s;
 			int cnt = 1;

@@ -375,7 +375,6 @@
             this.menuStripTabPage.Name = "contextMenuStrip1";
             this.menuStripTabPage.Size = new System.Drawing.Size(162, 68);
             this.menuStripTabPage.Text = "Xóa";
-            this.menuStripTabPage.Opening += new System.ComponentModel.CancelEventHandler(this.menuStripTabPage_Opening);
             // 
             // xóaToolStripMenuItem
             // 

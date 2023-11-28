@@ -29,16 +29,16 @@
 		private void InitializeComponent()
 		{
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.label1 = new System.Windows.Forms.Label();
 			this.btnTim = new System.Windows.Forms.Button();
-			this.rpvHDN = new Microsoft.Reporting.WinForms.ReportViewer();
 			this.txtSearch = new System.Windows.Forms.NumericUpDown();
+			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.rpvHDN = new Microsoft.Reporting.WinForms.ReportViewer();
 			this.groupBox1.SuspendLayout();
-			this.groupBox2.SuspendLayout();
 			this.tableLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.txtSearch)).BeginInit();
+			this.groupBox2.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// groupBox1
@@ -50,16 +50,6 @@
 			this.groupBox1.Size = new System.Drawing.Size(800, 69);
 			this.groupBox1.TabIndex = 0;
 			this.groupBox1.TabStop = false;
-			// 
-			// groupBox2
-			// 
-			this.groupBox2.Controls.Add(this.rpvHDN);
-			this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.groupBox2.Location = new System.Drawing.Point(0, 69);
-			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Size = new System.Drawing.Size(800, 381);
-			this.groupBox2.TabIndex = 1;
-			this.groupBox2.TabStop = false;
 			// 
 			// tableLayoutPanel1
 			// 
@@ -101,16 +91,6 @@
 			this.btnTim.UseVisualStyleBackColor = true;
 			this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
 			// 
-			// rpvHDN
-			// 
-			this.rpvHDN.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.rpvHDN.LocalReport.ReportEmbeddedResource = "Quan_Ly_Thuoc.Reports.ReportHDN.rdlc";
-			this.rpvHDN.Location = new System.Drawing.Point(3, 18);
-			this.rpvHDN.Name = "rpvHDN";
-			this.rpvHDN.ServerReport.BearerToken = null;
-			this.rpvHDN.Size = new System.Drawing.Size(794, 360);
-			this.rpvHDN.TabIndex = 0;
-			// 
 			// txtSearch
 			// 
 			this.txtSearch.Dock = System.Windows.Forms.DockStyle.Left;
@@ -135,6 +115,26 @@
             0,
             0});
 			// 
+			// groupBox2
+			// 
+			this.groupBox2.Controls.Add(this.rpvHDN);
+			this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.groupBox2.Location = new System.Drawing.Point(0, 69);
+			this.groupBox2.Name = "groupBox2";
+			this.groupBox2.Size = new System.Drawing.Size(800, 381);
+			this.groupBox2.TabIndex = 1;
+			this.groupBox2.TabStop = false;
+			// 
+			// rpvHDN
+			// 
+			this.rpvHDN.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.rpvHDN.LocalReport.ReportEmbeddedResource = "Quan_Ly_Thuoc.Reports.ReportHDN.rdlc";
+			this.rpvHDN.Location = new System.Drawing.Point(3, 18);
+			this.rpvHDN.Name = "rpvHDN";
+			this.rpvHDN.ServerReport.BearerToken = null;
+			this.rpvHDN.Size = new System.Drawing.Size(794, 360);
+			this.rpvHDN.TabIndex = 0;
+			// 
 			// FormdsHDN
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -143,13 +143,13 @@
 			this.Controls.Add(this.groupBox2);
 			this.Controls.Add(this.groupBox1);
 			this.Name = "FormdsHDN";
-			this.Text = "FormdsHDN";
+			this.Text = "Báo cáo hóa đơn nhập";
 			this.Load += new System.EventHandler(this.FormdsHDN_Load);
 			this.groupBox1.ResumeLayout(false);
-			this.groupBox2.ResumeLayout(false);
 			this.tableLayoutPanel1.ResumeLayout(false);
 			this.tableLayoutPanel1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.txtSearch)).EndInit();
+			this.groupBox2.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
